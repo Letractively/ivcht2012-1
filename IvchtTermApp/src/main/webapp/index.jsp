@@ -14,14 +14,15 @@
     <img src="resources/img/welcome.gif">
 </div>
 
-<hr class="full">
 
+<hr class="full">
+       <h1>
 <div>
     <span>
-        Это учебный проект выполняемый группой мИВЧТ-11 2012/2013 обучения
+        Это учебный проект выполняемый группой мИВЧТ-21 2012/2013 обучения
     </span>
 </div>
-
+           </h1>
 <br/>
 <hr class="full">
 
