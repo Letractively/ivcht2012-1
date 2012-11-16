@@ -1,5 +1,6 @@
 body {
-    background: #efaee9 url('..\img\bg.jpg');
+    background: #efaee9 url('../img/bg.gif');
+
 }
 
 h1 {
@@ -8,6 +9,14 @@ h1 {
  h6 {color: #ffffff;
 
  }
+
+p {
+    font-family: Arial;
+    font-size: 8px;
+    background-color: red;
+    color: #adff2f;
+
+}
 
 .info {
     font-style: italic;
