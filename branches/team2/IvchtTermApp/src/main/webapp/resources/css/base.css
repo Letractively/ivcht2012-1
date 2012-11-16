@@ -1,0 +1,17 @@
+body {
+    background-color: #e9ffe9;
+}
+
+h1 {
+   color: #00aaaa;
+}
+
+.info {
+    font-style: italic;
+    font-weight: bolder;
+}
+
+hr .full{
+    width: 100%;
+    color: #2356aa
+}
