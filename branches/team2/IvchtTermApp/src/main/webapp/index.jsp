@@ -25,8 +25,9 @@
            </h1>
 <br/>
 <hr class="full">
-
+     <h6>
 <a href="welcome">На страницу приветствия</a>    <br>
 <a href="https://code.google.com/p/ivcht2012-1">Страница проекта</a>
+</h6>
 </body>
 </html>
