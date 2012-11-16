@@ -5,6 +5,9 @@ body {
 h1 {
    color: #fff;
 }
+ h6 {color: #ffffff;
+
+ }
 
 .info {
     font-style: italic;
