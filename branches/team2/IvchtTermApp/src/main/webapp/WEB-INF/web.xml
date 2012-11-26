@@ -6,13 +6,13 @@
   <display-name>Archetype Created Web Application</display-name>
 
     <servlet>
-        <servlet-name>WelcomeController</servlet-name>
-        <servlet-class>edu.sstu.ivcht.term2012.controller.WelcomeServlet</servlet-class>
+        <servlet-name>DatabaseController</servlet-name>
+        <servlet-class>edu.sstu.ivcht.term2012.controller.DatabaseController</servlet-class>
     </servlet>
 
     <servlet-mapping>
-        <servlet-name>WelcomeController</servlet-name>
-        <url-pattern>/welcome</url-pattern>
+        <servlet-name>DatabaseController</servlet-name>
+        <url-pattern>/createdatabase</url-pattern>
     </servlet-mapping>
 
 </web-app>
