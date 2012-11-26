@@ -19,12 +19,12 @@ public class DatabaseService {
             "INSERT Type (id, type) VALUES (5, 'Седан') "+
             "INSERT Type (id, type) VALUES (6, 'Внедорожник')";
     private final static String CREATE_TYPE_TABLE_BRAND = "CREATE TABLE Brand (id IDENTITY , brand VARCHAR(20))";
-    private final static String INSERT_TYPE_TABLE_BRAND = "INSERT Type (id, type) VALUES (1, 'Opel') "+
-            "INSERT Type (id, type) VALUES (2, 'Audi') "+
-            "INSERT Type (id, type) VALUES (3, 'Renault') "+
-            "INSERT Type (id, type) VALUES (4, 'Nissan') "+
-            "INSERT Type (id, type) VALUES (5, 'Peugeot') "+
-            "INSERT Type (id, type) VALUES (6, 'Ваз')";
+    private final static String INSERT_TYPE_TABLE_BRAND = "INSERT Brand (id, type) VALUES (1, 'Opel') "+
+            "INSERT Brand (id, type) VALUES (2, 'Audi') "+
+            "INSERT Brand (id, type) VALUES (3, 'Renault') "+
+            "INSERT Brand (id, type) VALUES (4, 'Nissan') "+
+            "INSERT Brand (id, type) VALUES (5, 'Peugeot') "+
+            "INSERT Brand (id, type) VALUES (6, 'Ваз')";
      public void createDatabaseTables()  throws Exception{
         Connection connection =  DataBaseConnection.getConnection();
         Statement statement = connection.createStatement();
