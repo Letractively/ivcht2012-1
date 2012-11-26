@@ -1,37 +1,66 @@
 body {
-    background: #fff url('../img/bg2.jpg') repeat-x;  
+    background: #fff url('../img/img.gif');  
 	font-family: Arial, Helvetica, sans-serif;
-	font-size: 12px;
+	font-size: 14px;
+	margin:0px;
+	padding:0px;
 }
-
 h1 {
    color: #000;
 }
  h6 {color: #ffffff;
 }
-
 p {
     font-family: "Arial";
-    font-size: 18px;
-    color: #adff2f;
+    font-size: 14px;
+    color: #000;
 }
-
-.block {width:1000px; height:auto; min-height:1000px; background-color:#fff; color:#000; border:solid 1px #000; margin:0 auto;}
-
-#head{ height:200px; background-color:#CCC; margin:0; padding:0;}
-#navi{height:30px; background-color:#f6f6f6; border-bottom:1px solid #f6f6f6; border-top:1px dotted #F6f6f6; margin:0 padding:0;}
-.block2{ min-height:800px;}
-#left{float:left; width:200px;  min-height:800px; background-color:#fff; border-right:1px dotted #000;}
-#cont{float:left; min-height:800px; background-color:#fff; width:799px;}
-#foot{clear:both; min-height:80px; background-color: #f6f6f6; border-top:1px dotted #000; }
+.block {
+	width:1000px;
+ 	height:auto; 
+	min-height:1000px; 
+	background-color:#fff; 
+	color:#000; 
+	border:solid 1px #000; 
+	margin:0 auto;}
+#head{ 
+	height:200px; 
+	background-color:#CCC; 
+	margin:0; padding:0;
+}
+#navi{
+	height:30px; 
+	background-color:#f6f6f6; 
+	border-bottom:1px solid #f6f6f6; 
+	border-top:1px dotted #F6f6f6; 
+	margin:0;
+	padding:0;
+	}
+/*.block2{ min-height:800px;}*/
+#left{
+	float:left; 
+	width:200px;  
+	min-height:832px;
+	background-color:#fff;
+	border-right:1px dotted #000;
+	}
+#cont{
+	margin-left:201px; 
+	min-height:800px; 
+	background-color:#fff; 
+	width:799px;}
+#foot{
+	clear:both; 
+	min-height:80px; 
+	background-color: #f6f6f6; 
+	border-top:1px dotted #000; 
+	}
 #foot p span{font:Verdana, Geneva, sans-serif italic; color:#fff;}
 #foot p span{font:Verdana, Geneva, sans-serif italic; color:#fff; background-color:#ccc; display: inline-block; vertical-align:middle; float:right;}
-
 hr .full{
     width: 100%;
     color: #2356aa
 }
-
 .links	{font-size:14px;}
 .links ul {font-weight: 600; list-style:none;  border-bottom:1px #069 dotted; width:170px; padding-left:20px;} 
 .links li {border-left:5px #069 solid;}
