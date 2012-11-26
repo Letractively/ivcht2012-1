@@ -12,10 +12,10 @@ import java.sql.Statement;
  */
 public class DatabaseService {
     private final static String CREATE_TYPE_TABLE = "CREATE TABLE Auto (id IDENTITY , type VARCHAR(20))";
-    private final static String INSERT_TYPE_TABLE = "INSERT Type (id, type) VALUES (1, 'Минивен') "+
+    private final static String INSERT_TYPE_TABLE = "INSERT Type (id, type) VALUES (1, 'Минивэн') "+
     "INSERT Type (id, type) VALUES (2, 'Кроссовер') "+
             "INSERT Type (id, type) VALUES (3, 'Универсал') "+
-            "INSERT Type (id, type) VALUES (4, 'Хэтчбе') "+
+            "INSERT Type (id, type) VALUES (4, 'Хэтчбек') "+
             "INSERT Type (id, type) VALUES (5, 'Седан') "+
             "INSERT Type (id, type) VALUES (6, 'Внедорожник')";
     private final static String CREATE_TYPE_TABLE_BRAND = "CREATE TABLE Brand (id IDENTITY , brand VARCHAR(20))";
