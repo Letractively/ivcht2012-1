@@ -12,7 +12,6 @@ import java.util.Date;
 
 public class Auto {
     private int id;
-    private int id_type;
     private int id_brand;
     private int seat;
     private int length;
@@ -22,10 +21,10 @@ public class Auto {
    public Auto(){
 
    }
-    public Auto( int id, int id_brand, int id_type, int seat, int length, int width, int height) {
+    public Auto( int id, int id_brand,  int seat, int length, int width, int height) {
         this.id = id;
         this.id_brand = id_brand;
-        this.id_type = id_type;
+
         this.height = height;
         this.seat=seat;
         this.length=length;
@@ -40,13 +39,7 @@ public class Auto {
         this.id = id;
     }
 
-    public int getId_type() {
-        return id_type;
-    }
 
-    public void setId_type(int id_type) {
-        this.id_type = id_type;
-    }
 
     public int getId_brand() {
         return id_brand;
