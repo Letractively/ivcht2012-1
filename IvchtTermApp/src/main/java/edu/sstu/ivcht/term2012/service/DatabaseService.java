@@ -54,7 +54,7 @@ public class DatabaseService {
          /*
 
       try{
-           ERT_TYPE_TABLE_PACKAGE= "INSERT INTO Package (id, id_types, motor, transmission, drive, price, raiting,datestart,checked) VALUES (1, 1,2000, 'MT','2WD',430005,5,"+sdf.parse("2010.01.01")+",0) "+
+           INSERT_TYPE_TABLE_PACKAGE= "INSERT INTO Package (id, id_types, motor, transmission, drive, price, raiting,datestart,checked) VALUES (1, 1,2000, 'MT','2WD',430005,5,"+sdf.parse("2010.01.01")+",0) "+
                   "INSERT INTO Package (id, id_types, motor, transmission, drive, price, raiting,datestart,checked) VALUES (2, 2,1600, 'MT','2WD',430005,5,"+sdf.parse("01.01.2010")+",0) "+
                   "INSERT INTO Package (id, id_types, motor, transmission, drive, price, raiting,datestart,checked) VALUES (3, 3,2000, 'AT','4WD',530005,9,"+sdf.parse("01.01.2012")+",0) "+
                   "INSERT INTO Package (id, id_types, motor, transmission, drive, price, raiting,datestart,checked) VALUES (4, 4,3500, 'MT','2WD',477005,7,"+sdf.parse("01.01.2011")+",0) "+
