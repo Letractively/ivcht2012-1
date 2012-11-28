@@ -2,7 +2,7 @@
   Created by IntelliJ IDEA.
   User: Admin
   Date: 28.11.12
-  Time: 16:34
+  Time: 16:35
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
@@ -26,26 +26,6 @@
 </head>
 
 <body>
-<h1>Welcome to anonymous forum</h1>
-
-<table width="100%">
-    <tr>
-        <td>
-            <img src="resources/img/logo.jpg" align="left">
-        </td>
-    </tr>
-    <tr>
-        <td>
-            <a href="welcome">На страницу приветствия</a>
-        </td>
-    </tr>
-</table>
-
-<hr class="full" align="center">
-<span class="footer">
-    2012 © Created by Team1
-</span>
-
-
+N/A
 </body>
 </html>
