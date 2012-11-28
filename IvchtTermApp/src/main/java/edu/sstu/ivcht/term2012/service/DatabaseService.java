@@ -32,20 +32,20 @@ public class DatabaseService {
             "INSERT INTO Brand (id, brand) VALUES (5, 'Peugeot') "+
             "INSERT INTO Brand (id, brand) VALUES (6, 'Ваз')";
        //таблица автомобилей включает: ссылку на таблицу с брендами машин, число мест в авто, габариты авто и его описание
-    private final static String CREATE_TYPE_TABLE_AUTO = "CREATE TABLE Auto (id IDENTITY , id_brand  INTEGER, seat  INTEGER, height  INTEGER, width  INTEGER, len INTEGER, descr VARCHAR(100) )";
-    private final static String INSERT_TYPE_TABLE_AUTO = "INSERT INTO Auto (id, id_brand, seat, height, width, len, descr) VALUES (1, 1,5, 1500,1890,4305,'Первый автомобиль') "+
-            "INSERT INTO Auto (id, id_brand, seat, height, width, len, descr) VALUES (2, 1,5, 1500,1890,4305,'Первый автомобиль') "+
-            "INSERT INTO Auto (id, id_brand, seat, height, width, len, descr) VALUES (3, 2,5, 1500,1990,4305,'Второй автомобиль') "+
-            "INSERT INTO Auto (id, id_brand, seat, height, width, len, descr) VALUES (4, 4,7, 1500,1890,4605,'Третий автомобиль') "+
-            "INSERT INTO Auto (id, id_brand, seat, height, width, len, descr) VALUES (5, 5,7, 1600,1490,4305,'Четвертый автомобиль') "+
-            "INSERT INTO Auto (id, id_brand, seat, height, width, len, descr) VALUES (6, 3,5, 1500,1750,4005,'Пятый автомобиль') "+
-            "INSERT INTO Auto (id, id_brand, seat, height, width, len, descr) VALUES (7, 6,5, 1500,1890,4205,'Просто автомобиль') "+
-            "INSERT INTO Auto (id, id_brand, seat, height, width, len, descr) VALUES (8, 6,5, 1400,1890,4305,'Еще один автомобиль') "+
-            "INSERT INTO Auto (id, id_brand, seat, height, width, len, descr) VALUES (9, 6,5, 1500,1890,4356,'Опять автомобиль') "+
-            "INSERT INTO Auto (id, id_brand, seat, height, width, len, descr) VALUES (10, 6,5, 1450,1890,4305,'И снова автомобиль') "+
-            "INSERT INTO Auto (id, id_brand, seat, height, width, len, descr) VALUES (11, 4,5, 1500,1890,4305,'Юбилейный автомобиль') "+
-            "INSERT INTO Auto (id, id_brand, seat, height, width, len, descr) VALUES (12, 2,5, 1500,1890,4305,'Новый автомобиль') "+
-            "INSERT INTO Auto (id, id_brand, seat, height, width, len, descr) VALUES (13, 1,5, 1500,1890,4305,'Старый автомобиль') ";
+    private final static String CREATE_TYPE_TABLE_AUTO = "CREATE TABLE Auto (id IDENTITY , id_brand  INTEGER, seat  INTEGER, height  INTEGER, width  INTEGER, len INTEGER, descr VARCHAR(100), model VARCHAR(100) )";
+    private final static String INSERT_TYPE_TABLE_AUTO = "INSERT INTO Auto (id, id_brand, seat, height, width, len, descr, model) VALUES (1, 1,5, 1500,1890,4305,'Первый автомобиль', 'Meriva') "+
+            "INSERT INTO Auto (id, id_brand, seat, height, width, len, descr, model) VALUES (2, 1,5, 1500,1890,4305,'Первый автомобиль', 'Astra') "+
+            "INSERT INTO Auto (id, id_brand, seat, height, width, len, descr, model) VALUES (3, 2,5, 1500,1990,4305,'Второй автомобиль', 'A4') "+
+            "INSERT INTO Auto (id, id_brand, seat, height, width, len, descr, model) VALUES (4, 4,7, 1500,1890,4605,'Третий автомобиль', 'Qashqai') "+
+            "INSERT INTO Auto (id, id_brand, seat, height, width, len, descr, model) VALUES (5, 5,7, 1600,1490,4305,'Четвертый автомобиль', '4007') "+
+            "INSERT INTO Auto (id, id_brand, seat, height, width, len, descr, model) VALUES (6, 3,5, 1500,1750,4005,'Пятый автомобиль', 'Sandero') "+
+            "INSERT INTO Auto (id, id_brand, seat, height, width, len, descr, model) VALUES (7, 6,5, 1500,1890,4205,'Просто автомобиль', 'Калина') "+
+            "INSERT INTO Auto (id, id_brand, seat, height, width, len, descr, model) VALUES (8, 6,5, 1400,1890,4305,'Еще один автомобиль', 'Гранта') "+
+            "INSERT INTO Auto (id, id_brand, seat, height, width, len, descr, model) VALUES (9, 6,5, 1500,1890,4356,'Опять автомобиль', 'Лада') "+
+            "INSERT INTO Auto (id, id_brand, seat, height, width, len, descr, model) VALUES (10, 6,5, 1450,1890,4305,'И снова автомобиль', 'Нива') "+
+            "INSERT INTO Auto (id, id_brand, seat, height, width, len, descr, model) VALUES (11, 4,5, 1500,1890,4305,'Юбилейный автомобиль', 'Almera') "+
+            "INSERT INTO Auto (id, id_brand, seat, height, width, len, descr, model) VALUES (12, 2,5, 1500,1890,4305,'Новый автомобиль', 'A6') "+
+            "INSERT INTO Auto (id, id_brand, seat, height, width, len, descr, model) VALUES (13, 1,5, 1500,1890,4305,'Старый автомобиль', 'Insignia') ";
        //таблица содержит сведения о комплектации автомобиля
     private final static String CREATE_TYPE_TABLE_PACKAGE = "CREATE TABLE Package (id IDENTITY , id_types  INTEGER, motor INTEGER, transmission varchar(10), drive varchar(10), price FLOAT, raiting INTEGER, datestart DATE, checked BIT )";
        String  INSERT_TYPE_TABLE_PACKAGE="";

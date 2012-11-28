@@ -1,9 +1,9 @@
 package edu.sstu.ivcht.term2012.controller;
 
 import edu.sstu.ivcht.term2012.service.AutoService;
+import model.Brand;
 import edu.sstu.ivcht.term2012.util.*;
-
-import model.Auto;
+import model.Types;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -12,16 +12,14 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
-import static edu.sstu.ivcht.term2012.util.ServiceInstancer.*;
-
 /**
  * Created with IntelliJ IDEA.
  * User: roman
  * Date: 28.11.12
- * Time: 11:17
+ * Time: 16:16
  * To change this template use File | Settings | File Templates.
  */
-public class ListAutoController extends HttpServlet {
+public class ListTypesController extends HttpServlet {
 
     AutoService autoService = ServiceInstancer.getAutoService();
     @Override
@@ -35,8 +33,8 @@ public class ListAutoController extends HttpServlet {
     }
 
     private void processRequest(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException{
-        List<Auto> autoList = autoService.getAllAutos();
+        List<Types> autoList = autoService.getAllTypes();
         req.setAttribute("autos", autoList);
-        getServletContext().getRequestDispatcher("/index.jsp").forward(req,resp);
+        getServletContext().getRequestDispatcher("/block/head.jsp").forward(req,resp);
     }
 }

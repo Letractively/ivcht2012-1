@@ -2,6 +2,7 @@ package edu.sstu.ivcht.term2012.dao;
 
 import model.Auto;
 import model.Brand;
+import model.Types;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -23,9 +24,10 @@ public class AutoDBDao implements AutoDao{
         try {
             Connection connection =  DataBaseConnection.getConnection();
             Statement statement = connection.createStatement();
-            ResultSet resultSet =  statement.executeQuery("SELECT * FROM autos");
+            ResultSet resultSet =  statement.executeQuery("SELECT    Auto.model, Brand.brand, Auto.id_brand, Auto.seat, Auto.len, Auto.width, Auto.height, Auto.descr, Auto.id\n" +
+                    "FROM         Auto INNER JOIN Brand ON Auto.id_brand = Brand.id order by Brand.brand");
             while (resultSet.next()) {
-                Auto auto = new Auto(resultSet.getInt("id"),resultSet.getInt("seat"),resultSet.getInt("height"),resultSet.getInt("width"),resultSet.getInt("len"),resultSet.getString("descr"));
+                Auto auto = new Auto(resultSet.getInt("id"),resultSet.getInt("id_brand"),resultSet.getInt("seat"),resultSet.getInt("height"),resultSet.getInt("width"),resultSet.getInt("len"),resultSet.getString("descr"), resultSet.getString("brand"),resultSet.getString("model"));
                 autoList.add(auto);
             }
             resultSet.close();
@@ -74,5 +76,24 @@ public class AutoDBDao implements AutoDao{
             e.printStackTrace();
         }
         return brandList; //To change body of implemented methods use File | Settings | File Templates.
+    }
+
+    @Override
+    public List<Types> getAllTypes() {
+        List<Types> typesList = new LinkedList<Types>();
+        try {
+            Connection connection =  DataBaseConnection.getConnection();
+            Statement statement = connection.createStatement();
+            ResultSet resultSet =  statement.executeQuery("SELECT * FROM Types");
+            while (resultSet.next()) {
+                Types types = new Types(resultSet.getInt("id"),resultSet.getString("types"));
+                typesList.add(types);
+            }
+            resultSet.close();
+            statement.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return typesList;
     }
 }

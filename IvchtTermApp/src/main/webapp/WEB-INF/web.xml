@@ -10,8 +10,16 @@
         <servlet-class>edu.sstu.ivcht.term2012.controller.DatabaseController</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>ListBrandController</servlet-name>
-        <servlet-class>edu.sstu.ivcht.term2012.controller.ListBrandController</servlet-class>
+    <servlet-name>ListBrandController</servlet-name>
+    <servlet-class>edu.sstu.ivcht.term2012.controller.ListBrandController</servlet-class>
+</servlet>
+    <servlet>
+        <servlet-name>ListAutoController</servlet-name>
+        <servlet-class>edu.sstu.ivcht.term2012.controller.ListAutoController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ListTypesController</servlet-name>
+        <servlet-class>edu.sstu.ivcht.term2012.controller.ListTypesController</servlet-class>
     </servlet>
 
     <servlet-mapping>
@@ -21,5 +29,13 @@
     <servlet-mapping>
         <servlet-name>ListBrandController</servlet-name>
         <url-pattern>/listbrand</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ListAutoController</servlet-name>
+        <url-pattern>/listauto</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ListTypesController</servlet-name>
+        <url-pattern>/listtypes</url-pattern>
     </servlet-mapping>
 </web-app>

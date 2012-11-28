@@ -4,6 +4,7 @@ import edu.sstu.ivcht.term2012.dao.AutoDBDao;
 import edu.sstu.ivcht.term2012.dao.AutoDao;
 import model.Auto;
 import model.Brand;
+import model.Types;
 
 import java.util.List;
 
@@ -35,6 +36,11 @@ public class AutoBaseService implements AutoService {
     }
     public List<Brand> getAllBrand() {
         return dao.getAllBrand();
+    }
+
+
+    public List<Types> getAllTypes() {
+        return null;  //To change body of implemented methods use File | Settings | File Templates.
     }
 
     public void addAuto(Auto auto) {

@@ -19,6 +19,7 @@ public class Auto {
     private int height;
     private String descr;
     private String brand;
+    private String model;
 
 
     public Auto(){
@@ -34,7 +35,7 @@ public class Auto {
         this.descr=descr;
     }*/
 
-    public Auto( int id, int id_brand,  int seat, int len, int width, int height, String descr) {
+    public Auto( int id, int id_brand,  int seat, int len, int width, int height, String descr, String brand, String model) {
         this.id = id;
         this.id_brand = id_brand;
         this.height = height;
@@ -42,14 +43,29 @@ public class Auto {
         this.len=len;
         this.width=width;
         this.descr=descr;
+        this.brand=brand;
+        this.model=model;
     }
 
-    public Auto(int id, int seat, int height, int width, int len, String descr) {
-        //To change body of created methods use File | Settings | File Templates.
+
+    public String getModel() {
+        return model;
+    }
+
+    public void setModel(String model) {
+        this.model = model;
     }
 
     public int getLen() {
         return len;
+    }
+
+    public String getBrand() {
+        return brand;
+    }
+
+    public void setBrand(String brand) {
+        this.brand = brand;
     }
 
     public void setLen(int len) {
