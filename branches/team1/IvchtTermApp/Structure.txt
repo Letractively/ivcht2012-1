@@ -36,3 +36,8 @@ Src
       messageEdit.jsp  -- Edit Message page
       messageSearchResult.jsp -- Search Message result
 
+TODO:
+1. Подключение к БД
+2. Создание БД на HDD
+3. Заполнение БД тестовыми темами
+4. Выведение списка тем
