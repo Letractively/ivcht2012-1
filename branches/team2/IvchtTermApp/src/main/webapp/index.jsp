@@ -80,7 +80,8 @@
         <hr class="full">
         <h6>
             <a href="createdatabase">Создать базу данных</a>    <br>
-            <a href="https://code.google.com/p/ivcht2012-1">Страница проекта</a>
+            <a href="https://code.google.com/p/ivcht2012-1">Страница проекта</a>   <br>
+            <a href="listbrand">Список марок авто</a>
         </h6>
     </div>
 
