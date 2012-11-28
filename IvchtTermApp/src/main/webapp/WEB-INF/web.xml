@@ -9,10 +9,17 @@
         <servlet-name>DatabaseController</servlet-name>
         <servlet-class>edu.sstu.ivcht.term2012.controller.DatabaseController</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ListBrandController</servlet-name>
+        <servlet-class>edu.sstu.ivcht.term2012.controller.ListBrandController</servlet-class>
+    </servlet>
 
     <servlet-mapping>
         <servlet-name>DatabaseController</servlet-name>
         <url-pattern>/createdatabase</url-pattern>
     </servlet-mapping>
-
+    <servlet-mapping>
+        <servlet-name>ListBrandController</servlet-name>
+        <url-pattern>/listbrand</url-pattern>
+    </servlet-mapping>
 </web-app>

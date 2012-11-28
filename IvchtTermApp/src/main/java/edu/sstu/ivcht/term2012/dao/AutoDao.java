@@ -1,6 +1,7 @@
 package edu.sstu.ivcht.term2012.dao;
 
 import model.Auto;
+import model.Brand;
 
 import java.util.List;
 
@@ -21,4 +22,6 @@ public interface AutoDao {
     public void deleteAuto(int id);
 
     public Auto readAuto(int id);
+
+    public List<Brand> getAllBrand();
 }

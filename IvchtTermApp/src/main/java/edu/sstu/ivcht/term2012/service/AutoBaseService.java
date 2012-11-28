@@ -3,6 +3,7 @@ package edu.sstu.ivcht.term2012.service;
 import edu.sstu.ivcht.term2012.dao.AutoDBDao;
 import edu.sstu.ivcht.term2012.dao.AutoDao;
 import model.Auto;
+import model.Brand;
 
 import java.util.List;
 
@@ -13,7 +14,7 @@ import java.util.List;
  * Time: 11:37
  * To change this template use File | Settings | File Templates.
  */
-public class AutoBaseService {
+public class AutoBaseService implements AutoService {
 
     private AutoDao dao = new AutoDBDao();
 
@@ -32,6 +33,9 @@ public class AutoBaseService {
     public List<Auto> getAllAutos() {
         return dao.getAllAutos();
     }
+    public List<Brand> getAllBrand() {
+        return dao.getAllBrand();
+    }
 
     public void addAuto(Auto auto) {
         dao.addAuto(auto);
@@ -45,8 +49,6 @@ public class AutoBaseService {
         dao.deleteAuto(id);
     }
     public Auto readAuto(int id) {
-
-
         return  dao.readAuto(id);
     }
 

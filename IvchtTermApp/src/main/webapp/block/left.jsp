@@ -3,7 +3,7 @@
 <%@ taglib uri="http://java.sun.com/jstl/core" prefix="c" %>
 
 <ul>
-    <li><a href="#">Main</a></li>
-    <li><a href="#">Feedback</a></li>
-    <li><a href="#">Another link here</a></li>
+    <c:forEach items="${autos}" var="auto">
+    <li><a><c:out value="${auto.brand}"></c:out></a></li>
+    </c:forEach>
 </ul>

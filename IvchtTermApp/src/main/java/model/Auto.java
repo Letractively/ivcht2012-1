@@ -14,21 +14,54 @@ public class Auto {
     private int id;
     private int id_brand;
     private int seat;
-    private int length;
+    private int len;
     private int width;
     private int height;
+    private String descr;
+    private String brand;
 
-   public Auto(){
+
+    public Auto(){
 
    }
-    public Auto( int id, int id_brand,  int seat, int length, int width, int height) {
+  /*  public Auto(int id, String brand,int seat, int len, int width, int height, String descr)  {
         this.id = id;
-        this.id_brand = id_brand;
-
+        this.brand = brand;
         this.height = height;
         this.seat=seat;
-        this.length=length;
+        this.len=len;
         this.width=width;
+        this.descr=descr;
+    }*/
+
+    public Auto( int id, int id_brand,  int seat, int len, int width, int height, String descr) {
+        this.id = id;
+        this.id_brand = id_brand;
+        this.height = height;
+        this.seat=seat;
+        this.len=len;
+        this.width=width;
+        this.descr=descr;
+    }
+
+    public Auto(int id, int seat, int height, int width, int len, String descr) {
+        //To change body of created methods use File | Settings | File Templates.
+    }
+
+    public int getLen() {
+        return len;
+    }
+
+    public void setLen(int len) {
+        this.len = len;
+    }
+
+    public String getDescr() {
+        return descr;
+    }
+
+    public void setDescr(String descr) {
+        this.descr = descr;
     }
 
     public int getId() {
@@ -57,15 +90,7 @@ public class Auto {
         this.seat = seat;
     }
 
-    public int getLength() {
-        return length;
-    }
-
-    public void setLength(int length) {
-        this.length = length;
-    }
-
-    public int getWidth() {
+      public int getWidth() {
         return width;
     }
 

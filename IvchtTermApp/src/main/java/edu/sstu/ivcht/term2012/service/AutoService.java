@@ -2,6 +2,7 @@ package edu.sstu.ivcht.term2012.service;
 
 import java.util.List;
 import model.Auto;
+import model.Brand;
 
 /**
  * Created with IntelliJ IDEA.
@@ -12,6 +13,8 @@ import model.Auto;
  */
 public interface AutoService {
     public List<Auto> getAllAutos();
+
+    public List<Brand> getAllBrand();
 
     public void addAuto(Auto auto);
 
