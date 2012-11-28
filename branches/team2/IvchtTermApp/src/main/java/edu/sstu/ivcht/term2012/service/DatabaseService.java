@@ -51,24 +51,18 @@ public class DatabaseService {
        String  INSERT_TYPE_TABLE_PACKAGE="";
      public void createDatabaseTables()  throws Exception{
          //TODO Ошибка, не совпадают форматы даты....
-         /*
 
-      try{
-           INSERT_TYPE_TABLE_PACKAGE= "INSERT INTO Package (id, id_types, motor, transmission, drive, price, raiting,datestart,checked) VALUES (1, 1,2000, 'MT','2WD',430005,5,"+sdf.parse("2010.01.01")+",0) "+
-                  "INSERT INTO Package (id, id_types, motor, transmission, drive, price, raiting,datestart,checked) VALUES (2, 2,1600, 'MT','2WD',430005,5,"+sdf.parse("01.01.2010")+",0) "+
-                  "INSERT INTO Package (id, id_types, motor, transmission, drive, price, raiting,datestart,checked) VALUES (3, 3,2000, 'AT','4WD',530005,9,"+sdf.parse("01.01.2012")+",0) "+
-                  "INSERT INTO Package (id, id_types, motor, transmission, drive, price, raiting,datestart,checked) VALUES (4, 4,3500, 'MT','2WD',477005,7,"+sdf.parse("01.01.2011")+",0) "+
-                  "INSERT INTO Package (id, id_types, motor, transmission, drive, price, raiting,datestart,checked) VALUES (5, 5,2000, 'AT','2WD',830005,4,"+sdf.parse("01.01.2009")+",0) "+
-                  "INSERT INTO Package (id, id_types, motor, transmission, drive, price, raiting,datestart,checked) VALUES (6, 6,2500, 'MT','4WD',430005,2,"+sdf.parse("01.01.2008")+",0) "+
-                  "INSERT INTO Package (id, id_types, motor, transmission, drive, price, raiting,datestart,checked) VALUES (7, 6,2800, 'AT','2WD',930005,5,"+sdf.parse("01.01.2011")+",0) "+
-                  "INSERT INTO Package (id, id_types, motor, transmission, drive, price, raiting,datestart,checked) VALUES (8, 2,1800, 'MT','2WD',730005,1,"+sdf.parse("01.01.2010")+",0) ";
 
-         }
-         catch (ParseException e) {
-             e.printStackTrace();
-         }
-         */
-        Connection connection =  DataBaseConnection.getConnection();
+         INSERT_TYPE_TABLE_PACKAGE= "INSERT INTO Package (id, id_types, motor, transmission, drive, price, raiting,datestart,checked) VALUES (1, 1,2000, 'MT','2WD',430005,5,'2010-01-01',0) "+
+              "INSERT INTO Package (id, id_types, motor, transmission, drive, price, raiting,datestart,checked) VALUES (2, 2,1600, 'MT','2WD',430005,5,'2010-07-01',1) "+
+              "INSERT INTO Package (id, id_types, motor, transmission, drive, price, raiting,datestart,checked) VALUES (3, 3,2000, 'AT','4WD',530005,9,'2010-01-01',0) "+
+              "INSERT INTO Package (id, id_types, motor, transmission, drive, price, raiting,datestart,checked) VALUES (4, 4,3500, 'MT','2WD',477005,7,'2011-01-01',0) "+
+              "INSERT INTO Package (id, id_types, motor, transmission, drive, price, raiting,datestart,checked) VALUES (5, 5,2000, 'AT','2WD',830005,4,'2012-01-01',1) "+
+              "INSERT INTO Package (id, id_types, motor, transmission, drive, price, raiting,datestart,checked) VALUES (6, 6,2500, 'MT','4WD',430005,2,'2010-06-01',0) "+
+              "INSERT INTO Package (id, id_types, motor, transmission, drive, price, raiting,datestart,checked) VALUES (7, 6,2800, 'AT','2WD',930005,5,'2011-01-01',0) "+
+              "INSERT INTO Package (id, id_types, motor, transmission, drive, price, raiting,datestart,checked) VALUES (8, 2,1800, 'MT','2WD',730005,1,'2010-09-01',1) ";
+
+         Connection connection =  DataBaseConnection.getConnection();
         Statement statement = connection.createStatement();
         statement.executeUpdate(CREATE_TYPE_TABLE);
         statement.executeUpdate(INSERT_TYPE_TABLE);
@@ -77,7 +71,7 @@ public class DatabaseService {
          statement.executeUpdate(CREATE_TYPE_TABLE_AUTO);
          statement.executeUpdate(INSERT_TYPE_TABLE_AUTO);
          statement.executeUpdate(CREATE_TYPE_TABLE_PACKAGE);
-        // statement.executeUpdate(INSERT_TYPE_TABLE_PACKAGE);
+         statement.executeUpdate(INSERT_TYPE_TABLE_PACKAGE);
         // ... create other table
         statement.close();
     }
