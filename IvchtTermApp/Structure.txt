@@ -1,0 +1,32 @@
+Структура проекта.
+
+Src
+  main
+
+    java -- Содержит сервлеты и классы
+      controller -- Папка содержит сервлеты, отвечающие за вызов страниц JSP, с передачей в них определенных данных
+
+      dao        -- Папка содержит классы и интерфейсы, взаимодействующие с БД
+
+      service    -- Папка содержит классы, выполняющие некоторые обработки данных или расчеты?
+
+      utils      -- Папка содержит вспомогательные классы, призванные выполнять мелкие функции или упрощения операций
+
+    recources -- dunno
+
+    webapp -- JSP/HTML наполнение
+      recources        -- Рерурсы испльзуемые JSP/HTML страницами
+        css               -- Папка содержащая CSS стили
+        img               -- Папка содержащая используемые изображения
+      WEB-INF->web.xml -- Файл задающий соответствия между сервлетами и JSP/HTML страницами
+      index.jsp        -- Welcome page
+      about.jsp        -- About project/team page
+      topicList.jsp    -- List of Topics page
+      topicAdd.jsp     -- Add Topic page
+      topicEdit.jsp    -- Edit Topic page
+      topicSearchResult.jsp -- Search Topics result
+      messageList.jsp  -- List of Messages page
+      messageAdd.jsp   -- Add Message page
+      messageEdit.jsp  -- Edit Message page
+      messageSearchResult.jsp -- Search Message result
+
