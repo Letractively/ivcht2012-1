@@ -8,24 +8,26 @@
 </head>
 
 <body>
-<h1>Welcome to study IVCHT project</h1>
+<h1>Welcome to anonymous forum</h1>
 
-<div>
-    <img src="resources/img/welcome.gif">
-</div>
+<table width="100%">
+    <tr>
+        <td>
+            <img src="resources/img/logo.jpg" align="left">
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <a href="welcome">На страницу приветствия</a>
+        </td>
+    </tr>
+</table>
 
-<hr class="full">
+<hr class="full" align="center">
+<span class="footer">
+    2012 © Created by Team1
+</span>
 
-<div>
-    <span>
-        Это учебный проект выполняемый группой мИВЧТ-21 2012/2013 обучения
-    </span>
-</div>
-
-<br/>
-<hr class="full">
-
-<a href="welcome">На страницу приветствия</a>
 
 </body>
 </html>
