@@ -6,27 +6,20 @@
 <head>
     <link rel=stylesheet href="resources/css/base.css" type="text/css">
 </head>
+<title>Автомобили</title>
 <body>
 
-        <h2>Автомобили</h2>
-        <table class="example">
-            <tr>
-                <th>Марка</th>
-                <th>Модель</th>
-                <th>Число мест</th>
-                <th>Габариты</th>
-                <th>Описание</th>
-             </tr>
-            <c:forEach items="${autos}" var="auto">
-                <tr>
-                    <td><c:out value="${auto.brand}"></c:out></td>
-                    <td><c:out value="${auto.model}"></c:out></td>
-                    <td><c:out value="${auto.seat}"></c:out></td>
-                    <td><c:out value="${auto.len}"></c:out>x<c:out value="${auto.width}"></c:out>x<c:out value="${auto.height}"></c:out></td>
-                    <td><c:out value="${auto.descr}"></c:out></td>
-                </tr>
-            </c:forEach>
-        </table>
+            <%--<table class="example">--%>
+            <%--<tr>--%>
+                <%--<th>Марка</th>--%>
+                <%--<th>Модель</th>--%>
+                <%--<th>Число мест</th>--%>
+                <%--<th>Габариты</th>--%>
+                <%--<th>Описание</th>--%>
+             <%--</tr>--%>
+            <%--<c:forEach items="${autos}" var="auto">--%>
+            <%--</c:forEach>--%>
+        <%--</table>--%>
 
         <div class="block">
             <div id="head"><jsp:include page="block/head.jsp"></jsp:include></div>
@@ -105,8 +98,9 @@
         <h6>
             <a href="createdatabase">Создать базу данных</a>    <br>
             <a href="https://code.google.com/p/ivcht2012-1">Страница проекта</a>   <br>
-            <a href="listbrand">Список марок авто</a>
-            <a href="listauto">Список авто</a>
+            <a href="listbrand">Список марок авто</a> <br>
+            <a href="listauto">Список авто</a> <br>
+            <a href="index.jsp">Вернуться на главную</a>
         </h6>
     </div>
 
