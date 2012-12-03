@@ -5,6 +5,7 @@
 <body>
 <table class="example">
     <tr>
+        <th>Кузов</th>
         <th>Двигатель</th>
         <th>Трансмиссия</th>
         <th>Привод</th>
@@ -16,6 +17,7 @@
     </tr>
     <c:forEach items="${autos}" var="packag">
         <tr>
+            <td><c:out value="${packag.types}"></c:out></td>
             <td><c:out value="${packag.motor}"></c:out></td>
             <td><c:out value="${packag.transmission}"></c:out></td>
             <td><c:out value="${packag.drive}"></c:out></td>

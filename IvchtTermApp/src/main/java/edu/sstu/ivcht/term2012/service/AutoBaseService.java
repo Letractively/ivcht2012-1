@@ -32,8 +32,8 @@ public class AutoBaseService implements AutoService {
         return autoBaseService;
     }
 
-    public List<Auto> getAllAutos(int id) {
-        return dao.getAllAutos(id);
+    public List<Auto> getAllAutos(int id, Integer tps) {
+        return dao.getAllAutos(id, tps);
     }
     public List<Brand> getAllBrand() {
         return dao.getAllBrand();
