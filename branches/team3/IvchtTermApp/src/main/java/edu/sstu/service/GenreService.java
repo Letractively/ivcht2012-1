@@ -1,6 +1,7 @@
 package edu.sstu.service;
 
 
+import edu.sstu.model.Genre;
 import edu.sstu.model.Gruppa;
 import edu.sstu.model.Student;
 
@@ -8,14 +9,14 @@ import java.util.List;
 
 public interface GenreService {
 
-    public List<Gruppa> getAllGrupps();
+    public List<Genre> getAllGenres();
 
-    public void addGruppa(Gruppa gruppa);
+    public void addGenre(Genre genre);
 
-   public Student editGruppa(Gruppa Gruppa);
+   public Student editGenre(Genre genre);
 
-    public Student showGruppa(int id);
+    public Student showGenre(int id);
 
-    public void deleteGruppa(int id);
+    public void deleteGenre(int id);
 
 }
