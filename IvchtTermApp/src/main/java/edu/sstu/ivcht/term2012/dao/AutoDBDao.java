@@ -96,4 +96,27 @@ public class AutoDBDao implements AutoDao{
         }
         return typesList;
     }
+
+    @Override
+    public List<Package> getAllPackage() {
+        List<Package> packageList = new LinkedList<Package>();
+        try {
+            Connection connection =  DataBaseConnection.getConnection();
+            Statement statement = connection.createStatement();
+            ResultSet resultSet =  statement.executeQuery("SELECT     Package.*, Type.type\n" +
+                    "FROM         Package INNER JOIN\n" +
+                    "                      Type ON Package.id = Type.id");
+            while (resultSet.next()) {
+                Package packag=Package(resultSet.getInt("id"),resultSet.getInt("id_types"), resultSet.getString("types"), resultSet.getInt("id_auto"), resultSet.getInt("motor"), resultSet.getString("transmission"),resultSet.getString("drive"), resultSet.getDouble("price"), resultSet.getInt("rating"), resultSet.getString("datestart"), resultSet.getInt("checked"));
+
+                packageList.add(packag);
+
+            }
+            resultSet.close();
+            statement.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return packageList;
+    }
 }

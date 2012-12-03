@@ -58,4 +58,9 @@ public class AutoBaseService implements AutoService {
         return  dao.readAuto(id);
     }
 
+    @Override
+    public List<Package> getAllPackage() {
+        return null;  //To change body of implemented methods use File | Settings | File Templates.
+    }
+
 }

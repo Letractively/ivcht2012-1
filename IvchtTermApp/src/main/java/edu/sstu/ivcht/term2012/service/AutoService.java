@@ -28,5 +28,5 @@ public interface AutoService {
     public Auto readAuto(int id);
 
 
-
+   public  List<Package> getAllPackage();
 }

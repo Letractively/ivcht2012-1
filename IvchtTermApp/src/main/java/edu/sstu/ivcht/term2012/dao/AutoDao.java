@@ -27,4 +27,6 @@ public interface AutoDao {
     public List<Brand> getAllBrand();
 
     public List<Types> getAllTypes();
+
+    public List<Package> getAllPackage();
 }
