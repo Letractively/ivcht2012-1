@@ -211,7 +211,7 @@ html
   width:800px;
   top: 0;
   height:160px;
-  background-image: url('/resources/images/page_gl.png');
+  background-image: url('../images/page_gl.png');
   background-repeat: no-repeat;
 }
 
@@ -228,7 +228,7 @@ body
   height:100%;
   min-height:100%;
   background-color: #613B38;
-  background-image: url('/resources/images/Bottom_texture.jpg');
+  background-image: url('../images/Bottom_texture.jpg');
   background-repeat: repeat;
   background-attachment: fixed;
   background-position: top left;
@@ -299,7 +299,7 @@ table.position
 {
   width: 36px;
   height: 36px;
-  background-image: url('/resources/images/sheet_s.png');
+  background-image: url('../images/sheet_s.png');
 }
 
 .art-sheet-tl
@@ -335,7 +335,7 @@ table.position
   left: 18px;
   right: 18px;
   height: 36px;
-  background-image: url('/resources/images/sheet_h.png');
+  background-image: url('../images/sheet_h.png');
 }
 
 .art-sheet-tc
@@ -355,7 +355,7 @@ table.position
   top: 18px;
   bottom: 18px;
   width: 36px;
-  background-image: url('/resources/images/sheet_v.png');
+  background-image: url('../images/sheet_v.png');
 }
 
 .art-sheet-cr
@@ -420,7 +420,7 @@ div.art-header-png
   top: 0;
   width: 792px;
   height: 150px;
-  background-image: url('/resources/images/header.png');
+  background-image: url('../images/header.png');
   background-repeat: no-repeat;
   background-position:center center; 
 }
@@ -432,7 +432,7 @@ div.art-header-jpeg
   left:-50%;
   width: 792px;
   height: 150px;
-  background-image: url('/resources/images/header.jpg');
+  background-image: url('../images/header.jpg');
   background-repeat: no-repeat;
   background-position: center center;
 }
@@ -446,7 +446,7 @@ div.art-textblock
   left:   0;
   width: 225px;
   height: 150px;
-  background-image: url('/resources/images/textblock-bg.png');
+  background-image: url('../images/textblock-bg.png');
 }
 /* end TextBlock */
 
@@ -460,7 +460,7 @@ div.art-headerobject
   top: 0;
   width: 255px;
   height: 150px;
-  background-image: url('/resources/images/header-object.png');
+  background-image: url("../images/header-object.png");
 }
 /* end HeaderObject */
 
@@ -608,7 +608,7 @@ h2.art-logo-text a:hover
   top: 0;
   background: none;
   min-height: 0;
-  background-image: url('/resources/images/spacer.gif');
+  background-image: url('../images/spacer.gif');
   padding: 10px 30px 30px 30px;
   margin: -10px 0 0 -30px;
 }
@@ -670,7 +670,7 @@ h2.art-logo-text a:hover
   z-index: -1;
   top: 0;
   height: 100%;
-  background-image: url('/resources/images/nav.png');
+  background-image: url('../images/nav.png');
 }
 
 .art-nav-l
@@ -713,7 +713,7 @@ h2.art-logo-text a:hover
   top: 0;
   z-index: -1;
   height: 91px;
-  background-image: url('/resources/images/menuitem.png');
+  background-image: url('../images/menuitem.png');
 }
 
 .art-hmenu a .l
@@ -797,7 +797,7 @@ h2.art-logo-text a:hover
   margin:0 auto;
   width: 2px;
   height: 27px;
-  background-image: url('/resources/images/menuseparator.png');
+  background-image: url('../images/menuseparator.png');
 }
 /* end MenuSeparator */
 
@@ -809,7 +809,7 @@ h2.art-logo-text a:hover
   height: 26px;
   width: 180px;
   overflow: hidden;
-  background-image: url('/resources/images/subitem.png');
+  background-image: url('../images/subitem.png');
   background-position: left top;
   background-repeat: repeat-x;
   border-width: 1px;
@@ -1021,7 +1021,7 @@ div.art-block img
   line-height: 125%;    
   color: #525252;
   padding: 0 0 0 12px;
-  background-image: url('/resources/images/blockcontentbullets.png');
+  background-image: url('../images/blockcontentbullets.png');
   background-repeat: no-repeat;
 }/* end Box, BlockContent */
 
@@ -1113,7 +1113,7 @@ input, select, textarea
   height: 109px;
   margin: 0;
   padding: 0;
-  background-image: url('/resources/images/button.png');
+  background-image: url('../images/button.png');
 }
 
 .art-button-wrapper .art-button-l
@@ -1312,7 +1312,7 @@ h2.art-postheader a:hover,  h2.art-postheader a.hovered
 
 .art-post ul>li
 {
-  background-image: url('/resources/images/postbullets.png');
+  background-image: url('../images/postbullets.png');
   background-repeat: no-repeat;
   padding-left: 13px;
   /* makes "ul li" not to align behind the image if they are in the same line */
@@ -1346,7 +1346,7 @@ h2.art-postheader a:hover,  h2.art-postheader a.hovered
   margin: 10px 10px 10px 50px;
   padding: 0 0 0 28px;
   background-color: #EBDCDB;
-  background-image: url('/resources/images/postquote.png');
+  /*background-image: url('../images/postquote.png');  */
   background-position: left top;
   background-repeat: no-repeat;
   /* makes blockquote not to align behind the image if they are in the same line */
@@ -1405,14 +1405,14 @@ h2.art-postheader a:hover,  h2.art-postheader a.hovered
   right:5px;
   bottom:0;
   height:5px;
-  background-image: url('/resources/images/footer_b.png');
+  background-image: url('../images/footer_b.png');
 }
 
 .art-footer-r, .art-footer-l
 {
   position: absolute;
   height:5px;
-  background-image: url('/resources/images/footer_s.png');
+  background-image: url('../images/footer_s.png');
   bottom: 0;
 }
 

@@ -12,12 +12,12 @@ public class ServiceInstancer {
         return GruppaBaseService.getInstance();
     }
 
-    public static FilmService getFilmService(){
-        return FilmBaseService.getInstance();
-    }
-    public static GenreService getGenreService(){
-        return GenreBaseService.getInstance();
-    }
+//    public static FilmService getFilmService(){
+//        return FilmBaseService.getInstance();
+//    }
+//    public static GenreService getGenreService(){
+//        return GenreBaseService.getInstance();
+//    }
 
 
 }
