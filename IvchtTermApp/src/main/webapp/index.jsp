@@ -5,6 +5,7 @@
 <html>
 <head>
     <link rel=stylesheet href="resources/css/base.css" type="text/css">
+    <link rel=stylesheet href="resources/themes/theme<c:out value="${sessionScope.theme}"/>/theme.css" type="text/css">
 </head>
 
 <body>
@@ -25,7 +26,8 @@
 <br/>
 <hr class="full">
 
-<a href="welcome">На страницу приветствия</a>
+<a href="welcome">На страницу приветствия</a><br/>
+<a href="chooseTheme.jsp">Выбрать тему</a>
 
 </body>
 </html>

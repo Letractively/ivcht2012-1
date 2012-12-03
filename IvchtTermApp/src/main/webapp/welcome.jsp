@@ -7,6 +7,7 @@
 <head>
     <title></title>
     <link rel=stylesheet href="resources/css/base.css" type="text/css">
+    <link rel=stylesheet href="resources/themes/theme<c:out value="${sessionScope.theme}"/>/theme.css" type="text/css">
 </head>
 <body>
     <h2>Страница приветствия</h2>
@@ -15,6 +16,7 @@
     </span>
     <br/>
     <hr class="full">
-    <a href="index.jsp">Вернуться на главную</a>
+    <a href="index.jsp">Вернуться на главную</a><br/>
+    <a href="chooseTheme.jsp">Выбрать тему</a>
 </body>
 </html>

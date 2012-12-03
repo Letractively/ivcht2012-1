@@ -3,16 +3,37 @@
  "http://java.sun.com/dtd/web-app_2_3.dtd" >
 
 <web-app>
-  <display-name>Archetype Created Web Application</display-name>
+    <display-name>Archetype Created Web Application</display-name>
+
+    <filter>
+        <filter-name>ThemeFilter</filter-name>
+        <filter-class>edu.sstu.ivcht.term2012.filter.ThemeFilter</filter-class>
+        <init-param>
+            <param-name>test-param</param-name>
+            <param-value>This parameter is for testing.</param-value>
+        </init-param>
+    </filter>
+    <filter-mapping>
+        <filter-name>ThemeFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
 
     <servlet>
         <servlet-name>WelcomeController</servlet-name>
         <servlet-class>edu.sstu.ivcht.term2012.controller.WelcomeServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ThemeController</servlet-name>
+        <servlet-class>edu.sstu.ivcht.term2012.controller.ThemeServlet</servlet-class>
+    </servlet>
 
     <servlet-mapping>
         <servlet-name>WelcomeController</servlet-name>
         <url-pattern>/welcome</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ThemeController</servlet-name>
+        <url-pattern>/chooseTheme</url-pattern>
     </servlet-mapping>
 
 </web-app>
