@@ -1,0 +1,16 @@
+body {
+    background: url("background.jpg");
+}
+
+h1, h2 {
+   color: #444444;
+}
+
+hr .full{
+    width: 100%;
+    color: #777777;
+}
+
+.message {
+    font-size: 16pt;
+}
