@@ -52,6 +52,6 @@ public class ListAutoController extends HttpServlet {
                }
         List<Auto> autoList = autoService.getAllAutos(id,tps);
         req.setAttribute("autos", autoList);
-        getServletContext().getRequestDispatcher("/block/navi.jsp").forward(req,resp);
+        getServletContext().getRequestDispatcher("/index.jsp").forward(req,resp);
     }
 }

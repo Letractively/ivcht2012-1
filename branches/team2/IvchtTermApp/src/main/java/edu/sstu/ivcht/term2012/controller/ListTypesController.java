@@ -34,7 +34,7 @@ public class ListTypesController extends HttpServlet {
 
     private void processRequest(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException{
         List<Types> autoList = autoService.getAllTypes();
-        req.setAttribute("autos", autoList);
-        getServletContext().getRequestDispatcher("/block/head.jsp").forward(req,resp);
+        req.setAttribute("types", autoList);
+        getServletContext().getRequestDispatcher("/index.jsp").forward(req,resp);
     }
 }

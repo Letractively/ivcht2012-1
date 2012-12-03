@@ -1,11 +1,9 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ page pageEncoding="UTF-8" %>
 <%@ taglib uri="http://java.sun.com/jstl/core" prefix="c" %>
-<html>
-<body>
+
 <table class="example">
     <tr>
-        <th>Кузов</th>
         <th>Двигатель</th>
         <th>Трансмиссия</th>
         <th>Привод</th>
@@ -15,9 +13,8 @@
         <th>Наличие</th>
 
     </tr>
-    <c:forEach items="${autos}" var="packag">
+    <c:forEach items="${packag}" var="packag">
         <tr>
-            <td><c:out value="${packag.types}"></c:out></td>
             <td><c:out value="${packag.motor}"></c:out></td>
             <td><c:out value="${packag.transmission}"></c:out></td>
             <td><c:out value="${packag.drive}"></c:out></td>
@@ -28,5 +25,3 @@
         </tr>
     </c:forEach>
 </table>
-</body>
-</html>
