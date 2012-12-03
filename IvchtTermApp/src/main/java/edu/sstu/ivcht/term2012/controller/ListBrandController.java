@@ -32,7 +32,7 @@ public class ListBrandController extends HttpServlet {
 
     private void processRequest(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException{
         List<Brand> autoList = autoService.getAllBrand();
-        req.setAttribute("autos", autoList);
-        getServletContext().getRequestDispatcher("/block/left.jsp").forward(req,resp);
+        req.setAttribute("brand", autoList);
+        getServletContext().getRequestDispatcher("/index.jsp").forward(req,resp);
     }
 }
