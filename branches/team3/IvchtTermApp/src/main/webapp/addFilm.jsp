@@ -6,7 +6,7 @@
     <title>Добавление нового кинофильма</title>
 
 
-    <link rel="stylesheet" href="style.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="resources/css/style.css" type="text/css" media="screen" />
 
 </head>
 <body>
@@ -73,30 +73,30 @@
 <div class="art-nav-outer">
 	<ul class="art-hmenu">
 		<li>
-			<a href="главная.html"><span class="l"></span><span class="r"></span><span class="t">Главная</span></a>
+			<a href="index.jsp"><span class="l"></span><span class="r"></span><span class="t">Главная</span></a>
 		</li>	
 		<li>
-			<a href="new-page.html"><span class="l"></span><span class="r"></span><span class="t">Жанры</span></a>
+			<a href="genres.jsp"><span class="l"></span><span class="r"></span><span class="t">Жанры</span></a>
 			<ul>
 				<li>
-                    <a href="список-жанров.html">Список жанров</a>
+                    <a href="genresList.jsp">Список жанров</a>
 
                 </li>
 				<li>
-                    <a href="добавить-жанр.html">Добавить жанр</a>
+                    <a href="addGenre.jsp">Добавить жанр</a>
 
                 </li>
 			</ul>
 		</li>	
 		<li>
-			<a href="new-page-2.html" class="active"><span class="l"></span><span class="r"></span><span class="t">Кинофильмы</span></a>
+			<a href="films.jsp" class="active"><span class="l"></span><span class="r"></span><span class="t">Кинофильмы</span></a>
 			<ul>
 				<li>
-                    <a href="список-кинофильмов.html">Список кинофильмов</a>
+                    <a href="filmList.jsp">Список кинофильмов</a>
 
                 </li>
 				<li>
-                    <a href="добавить-кинофильм.html" class="active">Добавить кинофильм</a>
+                    <a href="addFilm.jsp" class="active">Добавить кинофильм</a>
 
                 </li>
 			</ul>
