@@ -93,7 +93,7 @@
 
                 </li>
 				<li>
-                    <a href="./addFilm.jsp">Добавть кинофильм</a>
+                    <a href="./addFilm.jsp">Добавить кинофильм</a>
 
                 </li>
 			</ul>
