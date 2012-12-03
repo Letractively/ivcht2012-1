@@ -1,18 +1,85 @@
 <!DOCTYPE web-app PUBLIC
- "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
- "http://java.sun.com/dtd/web-app_2_3.dtd" >
+        "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+        "http://java.sun.com/dtd/web-app_2_3.dtd" >
 
 <web-app>
-  <display-name>Archetype Created Web Application</display-name>
+    <display-name>Archetype Created Web Application</display-name>
+    <servlet>
+        <servlet-name>DeleteStudentController</servlet-name>
+        <servlet-class>edu.sstu.controller.DeleteStudentController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>EditStudentController</servlet-name>
+        <servlet-class>edu.sstu.controller.EditStudentController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ShowStudentController</servlet-name>
+        <servlet-class>edu.sstu.controller.ShowStudentController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ListGrStudentController</servlet-name>
+        <servlet-class>edu.sstu.controller.ListGrStudentController</servlet-class>
+    </servlet>
+    ListGrStudentController
+    <servlet>
+        <servlet-name>ListStudentController</servlet-name>
+        <servlet-class>edu.sstu.controller.ListStudentController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ListGruppaController</servlet-name>
+        <servlet-class>edu.sstu.controller.ListGruppaController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>AddStudentController</servlet-name>
+        <servlet-class>edu.sstu.controller.AddStudentController</servlet-class>
+    </servlet>
 
     <servlet>
-        <servlet-name>WelcomeController</servlet-name>
-        <servlet-class>edu.sstu.ivcht.term2012.controller.WelcomeServlet</servlet-class>
+        <servlet-name>AddGruppaController</servlet-name>
+        <servlet-class>edu.sstu.controller.AddGruppaController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>DatabaseController</servlet-name>
+        <servlet-class>edu.sstu.controller.DatabaseController</servlet-class>
     </servlet>
 
     <servlet-mapping>
-        <servlet-name>WelcomeController</servlet-name>
-        <url-pattern>/welcome</url-pattern>
+        <servlet-name>ListStudentController</servlet-name>
+        <url-pattern>/studentList</url-pattern>
     </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ListGruppaController</servlet-name>
+        <url-pattern>/gruppaList</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AddStudentController</servlet-name>
+        <url-pattern>/addStudent</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AddGruppaController</servlet-name>
+        <url-pattern>/addGruppa</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DatabaseController</servlet-name>
+        <url-pattern>/createTables</url-pattern>
+        </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>DeleteStudentController</servlet-name>
+        <url-pattern>/DeleteStudent</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>EditStudentController</servlet-name>
+        <url-pattern>/editStudent</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ShowStudentController</servlet-name>
+        <url-pattern>/showStudent</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ListGrStudentController</servlet-name>
+        <url-pattern>/studentGrList</url-pattern>
+    </servlet-mapping>
+
 
 </web-app>
