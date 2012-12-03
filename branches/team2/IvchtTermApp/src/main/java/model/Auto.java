@@ -13,6 +13,8 @@ import java.util.Date;
 public class Auto {
     private int id;
     private int id_brand;
+    private int id_types;
+    private String types;
     private int seat;
     private int len;
     private int width;
@@ -20,6 +22,11 @@ public class Auto {
     private String descr;
     private String brand;
     private String model;
+    private double price;
+    private int rating;
+    private String datest;
+
+
 
 
     public Auto(){
@@ -35,9 +42,11 @@ public class Auto {
         this.descr=descr;
     }*/
 
-    public Auto( int id, int id_brand,  int seat, int len, int width, int height, String descr, String brand, String model) {
+    public Auto( int id, int id_brand,int id_types, String types, int seat, int len, int width, int height, String descr, String brand, String model, double  price, int rating,String datest) {
         this.id = id;
         this.id_brand = id_brand;
+        this.id_types=id_types;
+        this.types=types;
         this.height = height;
         this.seat=seat;
         this.len=len;
@@ -45,8 +54,50 @@ public class Auto {
         this.descr=descr;
         this.brand=brand;
         this.model=model;
+        this.price=price;
+        this.rating=rating;
+        this.datest=datest;
     }
 
+    public String getTypes() {
+        return types;
+    }
+
+    public void setTypes(String types) {
+        this.types = types;
+    }
+
+    public int getId_types() {
+        return id_types;
+    }
+
+    public void setId_types(int id_types) {
+        this.id_types = id_types;
+    }
+
+    public double getPrice() {
+        return price;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
+    }
+
+    public int getRating() {
+        return rating;
+    }
+
+    public void setRating(int rating) {
+        this.rating = rating;
+    }
+
+    public String getDatest() {
+        return datest;
+    }
+
+    public void setDatest(String datest) {
+        this.datest = datest;
+    }
 
     public String getModel() {
         return model;

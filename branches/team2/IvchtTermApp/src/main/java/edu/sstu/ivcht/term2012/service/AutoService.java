@@ -14,7 +14,7 @@ import model.Types;
  * To change this template use File | Settings | File Templates.
  */
 public interface AutoService {
-    public List<Auto> getAllAutos(int id);
+    public List<Auto> getAllAutos(int id, Integer tps);
 
     public List<Brand> getAllBrand();
 

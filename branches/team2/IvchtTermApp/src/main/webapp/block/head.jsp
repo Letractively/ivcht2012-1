@@ -6,7 +6,7 @@
 <body>
 
 <c:forEach items="${autos}" var="types">
-    <a href="listpackage?tps=<c:out value="${types.id}"></c:out>"><c:out value="${types.types}"></c:out></a>    <br>
+    <a href="listauto?tps=<c:out value="${types.id}"></c:out>"><c:out value="${types.types}"></c:out></a>    <br>
 </c:forEach>
 
 </body>

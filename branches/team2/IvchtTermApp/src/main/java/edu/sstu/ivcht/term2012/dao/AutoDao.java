@@ -15,7 +15,7 @@ import java.util.List;
  * To change this template use File | Settings | File Templates.
  */
 public interface AutoDao {
-    public List<Auto> getAllAutos(int id);
+    public List<Auto> getAllAutos(int id, int tps);
 
     public void addAuto(Auto auto);
 

@@ -20,7 +20,7 @@ import java.util.List;
  */
 public class AutoDBDao implements AutoDao{
     String sql="";
-    public List<Auto> getAllAutos(int id) {
+    public List<Auto> getAllAutos(int id, int tps) {
         List<Auto> autoList = new LinkedList<Auto>();
         try {
             Connection connection =  DataBaseConnection.getConnection();
@@ -29,17 +29,23 @@ public class AutoDBDao implements AutoDao{
 
 
             if (id==0){
+                if(tps>0){
+                    sql="SELECT    Auto.*, Brand.brand, Types.types FROM Auto INNER JOIN Brand ON Auto.id_brand = Brand.id INNER JOIN Types ON Auto.id_types = Types.id where id_types="+tps+" order by Brand.brand";
 
-                    sql="SELECT    Auto.model, Brand.brand, Auto.id_brand, Auto.seat, Auto.len, Auto.width, Auto.height, Auto.descr, Auto.id FROM Auto INNER JOIN Brand ON Auto.id_brand = Brand.id order by Brand.brand";
+                }
+                    else
+                {
+                    sql="SELECT    Auto.*, Brand.brand, Types.types FROM Auto INNER JOIN Brand ON Auto.id_brand = Brand.id INNER JOIN Types ON Auto.id_types = Types.id order by Brand.brand";
 
-
+                }
                      }
             else {
-                  sql="SELECT    Auto.model, Brand.brand, Auto.id_brand, Auto.seat, Auto.len, Auto.width, Auto.height, Auto.descr, Auto.id FROM  Auto INNER JOIN Brand ON Auto.id_brand = Brand.id  where id_brand="+id+" order by Brand.brand";
+                  sql="SELECT    Auto.*, Brand.brand, Types.types FROM  Auto INNER JOIN Brand ON Auto.id_brand = Brand.id INNER JOIN Types ON Auto.id_types = Types.id where id_brand="+id+" order by Brand.brand";
         }
             resultSet =  statement.executeQuery(sql);
             while (resultSet.next()) {
-                Auto auto = new Auto(resultSet.getInt("id"),resultSet.getInt("id_brand"),resultSet.getInt("seat"),resultSet.getInt("height"),resultSet.getInt("width"),resultSet.getInt("len"),resultSet.getString("descr"), resultSet.getString("brand"),resultSet.getString("model"));
+                Auto auto = new Auto(resultSet.getInt("id"),resultSet.getInt("id_brand"), resultSet.getInt("id_types"), resultSet.getString("types"),resultSet.getInt("seat"),resultSet.getInt("height"),resultSet.getInt("width"),resultSet.getInt("len"),resultSet.getString("descr"), resultSet.getString("brand"),resultSet.getString("model"),resultSet.getDouble("price"),resultSet.getInt("rating"),resultSet.getString("datest"));
+
                 autoList.add(auto);
             }
             resultSet.close();
@@ -118,17 +124,17 @@ public class AutoDBDao implements AutoDao{
 
             if (id==0){
 
-              sql="SELECT Package.*, Types.types FROM Package INNER JOIN Types ON Package.id_types = Types.id";
+              sql="SELECT Package.*, Types.types FROM Package INNER JOIN Types ON Package.id_types = Types.id INNER JOIN Auto ON Package.id_auto=Auto.id";
             }
             else
             {
-                sql="SELECT Package.*, Types.types FROM Package INNER JOIN Types ON Package.id = Types.id where id_types="+id;
+                sql="SELECT Package.*, Types.types FROM Package INNER JOIN Types ON Package.id = Types.id INNER JOIN Auto ON Package.id_auto=Auto.id where id_types="+id;
             }
 
 
             ResultSet resultSet =  statement.executeQuery(sql);
-                while (resultSet.next()) {
-               Packag packag= new Packag(resultSet.getInt("id"), resultSet.getInt("id_types"), resultSet.getString("types"),  resultSet.getInt("motor"), resultSet.getString("transmission"), resultSet.getString("drive"), resultSet.getDouble("price"), resultSet.getInt("rating"), resultSet.getString("datestart"), resultSet.getInt("checked"));
+               while (resultSet.next()) {
+               Packag packag= new Packag(resultSet.getInt("id"), resultSet.getInt("id_types"),resultSet.getInt("id_types"), resultSet.getString("types"), resultSet.getInt("motor"), resultSet.getString("transmission"), resultSet.getString("drive"), resultSet.getDouble("price"), resultSet.getInt("rating"), resultSet.getString("datestart"), resultSet.getInt("checked"));
                packageList.add(packag);
 
             }

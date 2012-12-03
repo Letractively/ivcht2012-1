@@ -11,7 +11,8 @@ public class Packag {
     private int id;
     private int id_types;
     private String types;
-  //  private int id_auto;
+    private int id_auto;
+   // private String auto;
     private int motor;
     private String transmission;
     private String drive;
@@ -26,11 +27,12 @@ public class Packag {
 
     }
 
-    public Packag( int id, int id_types, String types, int motor, String transmission, String drive,double price, int rating, String datestart,int checked)  {
+    public Packag( int id, int id_types, int id_auto, String types,  int motor, String transmission, String drive,double price, int rating, String datestart,int checked)  {
         this.id = id;
         this.id_types = id_types;
         this.types=types;
-     //   this.id_auto=id_auto;
+        this.id_auto=id_auto;
+       // this.auto=auto;
         this.motor=motor;
         this.transmission=transmission;
         this.drive=drive;
@@ -100,7 +102,21 @@ public class Packag {
     }
 
 
+    public int getId_auto() {
+        return id_auto;
+    }
 
+    public void setId_auto(int id_auto) {
+        this.id_auto = id_auto;
+    }
+
+  /*  public String getAuto() {
+        return auto;
+    }
+
+    public void setAuto(String auto) {
+        this.auto = auto;
+    }*/
 
     public int getMotor() {
         return motor;

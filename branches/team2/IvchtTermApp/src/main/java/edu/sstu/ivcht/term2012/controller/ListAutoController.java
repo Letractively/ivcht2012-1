@@ -35,7 +35,14 @@ public class ListAutoController extends HttpServlet {
     }
 
     private void processRequest(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException{
-              Integer id;
+              Integer id,tps;
+        if  (req.getParameter("tps")==null){
+            tps=0;
+        }
+        else
+        {
+            tps=Integer.parseInt(req.getParameter("tps"));
+        }
                if (req.getParameter("id")==null){
                  id=0;
                }
@@ -43,7 +50,7 @@ public class ListAutoController extends HttpServlet {
                {
                    id=Integer.parseInt(req.getParameter("id"));
                }
-        List<Auto> autoList = autoService.getAllAutos(id);
+        List<Auto> autoList = autoService.getAllAutos(id,tps);
         req.setAttribute("autos", autoList);
         getServletContext().getRequestDispatcher("/block/navi.jsp").forward(req,resp);
     }
