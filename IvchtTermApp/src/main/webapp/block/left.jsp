@@ -4,8 +4,8 @@
     <html>
     <body>
 
-    <c:forEach items="${autos}" var="auto">
-        <a href="listauto?id=<c:out value="${auto.id}"></c:out>"><c:out value="${auto.brand}"></c:out></a>    <br>
+    <c:forEach items="${autos}" var="brand">
+        <a href="listauto?id=<c:out value="${brand.id}"></c:out>"><c:out value="${brand.brand}"></c:out></a>    <br>
     </c:forEach>
 
     </body>

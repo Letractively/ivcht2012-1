@@ -3,6 +3,8 @@ package edu.sstu.ivcht.term2012.controller;
 import edu.sstu.ivcht.term2012.service.AutoService;
 import model.Brand;
 import edu.sstu.ivcht.term2012.util.*;
+import model.Packag;
+
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -31,8 +33,16 @@ public class ListPackageController extends HttpServlet {
     }
 
     private void processRequest(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException{
-        List<Package> autoList = autoService.getAllPackage();
+           int id;
+        if (req.getParameter("tps")==null){
+            id=0;
+        }
+        else
+        {
+            id=Integer.parseInt(req.getParameter("tps"));
+        }
+        List<Packag> autoList = autoService.getAllPackag(id);
         req.setAttribute("autos", autoList);
-        getServletContext().getRequestDispatcher("/index.jsp").forward(req,resp);
+        getServletContext().getRequestDispatcher("/block/pac.jsp").forward(req,resp);
     }
 }

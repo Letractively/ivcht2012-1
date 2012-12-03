@@ -2,6 +2,7 @@ package edu.sstu.ivcht.term2012.dao;
 
 import model.Auto;
 import model.Brand;
+import model.Packag;
 import model.Types;
 
 import java.sql.Connection;
@@ -18,14 +19,25 @@ import java.util.List;
  * To change this template use File | Settings | File Templates.
  */
 public class AutoDBDao implements AutoDao{
-
-    public List<Auto> getAllAutos() {
+    String sql="";
+    public List<Auto> getAllAutos(int id) {
         List<Auto> autoList = new LinkedList<Auto>();
         try {
             Connection connection =  DataBaseConnection.getConnection();
             Statement statement = connection.createStatement();
-            ResultSet resultSet =  statement.executeQuery("SELECT    Auto.model, Brand.brand, Auto.id_brand, Auto.seat, Auto.len, Auto.width, Auto.height, Auto.descr, Auto.id\n" +
-                    "FROM         Auto INNER JOIN Brand ON Auto.id_brand = Brand.id order by Brand.brand");
+            ResultSet resultSet=null;
+
+
+            if (id==0){
+
+                    sql="SELECT    Auto.model, Brand.brand, Auto.id_brand, Auto.seat, Auto.len, Auto.width, Auto.height, Auto.descr, Auto.id FROM Auto INNER JOIN Brand ON Auto.id_brand = Brand.id order by Brand.brand";
+
+
+                     }
+            else {
+                  sql="SELECT    Auto.model, Brand.brand, Auto.id_brand, Auto.seat, Auto.len, Auto.width, Auto.height, Auto.descr, Auto.id FROM  Auto INNER JOIN Brand ON Auto.id_brand = Brand.id  where id_brand="+id+" order by Brand.brand";
+        }
+            resultSet =  statement.executeQuery(sql);
             while (resultSet.next()) {
                 Auto auto = new Auto(resultSet.getInt("id"),resultSet.getInt("id_brand"),resultSet.getInt("seat"),resultSet.getInt("height"),resultSet.getInt("width"),resultSet.getInt("len"),resultSet.getString("descr"), resultSet.getString("brand"),resultSet.getString("model"));
                 autoList.add(auto);
@@ -98,18 +110,26 @@ public class AutoDBDao implements AutoDao{
     }
 
     @Override
-    public List<Package> getAllPackage() {
-        List<Package> packageList = new LinkedList<Package>();
+    public List<Packag> getAllPackag(int id) {
+        List<Packag> packageList = new LinkedList<Packag>();
         try {
             Connection connection =  DataBaseConnection.getConnection();
             Statement statement = connection.createStatement();
-            ResultSet resultSet =  statement.executeQuery("SELECT     Package.*, Type.type\n" +
-                    "FROM         Package INNER JOIN\n" +
-                    "                      Type ON Package.id = Type.id");
-            while (resultSet.next()) {
-                Package packag=Package(resultSet.getInt("id"),resultSet.getInt("id_types"), resultSet.getString("types"), resultSet.getInt("id_auto"), resultSet.getInt("motor"), resultSet.getString("transmission"),resultSet.getString("drive"), resultSet.getDouble("price"), resultSet.getInt("rating"), resultSet.getString("datestart"), resultSet.getInt("checked"));
 
-                packageList.add(packag);
+            if (id==0){
+
+              sql="SELECT Package.*, Types.types FROM Package INNER JOIN Types ON Package.id_types = Types.id";
+            }
+            else
+            {
+                sql="SELECT Package.*, Types.types FROM Package INNER JOIN Types ON Package.id = Types.id where id_types="+id;
+            }
+
+
+            ResultSet resultSet =  statement.executeQuery(sql);
+                while (resultSet.next()) {
+               Packag packag= new Packag(resultSet.getInt("id"), resultSet.getInt("id_types"), resultSet.getString("types"),  resultSet.getInt("motor"), resultSet.getString("transmission"), resultSet.getString("drive"), resultSet.getDouble("price"), resultSet.getInt("rating"), resultSet.getString("datestart"), resultSet.getInt("checked"));
+               packageList.add(packag);
 
             }
             resultSet.close();

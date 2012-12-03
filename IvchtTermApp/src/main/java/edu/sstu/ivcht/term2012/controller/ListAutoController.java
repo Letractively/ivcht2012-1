@@ -35,8 +35,16 @@ public class ListAutoController extends HttpServlet {
     }
 
     private void processRequest(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException{
-        List<Auto> autoList = autoService.getAllAutos();
+              Integer id;
+               if (req.getParameter("id")==null){
+                 id=0;
+               }
+        else
+               {
+                   id=Integer.parseInt(req.getParameter("id"));
+               }
+        List<Auto> autoList = autoService.getAllAutos(id);
         req.setAttribute("autos", autoList);
-        getServletContext().getRequestDispatcher("/index.jsp").forward(req,resp);
+        getServletContext().getRequestDispatcher("/block/navi.jsp").forward(req,resp);
     }
 }
