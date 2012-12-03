@@ -4,6 +4,7 @@ import edu.sstu.ivcht.term2012.dao.AutoDBDao;
 import edu.sstu.ivcht.term2012.dao.AutoDao;
 import model.Auto;
 import model.Brand;
+import model.Packag;
 import model.Types;
 
 import java.util.List;
@@ -31,8 +32,8 @@ public class AutoBaseService implements AutoService {
         return autoBaseService;
     }
 
-    public List<Auto> getAllAutos() {
-        return dao.getAllAutos();
+    public List<Auto> getAllAutos(int id) {
+        return dao.getAllAutos(id);
     }
     public List<Brand> getAllBrand() {
         return dao.getAllBrand();
@@ -40,7 +41,7 @@ public class AutoBaseService implements AutoService {
 
 
     public List<Types> getAllTypes() {
-        return null;  //To change body of implemented methods use File | Settings | File Templates.
+        return dao.getAllTypes();  //To change body of implemented methods use File | Settings | File Templates.
     }
 
     public void addAuto(Auto auto) {
@@ -58,9 +59,9 @@ public class AutoBaseService implements AutoService {
         return  dao.readAuto(id);
     }
 
-    @Override
-    public List<Package> getAllPackage() {
-        return null;  //To change body of implemented methods use File | Settings | File Templates.
+
+    public List<Packag> getAllPackag(int id) {
+        return dao.getAllPackag(id);  //To change body of implemented methods use File | Settings | File Templates.
     }
 
 }

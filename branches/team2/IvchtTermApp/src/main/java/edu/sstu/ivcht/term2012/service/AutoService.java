@@ -3,6 +3,7 @@ package edu.sstu.ivcht.term2012.service;
 import java.util.List;
 import model.Auto;
 import model.Brand;
+import model.Packag;
 import model.Types;
 
 /**
@@ -13,7 +14,7 @@ import model.Types;
  * To change this template use File | Settings | File Templates.
  */
 public interface AutoService {
-    public List<Auto> getAllAutos();
+    public List<Auto> getAllAutos(int id);
 
     public List<Brand> getAllBrand();
 
@@ -27,6 +28,5 @@ public interface AutoService {
 
     public Auto readAuto(int id);
 
-
-   public  List<Package> getAllPackage();
+   public  List<Packag> getAllPackag(int id);
 }
