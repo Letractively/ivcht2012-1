@@ -1,12 +1,15 @@
 ﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"[]>
 <html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US" xml:lang="en">
 <head>
-   
+
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <title>Главная страница</title>
+    <title>Страница о кино</title>
+    <meta name="description" content="Description" />
+    <meta name="keywords" content="Keywords" />
 
 
     <link rel="stylesheet" href="style.css" type="text/css" media="screen" />
+
 </head>
 <body>
 <div id="art-page-background-glare">
@@ -51,15 +54,17 @@
                 	    <param name="wmode" value="transparent" />
                     	<param name="flashvars" value="color1=0xFFFFFF&amp;alpha1=.50&amp;framerate1=24&amp;loop=true&amp;wmode=transparent&amp;clip=images/flash.swf&amp;radius=5&amp;clipx=0&amp;clipy=-16&amp;initalclipw=900&amp;initalcliph=225&amp;clipw=900&amp;cliph=225&amp;width=792&amp;height=150&amp;textblock_width=0&amp;textblock_align=no&amp;hasTopCorners=true&amp;hasBottomCorners=false" />
                         <param name="swfliveconnect" value="true" />
-                	
+                	<!--<![endif]-->
+                		<div class="art-flash-alt"><a href="http://www.adobe.com/go/getflashplayer"><img src="http://www.adobe.com/images/shared/download_buttons/get_flash_player.gif" alt="Get Adobe Flash player" /></a></div>
+                	<!--[if !IE]>-->
                 	</object>
-                
+                	<!--<![endif]-->
                 </object>
                 </div>
                 </div>
                 <script type="text/javascript">    swfobject.switchOffAutoHideShow(); swfobject.registerObject("art-flash-object", "9.0.0", "expressInstall.swf");</script>
                 <div class="art-logo">
-                                 <h1 class="art-logo-name"><a href="./index.html">Кино -</a></h1>
+                                 <h1 class="art-logo-name"><a href="index.html">Кино -</a></h1>
                                                  <h2 class="art-logo-text">это жизнь, из которой                  вырезано всё скучное</h2>
                                 </div>
             </div>
@@ -70,30 +75,30 @@
 <div class="art-nav-outer">
 	<ul class="art-hmenu">
 		<li>
-			<a href="./главная.html" class="active"><span class="l"></span><span class="r"></span><span class="t">Главная</span></a>
+			<a href="главная.html"><span class="l"></span><span class="r"></span><span class="t">Главная</span></a>
 		</li>	
 		<li>
-			<a href="./new-page.html"><span class="l"></span><span class="r"></span><span class="t">Жанры</span></a>
+			<a href="new-page.html"><span class="l"></span><span class="r"></span><span class="t">Жанры</span></a>
 			<ul>
 				<li>
-                    <a href="./список-жанров.html">Список жанров</a>
+                    <a href="список-жанров.html">Список жанров</a>
 
                 </li>
 				<li>
-                    <a href="./добавить-жанр.html">Добавить жанр</a>
+                    <a href="добавить-жанр.html">Добавить жанр</a>
 
                 </li>
 			</ul>
 		</li>	
 		<li>
-			<a href="./new-page-2.html"><span class="l"></span><span class="r"></span><span class="t">Кинофильмы</span></a>
+			<a href="./new-page-2.html" class="active"><span class="l"></span><span class="r"></span><span class="t">Кинофильмы</span></a>
 			<ul>
 				<li>
-                    <a href="./список-кинофильмов.html">Список кинофильмов</a>
+                    <a href="список-кинофильмов.html">Список кинофильмов</a>
 
                 </li>
 				<li>
-                    <a href="./добавть-кинофильм.html">Добавть кинофильм</a>
+                    <a href="добавть-кинофильм.html">Добавть кинофильм</a>
 
                 </li>
 			</ul>
@@ -109,27 +114,12 @@
     <div class="art-post-body">
 <div class="art-post-inner art-article">
                                 <h2 class="art-postheader">
-                Главная страница
+                Страница о кино
                                 </h2>
                 <div class="cleared"></div>
                                 <div class="art-postcontent">
 
-<p style="text-align:center;"><span style="font-weight:bold;"><span style="font-size:16px;">Саратовский  Государственный   Технический университет</span></span></p>
-<p style="text-align:center;"><span style="font-weight:bold;"><span style="font-size:16px;">Кафедра Информатика и вычислительна техника</span></span></p>
-<p style="text-align:center;"><span style="font-weight:bold;"><span style="font-size:16px;"><br /></span></span></p>
-<p style="text-align:center;"><span style="font-weight:bold;"><span style="font-size:16px;"><br /></span></span></p>
-<p style="text-align:center;"><span style="font-weight:bold;"><span style="font-size:16px;"><br /></span></span></p>
-<p style="text-align:center;"><span style="font-weight:bold;"><span style="font-size:28px;">Курсовая работа</span></span></p>
-<p style="text-align:right;"><span style="font-size:16px;"><span style="font-weight:bold;"><br /></span></span></p>
-<p style="text-align:right;"><span style="font-size:16px;"><span style="font-weight:bold;"><br /></span></span></p>
-<p style="text-align:right;"><span style="font-size:16px;"><span style="font-weight:bold;"><br /></span></span></p>
-<p style="text-align:right;"><span style="font-size:16px;"><span style="font-weight:bold;"> Выполнили:</span></span></p>
-<p style="text-align:right;"><span style="font-size:16px;"><span style="font-weight:bold;"> </span></span><span style="font-size:16px;font-weight:bold;">студенты группы </span></p>
-<p style="text-align:right;"><span style="font-size:16px;font-weight:bold;">мИВЧТ-21</span></p>
-<p style="text-align:right;"><span style="font-size:16px;font-weight:bold;">Казурова Вера</span></p>
-<p style="text-align:right;"><span style="font-size:16px;font-weight:bold;">Ручкина Ирина</span></p>
-<p style="text-align:right;"><span style="font-size:16px;font-weight:bold;">Харьковская Наталья</span></p>
-<p><br /></p>
+<p>Текст о кино</p>
 
 
                 </div>
