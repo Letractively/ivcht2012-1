@@ -14,22 +14,31 @@ public class DatabaseService {
     /**
      * Константная строка - SQL запрос создания таблицы тем
      */
+    private final static String CREATE_TOPICS_TABLE = "CREATE TABLE topics (id IDENTITY, subject VARCHAR(100), description VARCHAR (100), createDate DATE)";
 
-    //TODO: остановился тут
-    private final static String CREATE_STUDENT_TABLE = "CREATE TABLE topics (id IDENTITY , firstName VARCHAR(100), secondName VARCHAR (100),  birthday DATE, height INTEGER)";
+    /**
+     * Константная строка - SQL запрос создания таблицы сообщений
+     */
+    private final static String CREATE_MESSAGES_TABLE = "CREATE TABLE messages (id IDENTITY, subject VARCHAR(100), text VARCHAR (100), createDate DATE, topicId INTEGER)";
 
-
-
+    /**
+     * Метод, создающий необходимые таблицы в базе данных
+     * @throws Exception
+     */
     public void createDatabaseTables()  throws Exception{
 
+        //Экземпляр подключения к БД
         Connection connection = ConnectionDBDao.getConnection();
 
+        //Экземпляр обращения к БД
         Statement statement = connection.createStatement();
 
-        statement.executeUpdate(CREATE_STUDENT_TABLE);
+        //Выполнение команды БД
+        //Создание таблиц тем и сообщений
+        statement.executeUpdate(CREATE_TOPICS_TABLE);
+        statement.executeUpdate(CREATE_MESSAGES_TABLE);
 
-        // ... create other table
-
+        //Закрытие обращения к БД
         statement.close();
     }
 }
