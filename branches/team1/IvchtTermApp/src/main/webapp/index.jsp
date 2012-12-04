@@ -36,7 +36,7 @@
     </tr>
     <tr>
         <td>
-            <a href="welcome">На страницу приветствия</a>
+            <a href="createDatabase">На страницу приветствия</a>
         </td>
     </tr>
 </table>

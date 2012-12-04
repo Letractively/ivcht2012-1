@@ -26,6 +26,6 @@
 </head>
 
 <body>
-N/A
+message search result
 </body>
 </html>
