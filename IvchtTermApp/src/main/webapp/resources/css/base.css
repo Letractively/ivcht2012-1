@@ -1,7 +1,7 @@
 body {
     background: #fff url('../img/img.gif');  
-	font-family: Arial, Helvetica, sans-serif;
-	font-size: 14px;
+	font-family: Tahoma, Arial, Helvetica, sans-serif;
+	font-size: 12px;
 	margin:0px;
 	padding:0px;
 }
@@ -11,8 +11,8 @@ h1 {
  h6 {color: #ffffff;
 }
 p {
-    font-family: "Arial";
-    font-size: 14px;
+    font-family: "Tahoma, Arial";
+    font-size: 12px;
     color: #000;
 }
 .block {
@@ -22,20 +22,21 @@ p {
 	background-color:#fff; 
 	color:#000; 
 	border:solid 1px #000; 
-	margin:0 auto;}
+	margin:0 auto;
+}
 #head{ 
 	height:200px; 
 	background-color:#CCC; 
 	margin:0; padding:0;
 }
 #navi{
-	height:60px;
-	background-color:#f6f6f6; 
+	height:20px;
+	background-color:#069;
 	border-bottom:1px solid #f6f6f6; 
 	border-top:1px dotted #F6f6f6; 
 	margin:0;
 	padding:0;
-	}
+}
 /*.block2{ min-height:800px;}*/
 #left{
 	float:left; 
@@ -52,14 +53,15 @@ p {
 #foot{
 	clear:both; 
 	min-height:80px; 
-	background-color: #f6f6f6; 
+	background-color: #069;
 	border-top:1px dotted #000; 
 	}
-#foot p span{font:Verdana, Geneva, sans-serif italic; color:#fff;}
-#foot p span{font:Verdana, Geneva, sans-serif italic; color:#fff; background-color:#ccc; display: inline-block; vertical-align:middle; float:right;}
+#foot p span{font:Tahoma, Arial, Verdana, Geneva, sans-serif italic;  vertical-align:middle; float:right; font-size: 12px; color: #fff;}
+#foot h6 a{color:#fff; text-decoration: none; margin: 0 10px;}
+#foot h6 a:hover{color:#fff; text-decoration: #ff8c00; text-decoration: underline;}
 hr .full{
     width: 100%;
-    color: #2356aa
+    color: #fff;
 }
 .links	{font-size:14px;}
 .links ul {font-weight: 600; list-style:none;  border-bottom:1px #069 dotted; width:170px; padding-left:20px;} 
@@ -94,6 +96,31 @@ border-radius: 4px;
 -o-transform: scale(1.09) rotate(-2deg);
 transform: scale(1.09) rotate(-2deg);
 }
+/*сделаем меню для горизонтального меню, хотя конечно можно было бы использовать и предыдущее*/
+.nav {
+    margin-left: 200px;
+    font-size: 14px;
+    height:12px;
+    font-family:Tahoma, Arial;
+    text-align: center;
+
+}
+.nav a {
+    display:inline;
+    color: #fff;
+    text-align:center;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin: 5px auto;
+    text-decoration: none;
+    border-left: #fff solid 2px;
+}
+.nav a:hover {
+    color: #f6f6f6;
+    text-decoration: underline;
+
+
+}
 
 /*Для полей, чтобы красивее смотрелись*/
 #inp {margin:20 auto;}
@@ -122,7 +149,9 @@ table {
     *border-collapse: collapse;
     border-spacing: 0;
 	margin:20px auto;
-    width: 80%;    
+    width: 80%;
+    font: 12px Tahoma, Arial italic;
+
 }
 
 .bordered {
