@@ -5,7 +5,7 @@
         <jsp:forward page="/listtypes"/>
 </c:if>
 </a><c:forEach items="${types}" var="types">
-    <a href="listpackage?tps=<c:out value="${types.id}"></c:out>"><c:out value="${types.types}"></c:out></a>
+    <a href="listauto?tps=<c:out value="${types.id}"></c:out>"><c:out value="${types.types}"></c:out></a>
 </c:forEach>
 
    <table class="example">

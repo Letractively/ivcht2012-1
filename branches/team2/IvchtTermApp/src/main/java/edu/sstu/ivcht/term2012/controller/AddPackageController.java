@@ -63,7 +63,7 @@ public class AddPackageController extends HttpServlet {
         AutoService autoService = ServiceInstancer.getAutoService();
         List<Auto> autoList = autoService.getAllAutos(0,0);     //получение списка авто для добавления к ним конкретной комплектации
         req.setAttribute("autos", autoList);
-        getServletContext().getRequestDispatcher("/block/addPackage.jsp").forward(req, resp);
+        getServletContext().getRequestDispatcher("/block/addPackag.jsp").forward(req, resp);
     }
 }
 

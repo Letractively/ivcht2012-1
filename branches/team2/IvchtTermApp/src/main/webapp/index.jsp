@@ -9,7 +9,7 @@
 <title>Автомобили</title>
 <body>
 
- <%-- <jsp:forward page="/createdatabase"/>   // Создание БД     --%>
+   <%--<jsp:forward page="/createdatabase"/> -%>// Создание БД     --%>
 
             <div id="head"><jsp:include page="block/head.jsp"></jsp:include></div>
             <div id="navi"><jsp:include page="block/navi.jsp"></jsp:include></div>
