@@ -1,9 +1,8 @@
 package edu.sstu.controller;
 
-import edu.sstu.model.Gruppa;
-import edu.sstu.model.Student;
-import edu.sstu.service.GruppaService;
-import edu.sstu.service.StudentService;
+import edu.sstu.model.Film;
+import edu.sstu.model.Genre;
+import edu.sstu.service.GenreService;
 import edu.sstu.utils.ServiceInstancer;
 
 import javax.servlet.ServletException;
@@ -13,9 +12,9 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 
-public class AddGruppaController extends HttpServlet {
+public class AddGenreController extends HttpServlet {
     private static SimpleDateFormat sdf = new SimpleDateFormat("dd.MM.yyyy");
-    GruppaService gruppaService = ServiceInstancer.getGruppaService();
+    GenreService genreService = ServiceInstancer.getGenreService();
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -30,16 +29,29 @@ public class AddGruppaController extends HttpServlet {
     private void processRequest(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
         req.setCharacterEncoding("UTF-8");
 
-       try {
-           Gruppa gruppa = new Gruppa( "Gr1", "info Gr1");
-           gruppaService.addGruppa(gruppa);
 
-            req.setAttribute("result", "Студент успешно добавлен");
+        String genre = req.getParameter("genre");
+        String info = req.getParameter("info");
+        String date = req.getParameter("date");
+
+
+
+
+        try {
+            Genre gn = new Genre(
+                    genre,
+                    info,
+                   sdf.parse(date)
+            );
+            genreService.addGenre(gn);
+            req.setAttribute("result", "Фильм успешно добавлен");
+            genreService.getAllGenres();
+            req.setAttribute("result", "Фильм успешно добавлен");
         } catch (Exception e) {
-            req.setAttribute("error", "Произошла ошибка при добавлении студента");
+            req.setAttribute("error", "Произошла ошибка при добавлении фильма");
             e.printStackTrace();
         }
 
-        getServletContext().getRequestDispatcher("/addGruppa.jsp").forward(req, resp);
+        getServletContext().getRequestDispatcher("/addGenre.jsp").forward(req, resp);
     }
 }

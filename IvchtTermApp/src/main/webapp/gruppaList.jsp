@@ -4,7 +4,7 @@
 
 <html>
 <head>
-    <title>Gruppa List</title>
+    <title>Genre List</title>
 
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 
@@ -33,7 +33,7 @@
             <th>Редактирование</th>
             <th>Список студентов</th>
         </tr>
-        <c:forEach items="${grupps}" var="gruppa">
+        <c:forEach items="${grupps}" var="genre">
             <tr>
                 <td><c:out value="${gruppa.id}"></c:out></td>
                 <td><c:out value="${gruppa.namegrupp}"></c:out></td>

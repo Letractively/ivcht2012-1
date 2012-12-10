@@ -1,53 +1,52 @@
 package edu.sstu.dao;
 
-import edu.sstu.model.Gruppa;
-import edu.sstu.model.Student;
+import edu.sstu.model.Genre;
+import edu.sstu.model.Film;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
-import java.text.SimpleDateFormat;
 import java.util.LinkedList;
 import java.util.List;
 
 /**
 * @author dkinzel
 */
-public class GruppaDBDao implements GruppaDao{
+public class GenreDBDao implements GenreDao {
 
 
-    public List<Gruppa> getAllGrupps() {
-        List<Gruppa> gruppaList = new LinkedList<Gruppa>();
+    public List<Genre> getAllGenres() {
+        List<Genre> genreList = new LinkedList<Genre>();
         try {
             Connection connection =  DataBaseConnection.getConnection();
             Statement statement = connection.createStatement();
-            ResultSet resultSet =  statement.executeQuery("SELECT * FROM gruppa");
+            ResultSet resultSet =  statement.executeQuery("SELECT * FROM genres");
             while (resultSet.next()) {
-                Gruppa gruppa = new Gruppa(
+                Genre genre = new Genre(
                         resultSet.getInt("id"),
-                        resultSet.getString("namegrupp"),
-                        resultSet.getString("info")
-
+                        resultSet.getString("genre"),
+                        resultSet.getString("info"),
+                        resultSet.getDate("date")
                 );
-                gruppaList.add(gruppa);
+                genreList.add(genre);
             }
             resultSet.close();
             statement.close();
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return gruppaList;
+        return genreList;
           }
 
-    public void addGruppa(Gruppa gruppa) {
+    public void addGenre(Genre genre) {
         try {
 
             Connection connection =  DataBaseConnection.getConnection();
             Statement statement = connection.createStatement();
-            String sql = "INSERT INTO gruppa (namegrupp, info) VALUES (" +
-                    "'" + gruppa.getnamegrupp() + "', " +
-                    "'" + gruppa.getinfo() + "')";
-
+            String sql = "INSERT INTO genres (genre, info, date) VALUES (" +
+                    "'" + genre.getGenre() + "', " +
+                    "'" + genre.getInfo() + "', " +
+                    "'" + genre.getDate() + "')";
             statement.executeUpdate(sql);
 
         } catch (Exception e) {
@@ -55,28 +54,28 @@ public class GruppaDBDao implements GruppaDao{
         }
     }
 
-    public Student editGruppa(Gruppa Gruppa) {
+    public Film editGenre(Genre Genre) {
         return null;  //To change body of implemented methods use File | Settings | File Templates.
     }
 
-    public Student showGruppa(int id) {
+    public Film showGenre(int id) {
         return null;  //To change body of implemented methods use File | Settings | File Templates.
     }
 
-    public void deleteGruppa(int id) {
+    public void deleteGenre(int id) {
         //To change body of implemented methods use File | Settings | File Templates.
     }
 
 
     /*  private static SimpleDateFormat sdf = new SimpleDateFormat("dd.MM.yyyy");
-public List<Student> getAllGrupps() {
-    List<Student> studentList = new LinkedList<Student>();
+public List<Film> getAllGrupps() {
+    List<Film> studentList = new LinkedList<Film>();
     try {
         Connection connection =  DataBaseConnection.getConnection();
         Statement statement = connection.createStatement();
         ResultSet resultSet =  statement.executeQuery("SELECT * FROM students");
         while (resultSet.next()) {
-            Student student = new Student(
+            Film student = new Film(
                     resultSet.getInt("id"),
                     resultSet.getString("firstName"),
                     resultSet.getString("secondName"),
@@ -93,7 +92,7 @@ public List<Student> getAllGrupps() {
     return studentList;
 }
 /*
-public void addStudent(Student student)      try {
+public void addStudent(Film student)      try {
        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
         Connection connection =  DataBaseConnection.getConnection();
         Statement statement = connection.createStatement();
@@ -112,9 +111,9 @@ public void addStudent(Student student)      try {
 }
 
 
-public Student showStudent(int id) {
+public Film showStudent(int id) {
    // SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-    Student student = new Student();
+    Film student = new Film();
     try {
         Connection connection = DataBaseConnection.getConnection();
         Statement statement = connection.createStatement();
@@ -139,7 +138,7 @@ public Student showStudent(int id) {
     return student;
 }
 
-public Student editStudent(Student student) {
+public Film editStudent(Film student) {
     try {
        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
         Connection connection =  DataBaseConnection.getConnection();

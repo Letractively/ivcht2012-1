@@ -12,28 +12,28 @@ public class Film {
     private String country;
     private Boolean D3;
     private Date date;
-    public int grId;
+    public int genreId;
 
     public Film() {
     }
 
-    public Film(String name, String info, String country, Boolean d3, Date date, int grId) {
+    public Film(String name, String info, String country, Boolean d3, Date date, int genreId) {
         this.name = name;
         this.info = info;
         this.country = country;
         D3 = d3;
         this.date = date;
-        this.grId = grId;
+        this.genreId = genreId;
     }
 
-    public Film(int id, String name, String info, String country, Boolean d3, Date date, int grId) {
+    public Film(int id, String name, String info, String country, Boolean d3, Date date, int genreId) {
         this.id = id;
         this.name = name;
         this.info = info;
         this.country = country;
         D3 = d3;
         this.date = date;
-        this.grId = grId;
+        this.genreId = genreId;
     }
 
     public static SimpleDateFormat getSdf() {
@@ -92,11 +92,11 @@ public class Film {
         this.date = date;
     }
 
-    public int getGrId() {
-        return grId;
+    public int getGenreId() {
+        return genreId;
     }
 
-    public void setGrId(int grId) {
-        this.grId = grId;
+    public void setGenreId(int genreId) {
+        this.genreId = genreId;
     }
 }

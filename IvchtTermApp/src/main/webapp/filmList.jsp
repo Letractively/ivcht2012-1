@@ -1,5 +1,5 @@
-﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"[]>
-<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US" xml:lang="en">
+﻿<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib uri="http://java.sun.com/jstl/core" prefix="c" %>
 <head>
 
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
@@ -120,7 +120,7 @@
 <p style="text-align:auto;"><br /></p>
 <p>
 	<table class="art-article" border="0" cellspacing="0" cellpadding="0" style="width:100%;">
-		<tbody>
+		<tbody >
 			<tr class="even">
 				<td style="text-align:center;"><span style="font-weight:bold;"><span style="color:rgb(62, 37, 35);">Код</span></span></td>
 				<td style="text-align:center;"><span style="font-weight:bold;"><span style="color:rgb(62, 37, 35);">Наименование</span></span></td>
@@ -131,16 +131,21 @@
 				<td style="text-align:center;"><span style="font-weight:bold;"><span style="color:rgb(62, 37, 35);">Есть в 3D</span></span></td>
 				<td style="text-align:center;width:100px;"><span style="font-weight:bold;"><span style="color:rgb(62, 37, 35);">Действия</span></span></td>
 			</tr>
-			<tr>
-				<td><br /></td>
-				<td><br /></td>
-				<td><br /></td>
-				<td><br /></td>
-				<td><br /></td>
-				<td><br /></td>
-				<td><br /></td>
-				<td style="width:100px;"><span class="art-button-wrapper"><span class="art-button-l"> </span><span class="art-button-r"> </span><a href="" target="_self" class="art-button" style="padding-right:16px !important;padding-left:16px !important;color:rgb(255, 255, 255) !important;position:relative;top:0;display:inline-block;vertical-align:middle;white-space:nowrap;text-align:center;width:auto;height:33px;cursor:pointer;">Редактировать</a></span> <br /><span class="art-button-wrapper"><span class="art-button-l"> </span><span class="art-button-r"> </span><a title="Удалить" class="art-button" style="padding-right:16px !important;padding-left:16px !important;color:rgb(255, 255, 255) !important;position:relative;top:0;display:inline-block;vertical-align:middle;white-space:nowrap;text-align:center;width:auto;height:33px;cursor:pointer;">     Удалить    </a></span><br /></td>
-			</tr>
+            <c:forEach items="${films}" var="film">
+                <tr>
+                    <td><c:out value="${film.id}"></c:out></td>
+                    <td><c:out value="${film.name}"></c:out></td>
+                    <td><c:out value="${film.info}"></c:out></td>
+                    <td><c:out value="${film.country}"></c:out></td>
+                    <td><c:out value="${film.D3}"></c:out></td>
+                    <td><c:out value="${film.date}"></c:out></td>
+                    <td><c:out value="${groupMap[film.genreId]}"/><br/></td>
+                    <td><a href="DeleteFilm?id=<c:out value='${film.id}'></c:out>">удалить</a>
+                    <a href="showFilm?id=<c:out value='${film.id}'></c:out>">редактировать</a></td>
+
+                </tr>
+            </c:forEach>
+				</tr>
 		</tbody>
 	</table>
 	<br />

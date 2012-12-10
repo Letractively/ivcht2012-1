@@ -1,7 +1,7 @@
 package edu.sstu.controller;
 
-import edu.sstu.model.Student;
-import edu.sstu.service.StudentService;
+import edu.sstu.model.Film;
+import edu.sstu.service.FilmService;
 import edu.sstu.utils.ServiceInstancer;
 
 import javax.servlet.ServletException;
@@ -17,9 +17,9 @@ import java.io.IOException;
  * Time: 20:26
  * To change this template use File | Settings | File Templates.
  */
-public class ShowStudentController extends HttpServlet {
+public class ShowFilmController extends HttpServlet {
 
-    StudentService studentService = ServiceInstancer.getStudentService();
+    FilmService filmService = ServiceInstancer.getFilmService();
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -37,15 +37,14 @@ public class ShowStudentController extends HttpServlet {
         try {
 
             Integer id = Integer.parseInt(req.getParameter("id"));
-            Student  student = studentService.showStudent(id);
-            req.setAttribute("student", student);
+            Film film = filmService.showFilm(id);
+            req.setAttribute("film", film);
             } catch (Exception e) {
             req.setAttribute("error", "Произошла ошибка при добавлении студента");
             e.printStackTrace();
         }
-       // Student student = studentService.showStudent(Integer id);
-        //req.setAttribute("students", student);
-        getServletContext().getRequestDispatcher("/editStudent.jsp").forward(req, resp);
+
+        getServletContext().getRequestDispatcher("/editFilm.jsp").forward(req, resp);
     }
 
 }

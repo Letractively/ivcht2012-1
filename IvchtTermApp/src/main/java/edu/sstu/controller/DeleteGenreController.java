@@ -1,7 +1,9 @@
 package edu.sstu.controller;
 
-import edu.sstu.model.Student;
-import edu.sstu.service.StudentService;
+import edu.sstu.model.Film;
+import edu.sstu.model.Genre;
+import edu.sstu.service.FilmService;
+import edu.sstu.service.GenreService;
 import edu.sstu.utils.ServiceInstancer;
 
 import javax.servlet.ServletException;
@@ -18,9 +20,9 @@ import java.util.List;
  * Time: 19:57
  * To change this template use File | Settings | File Templates.
  */
-public class DeleteStudentController extends HttpServlet {
+public class DeleteGenreController extends HttpServlet {
 
-    StudentService studentService = ServiceInstancer.getStudentService();
+    GenreService genreService = ServiceInstancer.getGenreService();
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -36,14 +38,14 @@ public class DeleteStudentController extends HttpServlet {
 
         try{
             Integer id = Integer.parseInt(req.getParameter("id"));
-            studentService.deleteStudent(id);
+            genreService.deleteGenre(id);
         }
         catch (Exception e){
 
         }
-        List<Student> studentList = studentService.getAllStudents();
-        req.setAttribute("students", studentList);
-        getServletContext().getRequestDispatcher("/studentList.jsp").forward(req,resp);    }
+        List<Genre> genreList = genreService.getAllGenres();
+        req.setAttribute("genres", genreList);
+        getServletContext().getRequestDispatcher("/genreList.jsp").forward(req,resp);    }
 
 }
 

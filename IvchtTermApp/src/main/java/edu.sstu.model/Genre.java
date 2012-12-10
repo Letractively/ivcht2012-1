@@ -69,4 +69,7 @@ public class Genre {
     public void setDate(Date date) {
         this.date = date;
     }
+
+
+
 }
