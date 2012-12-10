@@ -14,4 +14,6 @@ public class ServiceInstancer {
     public static AutoService getAutoService(){
         return AutoBaseService.getInstance();
     }
+
+
 }

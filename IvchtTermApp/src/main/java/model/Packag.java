@@ -21,8 +21,6 @@ public class Packag {
     private String datestart;
     private int checked;
 
-
-
     public Packag(){
 
     }
@@ -44,6 +42,19 @@ public class Packag {
 
 
 }
+
+
+    public Packag(Integer id_auto, Integer motor, String transmission, String drive, Double price, int checked) {
+
+        this.id_auto=id_auto;
+        this.motor=motor;
+        this.transmission=transmission;
+        this.drive=drive;
+        this.checked=checked;
+        this.price=price;
+    }
+
+
 
     public double getPrice() {
         return price;

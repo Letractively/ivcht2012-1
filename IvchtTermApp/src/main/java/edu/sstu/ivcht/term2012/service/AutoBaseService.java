@@ -2,10 +2,8 @@ package edu.sstu.ivcht.term2012.service;
 
 import edu.sstu.ivcht.term2012.dao.AutoDBDao;
 import edu.sstu.ivcht.term2012.dao.AutoDao;
-import model.Auto;
-import model.Brand;
-import model.Packag;
-import model.Types;
+import model.*;
+import sun.awt.image.PixelConverter;
 
 import java.util.List;
 
@@ -64,4 +62,16 @@ public class AutoBaseService implements AutoService {
         return dao.getAllPackag(id);  //To change body of implemented methods use File | Settings | File Templates.
     }
 
+    public void addPackage(Packag packag){
+        dao.addPackage(packag);
+    }
+    public void addUser(Usr usr){
+        dao.addUser(usr);
+    }
+    public void deleteUser(int id){
+        dao.deleteUser(id);
+    }
+    public List<Usr> getAllUser() {
+        return dao.getAllUser();
+    }
 }

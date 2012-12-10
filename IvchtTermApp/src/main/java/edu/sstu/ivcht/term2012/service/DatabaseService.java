@@ -15,7 +15,10 @@ import java.text.SimpleDateFormat;
 public class DatabaseService {
     SimpleDateFormat sdf = new SimpleDateFormat("dd.MM.yyyy");
 
-        //таблица типов авто содержит только типы кузовов авто
+    private final static String CREATE_TYPE_TABLE_KONTROL="CREATE TABLE users(user_id IDENTITY, user_login VARCHAR(20), user_password VARCHAR(20),user_hash VARCHAR(20),user_ip VARCHAR(20),prava INTEGER)";
+
+    private final static String INSERT_TYPE_TABLE_KONTROL="INSERT INTO users (user_id, user_login , user_password,user_hash,user_ip ,prava) VALUES (1,1,1, 0,0,0)";
+    //таблица типов авто содержит только типы кузовов авто
     private final static String CREATE_TYPE_TABLE = "CREATE TABLE Types (id IDENTITY , types VARCHAR(20))";
     private final static String INSERT_TYPE_TABLE = "INSERT INTO Types (id, types) VALUES (1, 'Минивэн') "+
     "INSERT INTO Types (id, types) VALUES (2, 'Кроссовер') "+
@@ -47,7 +50,7 @@ public class DatabaseService {
             "INSERT INTO Auto (id, id_brand,id_types, seat, height, width, len, descr, model, price, rating, datest) VALUES (12, 2,5,1, 1500,1890,4305,'Новый автомобиль', 'A6',540005,5,'2010-01-01') "+
             "INSERT INTO Auto (id, id_brand,id_types, seat, height, width, len, descr, model, price, rating, datest) VALUES (13, 1,5,6, 1500,1890,4305,'Старый автомобиль', 'Insignia',550005,5,'2010-01-01') ";
        //таблица содержит сведения о комплектации автомобиля
-    private final static String CREATE_TYPE_TABLE_PACKAGE = "CREATE TABLE Package (id IDENTITY , id_types  INTEGER,id_auto INTEGER,  motor INTEGER, transmission varchar(10), drive varchar(10), price FLOAT, rating INTEGER, datestart DATE, checked BIT )";
+    private final static String CREATE_TYPE_TABLE_PACKAGE = "CREATE TABLE Package (id IDENTITY , id_types  INTEGER,id_auto INTEGER,  motor INTEGER, transmission varchar(10), drive varchar(10), price DOUBLE, rating INTEGER, datestart DATE, checked INTEGER )";
        String  INSERT_TYPE_TABLE_PACKAGE="";
      public void createDatabaseTables()  throws Exception{
          //TODO Ошибка, не совпадают форматы даты....
@@ -72,6 +75,8 @@ public class DatabaseService {
          statement.executeUpdate(INSERT_TYPE_TABLE_AUTO);
          statement.executeUpdate(CREATE_TYPE_TABLE_PACKAGE);
          statement.executeUpdate(INSERT_TYPE_TABLE_PACKAGE);
+         statement.executeUpdate(CREATE_TYPE_TABLE_KONTROL);
+         statement.executeUpdate(INSERT_TYPE_TABLE_KONTROL);
         // ... create other table
         statement.close();
     }

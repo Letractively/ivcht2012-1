@@ -8,8 +8,6 @@
         <th>Трансмиссия</th>
         <th>Привод</th>
         <th>Цена</th>
-        <th>Рейтинг</th>
-        <th>Дата начала продаж</th>
         <th>Наличие</th>
 
     </tr>
@@ -19,8 +17,6 @@
             <td><c:out value="${packag.transmission}"></c:out></td>
             <td><c:out value="${packag.drive}"></c:out></td>
             <td><c:out value="${packag.price}"></c:out></td>
-            <td><c:out value="${packag.rating}"></c:out></td>
-            <td><c:out value="${packag.datestart}"></c:out></td>
             <td><c:out value="${packag.checked}"></c:out></td>
         </tr>
     </c:forEach>
