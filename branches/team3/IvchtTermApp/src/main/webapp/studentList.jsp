@@ -34,7 +34,7 @@
             <th>Удаление</th>
             <th>Редактирование</th>
         </tr>
-        <c:forEach items="${students}" var="student">
+        <c:forEach items="${students}" var="film">
             <tr>
                 <td><c:out value="${student.id}"></c:out></td>
                 <td><c:out value="${student.secondName}"></c:out></td>
@@ -48,8 +48,8 @@
         </c:forEach>
     </table>
     <c:out value="${count}"/>
-  <a href="gruppaList?i=1">Добавить</a><br/>
+  <a href="genreList?i=1">Добавить</a><br/>
     <a href="index.jsp">На главную</a><br/>
-    <a href="gruppaList?i=2">Список групп</a><br/>
+    <a href="genreList?i=2">Список групп</a><br/>
 </body>
 </html>

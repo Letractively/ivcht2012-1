@@ -5,6 +5,6 @@
 <body>
 <h2>JSP MVC Tutorial</h2>
 
-<a href="studentList">Список студентов</a>
+<a href="filmList">Список студентов</a>
 </body>
 </html>

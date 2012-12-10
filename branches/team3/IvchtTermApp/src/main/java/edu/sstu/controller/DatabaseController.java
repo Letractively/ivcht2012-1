@@ -21,13 +21,13 @@ public class DatabaseController extends HttpServlet{
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         createDatabase();
-        getServletContext().getRequestDispatcher("/studentList.jsp").forward(req,resp);
+        getServletContext().getRequestDispatcher("/filmList.jsp").forward(req,resp);
     }
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         createDatabase();
-        getServletContext().getRequestDispatcher("/studentList.jsp").forward(req,resp);
+        getServletContext().getRequestDispatcher("/filmList.jsp").forward(req,resp);
     }
 
     private void createDatabase(){

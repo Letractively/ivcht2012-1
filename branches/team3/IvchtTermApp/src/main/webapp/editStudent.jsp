@@ -76,7 +76,7 @@
 <br/>
 <br/>
 
-<a href="studentList">К списку студентов</a><br/>
+<a href="filmList">К списку студентов</a><br/>
 <a href="index.jsp">На главную</a><br/>
 </body>
 </html>

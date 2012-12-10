@@ -52,7 +52,7 @@
 
                 <select name="grId">
                     <option disabled>Выберите группу</option>
-                    <c:forEach items="${grupps}" var="gruppa">
+                    <c:forEach items="${grupps}" var="genre">
                          <option value="<c:out value='${gruppa.id}'></c:out>"><c:out value="${gruppa.namegrupp}"></c:out></option>
                      </c:forEach>
                 </select>
@@ -81,7 +81,7 @@
 <br/>
 <br/>
 
-<a href="studentList">К списку студентов</a><br/>
+<a href="filmList">К списку студентов</a><br/>
 <a href="index.jsp">На главную</a><br/>
 </body>
 </html>

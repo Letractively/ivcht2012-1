@@ -59,7 +59,7 @@
 <br/>
 <br/>
 
-<a href="gruppaList?i=2">К списку студентов</a><br/>
+<a href="genreList?i=2">К списку студентов</a><br/>
 <a href="index.jsp">На главную</a><br/>
 </body>
 </html>

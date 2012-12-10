@@ -1,5 +1,6 @@
-﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"[]>
-<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US" xml:lang="en">
+﻿<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page pageEncoding="UTF-8" %>
+<%@ taglib uri="http://java.sun.com/jstl/core" prefix="c" %><html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US" xml:lang="en">
 <head>
 
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
@@ -114,6 +115,70 @@
                                 <h2 class="art-postheader">
                 Добавление нового кинофильма
                                 </h2>
+
+    <form action="addFilm" method="post">
+        <table class="example">
+            <tr>
+                <td>Название</td>
+                <td><input type="text" name="name"/></td>
+            </tr>
+            <tr>
+                <td>инфо</td>
+                <td><input type="text" name="info" /></td>
+            </tr>
+            <tr>
+                <td>Страна</td>
+                <td><input type="text" name="country" /></td>
+            </tr>
+            <tr>
+                <td>3D</td>
+                <td><input type="text" name="D3" /></td>
+            </tr>
+            <tr>
+                <td>Дата рождения(01.01.1999)</td>
+                <td><input type="text" name="date" /></td>
+            </tr>
+
+            <tr>
+                <td>жанр</td>
+                <td>
+
+                    <select name="genreId">
+                        <option disabled>Выберите группу</option>
+                        <c:forEach items="${genres}" var="genre">
+                            <option value="<c:out value='${genre.id}'></c:out>"><c:out value="${genre.genre}"></c:out></option>
+                        </c:forEach>
+                    </select>
+
+                </td>
+
+            </tr>
+            <tr>
+                <td>
+                <td>
+                    <input type="submit" value="Добавить"/>
+                    <input type="reset" value="Очистить"/>
+                </td>
+            </tr>
+        </table>
+    </form>
+
+    <c:if test="${not empty result}">
+        <span> <c:out value="${result}"></c:out></span>
+    </c:if>
+
+    <c:if test="${not empty error}">
+        <span class="error"><c:out value="${error}"></c:out></span>
+    </c:if>
+
+    <br/>
+    <br/>
+
+    <a href="filmList">К списку студентов</a><br/>
+    <a href="index.jsp">На главную</a><br/>
+
+
+
                 <div class="cleared"></div>
                                 <div class="art-postcontent">
 

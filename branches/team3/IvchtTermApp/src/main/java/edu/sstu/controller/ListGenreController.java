@@ -1,8 +1,8 @@
 package edu.sstu.controller;
 
-import edu.sstu.model.Gruppa;
-import edu.sstu.service.GruppaService;
-import edu.sstu.service.StudentService;
+import edu.sstu.model.Genre;
+import edu.sstu.service.FilmService;
+import edu.sstu.service.GenreService;
 import edu.sstu.utils.ServiceInstancer;
 
 import javax.servlet.ServletException;
@@ -12,10 +12,10 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
-public class ListGruppaController extends HttpServlet{
+public class ListGenreController extends HttpServlet{
 
-    GruppaService gruppaService = ServiceInstancer.getGruppaService();
-    StudentService studentService = ServiceInstancer.getStudentService();
+    GenreService genreService = ServiceInstancer.getGenreService();
+    FilmService filmService = ServiceInstancer.getFilmService();
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         processRequest(req, resp);
@@ -29,14 +29,14 @@ public class ListGruppaController extends HttpServlet{
     private void processRequest(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException{
         Integer i = Integer.parseInt(req.getParameter("i"));
 
-        List<Gruppa> gruppaList = gruppaService.getAllGrupps();
-        req.setAttribute("grupps", gruppaList);
+        List<Genre> genreList = genreService.getAllGenres();
+        req.setAttribute("genres", genreList);
         if (i==1) {
-        getServletContext().getRequestDispatcher("/addStudent.jsp").forward(req,resp);
+        getServletContext().getRequestDispatcher("/addFilm.jsp").forward(req,resp);
         }
        if (i==2) {
 
-            getServletContext().getRequestDispatcher("/gruppaList.jsp").forward(req,resp);
+            getServletContext().getRequestDispatcher("/genreList.jsp").forward(req,resp);
         }
     }
 }

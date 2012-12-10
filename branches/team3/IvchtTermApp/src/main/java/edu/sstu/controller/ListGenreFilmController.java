@@ -1,9 +1,9 @@
 package edu.sstu.controller;
 
-import edu.sstu.model.Gruppa;
-import edu.sstu.model.Student;
-import edu.sstu.service.GruppaService;
-import edu.sstu.service.StudentService;
+import edu.sstu.model.Genre;
+import edu.sstu.model.Film;
+import edu.sstu.service.FilmService;
+import edu.sstu.service.GenreService;
 import edu.sstu.utils.ServiceInstancer;
 
 import javax.servlet.ServletException;
@@ -21,10 +21,10 @@ import java.util.List;
  * Time: 20:26
  * To change this template use File | Settings | File Templates.
  */
-public class ListGrStudentController extends HttpServlet {
+public class ListGenreFilmController extends HttpServlet {
 
-    StudentService studentService = ServiceInstancer.getStudentService();
-    GruppaService gruppaService = ServiceInstancer.getGruppaService();
+    FilmService filmService = ServiceInstancer.getFilmService();
+    GenreService genreService = ServiceInstancer.getGenreService();
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         processRequest(req, resp);
@@ -38,20 +38,20 @@ public class ListGrStudentController extends HttpServlet {
     private void processRequest(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
         req.setCharacterEncoding("UTF-8");
         Integer id = Integer.parseInt(req.getParameter("id"));
-        List<Student> studentList = studentService.getGrStudents(id);
-        req.setAttribute("students", studentList);
-        List<Gruppa> gruppaList = gruppaService.getAllGrupps();
-        Integer count = studentList.size();
+        List<Film> filmList = filmService.getGenreFilms(id);
+        req.setAttribute("films", filmList);
+        List<Genre> genreList = genreService.getAllGenres();
+        Integer count = filmList.size();
 
-        HashMap groupMap = new HashMap<Integer, String>();
-        for (Gruppa gruppa : gruppaList){
-            groupMap.put(gruppa.getId(), gruppa.getnamegrupp());
+        HashMap genreMap = new HashMap<Integer, String>();
+        for (Genre genre : genreList){
+            genreMap.put(genre.getId(), genre.getGenre());
         }
 
-        req.setAttribute("grupps", gruppaList);
-        req.setAttribute("groupMap", groupMap );
+        req.setAttribute("genres", genreList);
+        req.setAttribute("genreMap", genreMap );
         req.setAttribute("count", count );
-        getServletContext().getRequestDispatcher("/studentList.jsp").forward(req,resp);
+        getServletContext().getRequestDispatcher("/filmList.jsp").forward(req,resp);
     }
 
 }
