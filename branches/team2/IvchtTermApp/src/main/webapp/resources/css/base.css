@@ -63,7 +63,7 @@ hr .full{
     width: 100%;
     color: #fff;
 }
-.links	{font-size:20px;}
+.links	{font-size:14px;}
 .links ul {font-weight: 600; list-style:none;  border-bottom:1px #069 dotted; width:170px; padding-left:20px;} 
 .links li {border-left:5px #069 solid;}
 .links ul li a{text-decoration:none; border:1px dotted #069; border-right:none; border-bottom:none;

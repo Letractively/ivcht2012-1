@@ -43,6 +43,6 @@ public class ListPackageController extends HttpServlet {
         }
         List<Packag> autoList = autoService.getAllPackag(id);
         req.setAttribute("packag", autoList);
-        getServletContext().getRequestDispatcher("/index.jsp").forward(req,resp);
+        getServletContext().getRequestDispatcher("/page1.jsp").forward(req,resp);
     }
 }
