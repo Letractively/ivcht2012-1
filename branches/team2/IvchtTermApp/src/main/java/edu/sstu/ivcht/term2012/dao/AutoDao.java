@@ -1,9 +1,6 @@
 package edu.sstu.ivcht.term2012.dao;
 
-import model.Auto;
-import model.Brand;
-import model.Packag;
-import model.Types;
+import model.*;
 
 import java.util.List;
 
@@ -15,6 +12,7 @@ import java.util.List;
  * To change this template use File | Settings | File Templates.
  */
 public interface AutoDao {
+
     public List<Auto> getAllAutos(int id, int tps);
 
     public void addAuto(Auto auto);
@@ -30,4 +28,12 @@ public interface AutoDao {
     public List<Types> getAllTypes();
 
     public List<Packag> getAllPackag(int id);
+
+    public void addPackage(Packag packag);
+
+    void addUser(Usr usr);
+
+    void deleteUser(int id);
+
+    public List<Usr> getAllUser();
 }

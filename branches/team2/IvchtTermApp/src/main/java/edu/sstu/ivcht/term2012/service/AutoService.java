@@ -1,10 +1,9 @@
 package edu.sstu.ivcht.term2012.service;
 
 import java.util.List;
-import model.Auto;
-import model.Brand;
-import model.Packag;
-import model.Types;
+
+import model.*;
+import sun.awt.image.PixelConverter;
 
 /**
  * Created with IntelliJ IDEA.
@@ -29,4 +28,11 @@ public interface AutoService {
     public Auto readAuto(int id);
 
    public  List<Packag> getAllPackag(int id);
+
+   public void addPackage(Packag packag);
+    public void addUser(Usr usr);
+    public void deleteUser(int id);
+    public  List<Usr> getAllUser();
+
 }
+

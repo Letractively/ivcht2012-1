@@ -22,9 +22,18 @@
         <servlet-class>edu.sstu.ivcht.term2012.controller.ListTypesController</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>ListPackageController</servlet-name>
-        <servlet-class>edu.sstu.ivcht.term2012.controller.ListPackageController</servlet-class>
+    <servlet-name>ListPackageController</servlet-name>
+    <servlet-class>edu.sstu.ivcht.term2012.controller.ListPackageController</servlet-class>
+</servlet>
+    <servlet>
+        <servlet-name>AddPackageController</servlet-name>
+        <servlet-class>edu.sstu.ivcht.term2012.controller.AddPackageController</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>AddUserController</servlet-name>
+        <servlet-class>edu.sstu.ivcht.term2012.controller.AddUserController</servlet-class>
+    </servlet>
+
 
     <servlet-mapping>
         <servlet-name>DatabaseController</servlet-name>
@@ -46,5 +55,12 @@
         <servlet-name>ListPackageController</servlet-name>
         <url-pattern>/listpackage</url-pattern>
     </servlet-mapping>
-
+    <servlet-mapping>
+        <servlet-name>AddPackageController</servlet-name>
+        <url-pattern>/addpackage</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AddUserController</servlet-name>
+        <url-pattern>/adduser</url-pattern>
+    </servlet-mapping>
 </web-app>

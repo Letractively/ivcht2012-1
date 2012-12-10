@@ -1,13 +1,12 @@
 package edu.sstu.ivcht.term2012.dao;
 
-import model.Auto;
-import model.Brand;
-import model.Packag;
-import model.Types;
+import model.*;
 
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import java.text.SimpleDateFormat;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -20,6 +19,11 @@ import java.util.List;
  */
 public class AutoDBDao implements AutoDao{
     String sql="";
+
+    public AutoDBDao() {
+        //To change body of created methods use File | Settings | File Templates.
+    }
+
     public List<Auto> getAllAutos(int id, int tps) {
         List<Auto> autoList = new LinkedList<Auto>();
         try {
@@ -128,7 +132,7 @@ public class AutoDBDao implements AutoDao{
             }
             else
             {
-                sql="SELECT Package.*, Types.types FROM Package INNER JOIN Types ON Package.id = Types.id INNER JOIN Auto ON Package.id_auto=Auto.id where id_types="+id;
+                sql="SELECT Package.*, Types.types FROM Package INNER JOIN Types ON Package.id_types = Types.id INNER JOIN Auto ON Package.id_auto=Auto.id where id_auto="+id;
             }
 
 
@@ -144,5 +148,80 @@ public class AutoDBDao implements AutoDao{
             e.printStackTrace();
         }
         return packageList;
+    }
+
+    @Override
+    public void addPackage(Packag packag) {
+
+        try {
+            Connection connection =  DataBaseConnection.getConnection();
+            Statement statement = connection.createStatement();
+           // Statement statement = connection.createStatement();
+            String sql="select  max(id) as id1 from Package";
+
+            ResultSet resultSet=statement.executeQuery(sql);
+            resultSet.next();
+            int tab_id=resultSet.getInt("id1")+1;
+
+             sql = "INSERT INTO Package (id, id_types,id_auto, motor, transmission, drive, price, rating, datestart,checked) VALUES "+
+                    "("+tab_id+",1,"+packag.getId_auto()+",?, ?,?,?,0,'2010-01-01',?)";
+            PreparedStatement pstm = connection.prepareStatement(sql);
+            pstm.setInt(1, packag.getMotor());
+            pstm.setNString(2,String.valueOf(packag.getTransmission()));
+            pstm.setNString(3, String.valueOf(packag.getDrive()));
+            pstm.setDouble(4, packag.getPrice());
+            pstm.setInt(5,packag.getChecked());
+
+
+            //statement.executeUpdate(sql);
+            pstm.executeUpdate();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+         }
+
+              public void addUser(Usr usr){
+                  try {
+                      Connection connection =  DataBaseConnection.getConnection();
+                      Statement statement = connection.createStatement();
+                      // Statement statement = connection.createStatement();
+                      String sql="select  max(user_id) as id1 from users ";
+                      ResultSet resultSet=statement.executeQuery(sql);
+                      resultSet.next();
+                      int tab_id=resultSet.getInt("id1")+1;
+
+                      sql = "INSERT INTO users (user_id, user_login , user_password,user_hash,user_ip ,prava) VALUES "+
+                              "("+tab_id+",?,?, 0,0,?)";
+                      PreparedStatement pstm = connection.prepareStatement(sql);
+                      pstm.setString(1, usr.getUser_name());
+                      pstm.setString(2, usr.getUser_pass());
+                      pstm.setInt(3, usr.getPrava());
+                      pstm.executeUpdate();
+
+                  } catch (Exception e) {
+                      e.printStackTrace();
+                  }
+              }
+    public void deleteUser(int id){
+
+    }
+    public List<Usr> getAllUser() {
+        List<Usr> userList = new LinkedList<Usr>();
+        try {
+            Connection connection =  DataBaseConnection.getConnection();
+            Statement statement = connection.createStatement();
+            ResultSet resultS =  statement.executeQuery("SELECT * FROM users");
+            while (resultS.next()) {
+                Usr users = new Usr(resultS.getInt("user_id"),resultS.getString("user_login"),resultS.getString("user_password"),resultS.getString("user_hash"),resultS.getString("user_ip"),resultS.getInt("prava"));
+                userList.add(users);
+            }
+            resultS.close();
+            statement.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return userList;
     }
 }
