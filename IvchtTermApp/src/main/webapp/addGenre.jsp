@@ -34,7 +34,6 @@
                 </div>
                 <div class="art-textblock"> </div>
                 <div class="art-headerobject"></div>
-                <script type="text/javascript" src="../swfobject.js"></script>
                 <div id="art-flash-area">
                 <div id="art-flash-container">
                 <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" width="792" height="150" id="art-flash-object">
@@ -112,25 +111,50 @@
                                 <h2 class="art-postheader">
                 Добавление нового жанра
                                 </h2>
-                <div class="cleared"></div>
-                                <div class="art-postcontent">
+                                    <form action="addFilm" method="post">
+        <table class="art-article" border="0" cellspacing="0" cellpadding="0" style="width:100%;"><tbody >
+            <tr>
+                <td> Наименование</td>
+                <td><input type="text" name="name"/></td>
+            </tr>
+             <tr>
+                 <td><input type="text" name="info"/>Описание</td> 
+            </tr>
+            <tr> 
+            
+           
+            <tr>
+                <td>Дата выхода(01.01.1900)</td>
+                <td><input type="text" name="date" /></td>
+            </tr>
+                         
+                <td>
+                    <input type="submit" value="Добавить"/>
+                    <input type="reset" value="Очистить"/>
+                </td>
+            </tr>
+     </tbody>   </table>
+    </form>
 
-<p><br /></p>
+
+    <c:if test="${not empty result}">
+        <span> <c:out value="${result}"></c:out></span>
+    </c:if>
 
 
-                </div>
-                <div class="cleared"></div>
-                </div>
+    <c:if test="${not empty error}">
+        <span class="error"><c:out value="${error}"></c:out></span>
+    </c:if>
 
-		<div class="cleared"></div>
+
     </div>
 </div>
 
-                      <div class="cleared"></div>
+                  
                     </div>
                 </div>
             </div>
-            <div class="cleared"></div>
+          
             <div class="art-footer">
                 <div class="art-footer-t"></div>
                 <div class="art-footer-l"></div>
