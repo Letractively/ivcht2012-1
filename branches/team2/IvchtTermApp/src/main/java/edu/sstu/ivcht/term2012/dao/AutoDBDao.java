@@ -22,7 +22,12 @@ public class AutoDBDao implements AutoDao{
         //To change body of created methods use File | Settings | File Templates.
     }
 
+            public void getAuto(int id_auto){
 
+            }
+            public void getPackage(int id_package){
+
+            }
             public List<Auto> getAllAutos(int id, int tps) {
         List<Auto> autoList = new LinkedList<Auto>();
         try {
@@ -106,7 +111,21 @@ public class AutoDBDao implements AutoDao{
 
     @Override
     public Auto readAuto(int id) {
-        return null;  //To change body of implemented methods use File | Settings | File Templates.
+        Auto auto=null;
+        try {
+            Connection connection =  DataBaseConnection.getConnection();
+            Statement statement = connection.createStatement();
+            sql="SELECT    Auto.*, Brand.brand, Types.types FROM Auto INNER JOIN Brand ON Auto.id_brand = Brand.id INNER JOIN Types ON Auto.id_types = Types.id where id="+id;
+            ResultSet resultSet =  statement.executeQuery(sql);
+            resultSet.next();
+            auto= new Auto(resultSet.getInt("id"),resultSet.getInt("id_brand"), resultSet.getInt("id_types"), resultSet.getString("types"),resultSet.getInt("seat"),resultSet.getInt("height"),resultSet.getInt("width"),resultSet.getInt("len"),resultSet.getString("descr"), resultSet.getString("brand"),resultSet.getString("model"),resultSet.getDouble("price"),resultSet.getInt("rating"),resultSet.getString("datest"));
+            resultSet.close();
+            statement.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return auto;  //To change body of implemented methods use File | Settings | File Templates.
     }
 
     @Override

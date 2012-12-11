@@ -6,7 +6,7 @@
 <head>
     <link rel=stylesheet href="resources/css/base.css" type="text/css">
 </head>
-<title>Автомобили</title>
+<title>Автомобили1</title>
 <body>
 <div class="block">
             <div id="head"><jsp:include page="block/head.jsp"></jsp:include></div>
