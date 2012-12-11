@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"[]>
+ <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"[]>
 <html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US" xml:lang="en">
 <head>
 
@@ -62,8 +62,8 @@
                 </div>
                 <script type="text/javascript">    swfobject.switchOffAutoHideShow(); swfobject.registerObject("art-flash-object", "9.0.0", "expressInstall.swf");</script>
                 <div class="art-logo">
-                                 <h1 class="art-logo-name"><a href="./index.html">Кино -</a></h1>
-                                                 <h2 class="art-logo-text">это жизнь, из которой                  вырезано всё скучное</h2>
+                                 <h1 class="art-logo-name"><a href="index.jsp">Кино -</a></h1>
+                                                 <h2 class="art-logo-text">это жизнь, из которой                  вырезано всё скучное</h2>
                                 </div>
             </div>
             <div class="cleared reset-box"></div>
@@ -89,7 +89,7 @@
 			</ul>
 		</li>	
 		<li>
-			<a href="./films.jsp"><span class="l"></span><span class="r"></span><span class="t">Кинофильмы</span></a>
+			<a href="films.jsp"><span class="l"></span><span class="r"></span><span class="t">Кинофильмы</span></a>
 			<ul>
 				<li>
                     <a href="filmList.jsp">Список кинофильмов</a>
@@ -148,7 +148,7 @@
 <p style="text-align:justify;"><span style="color:rgb(62, 37, 35);font-size:16px;"><br /></span></p>
 <p style="text-align:justify;"><span style="color:rgb(62, 37, 35);font-size:16px;"><br /></span></p>
 <p style="text-align:justify;"><span style="color:rgb(62, 37, 35);font-size:16px;"><br /></span></p>
-<p style="text-align:center;"><span style="color:rgb(62, 37, 35);font-size:16px;">Семейный </span></p>
+<p style="text-align:center;"><span style="color:rgb(62, 37, 35);font-size:16px;">Семейный </span></p>
 <p style="text-align:center;"></p>
 <p style="text-align:justify;">Семейный — детские фильмы и фильмы, предназначенные для просмотра всей семьёй. Фильмы этого жанра зачастую лишены насилия, имеют множество элементов мелодрамы и комедии с незамысловатым юмором. </p>
 <p style="text-align:center;"><span style="font-size:16px;"><span style="color:rgb(62, 37, 35);">Триллер </span></span></p>
