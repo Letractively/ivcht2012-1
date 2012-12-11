@@ -126,7 +126,7 @@
 				<td style="text-align:center;"><span style="font-weight:bold;"><span style="color:rgb(62, 37, 35);">Жанр</span></span></td>
 				<td style="text-align:center;"><span style="font-weight:bold;"><span style="color:rgb(62, 37, 35);">Описание</span></span></td>
 				<td style="text-align:center;"><span style="font-weight:bold;"><span style="color:rgb(62, 37, 35);">Страна</span></span></td>
-				<td style="text-align:center;"><span style="font-weight:bold;"><span style="color:rgb(62, 37, 35);">Год выхода<br /></span></span></td>
+				<td style="text-align:center;"><span style="font-weight:bold;"><span style="color:rgb(62, 37, 35);">Дата выхода<br /></span></span></td>
 				<td style="text-align:center;"><span style="font-weight:bold;"><span style="color:rgb(62, 37, 35);">Есть в 3D</span></span></td>
 				<td style="text-align:center;width:100px;"><span style="font-weight:bold;"><span style="color:rgb(62, 37, 35);">Действия</span></span></td>
 			</tr>
