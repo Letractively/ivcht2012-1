@@ -1,4 +1,4 @@
-﻿<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+ <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jstl/core" prefix="c" %>
 <head>
 
@@ -35,18 +35,18 @@
                 </div>
                 <div class="art-textblock"> </div>
                 <div class="art-headerobject"></div>
-                <script type="text/javascript" src="../swfobject.js"></script>
+             
                 <div id="art-flash-area">
                 <div id="art-flash-container">
                 <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" width="792" height="150" id="art-flash-object">
-                	<param name="movie" value="../container.swf" />
+                	<param name="movie" value="container.swf" />
                 	<param name="quality" value="high" />
                 	<param name="scale" value="default" />
                 	<param name="wmode" value="transparent" />
                 	<param name="flashvars" value="color1=0xFFFFFF&amp;alpha1=.50&amp;framerate1=24&amp;loop=true&amp;wmode=transparent&amp;clip=../images/flash.swf&amp;radius=5&amp;clipx=0&amp;clipy=-16&amp;initalclipw=900&amp;initalcliph=225&amp;clipw=900&amp;cliph=225&amp;width=792&amp;height=150&amp;textblock_width=0&amp;textblock_align=no&amp;hasTopCorners=true&amp;hasBottomCorners=false" />
                     <param name="swfliveconnect" value="true" />
                 	<!--[if !IE]>-->
-                	<object type="application/x-shockwave-flash" data="../container.swf" width="792" height="150">
+                	<object type="application/x-shockwave-flash" data="container.swf" width="792" height="150">
                 	    <param name="quality" value="high" />
                 	    <param name="scale" value="default" />
                 	    <param name="wmode" value="transparent" />
@@ -60,10 +60,9 @@
                 </object>
                 </div>
                 </div>
-                <script type="text/javascript">    swfobject.switchOffAutoHideShow(); swfobject.registerObject("art-flash-object", "9.0.0", "../expressInstall.swf");</script>
                 <div class="art-logo">
-                                 <h1 class="art-logo-name"><a href="index.html">Кино -</a></h1>
-                                                 <h2 class="art-logo-text">это жизнь, из которой                  вырезано всё скучное</h2>
+                                 <h1 class="art-logo-name"><a href="index.jsp">Кино -</a></h1>
+                                                 <h2 class="art-logo-text">это жизнь, из которой                  вырезано всё скучное</h2>
                                 </div>
             </div>
             <div class="cleared reset-box"></div>
