@@ -14,6 +14,11 @@
             <div id="left" class="links"><jsp:include page="block/left.jsp"></jsp:include></div>
             <div id="cont"><jsp:include page="block/pac.jsp"></jsp:include> </div>
             <div id="foot"><jsp:include page="block/foot.jsp"></jsp:include>
+
+
+
+
+
                 <p id="inp"><form action="">
                     <input type="text"></input>
                 </form>
