@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"[]>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"[]>
 <html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US" xml:lang="en">
 <head>
    
@@ -59,8 +59,8 @@
                 </div>
                 <script type="text/javascript">    swfobject.switchOffAutoHideShow(); swfobject.registerObject("art-flash-object", "9.0.0", "expressInstall.swf");</script>
                 <div class="art-logo">
-                                 <h1 class="art-logo-name"><a href="./index.html">Кино -</a></h1>
-                                                 <h2 class="art-logo-text">это жизнь, из которой                  вырезано всё скучное</h2>
+                                 <h1 class="art-logo-name"><a href="index.jsp">Кино -</a></h1>
+                                                 <h2 class="art-logo-text">это жизнь, из которой                  вырезано всё скучное</h2>
                                 </div>
             </div>
             <div class="cleared reset-box"></div>
@@ -70,30 +70,30 @@
 <div class="art-nav-outer">
 	<ul class="art-hmenu">
 		<li>
-			<a href="./index.jsp" class="active"><span class="l"></span><span class="r"></span><span class="t">Главная</span></a>
+			<a href="index.jsp" class="active"><span class="l"></span><span class="r"></span><span class="t">Главная</span></a>
 		</li>	
 		<li>
-			<a href="./genres.jsp"><span class="l"></span><span class="r"></span><span class="t">Жанры</span></a>
+			<a href="genres.jsp"><span class="l"></span><span class="r"></span><span class="t">Жанры</span></a>
 			<ul>
 				<li>
-                    <a href="./genreList.jsp">Список жанров</a>
+                    <a href="genreList.jsp">Список жанров</a>
 
                 </li>
 				<li>
-                    <a href="./addGenre.jsp">Добавить жанр</a>
+                    <a href="addGenre.jsp">Добавить жанр</a>
 
                 </li>
 			</ul>
 		</li>	
 		<li>
-			<a href="./films.jsp"><span class="l"></span><span class="r"></span><span class="t">Кинофильмы</span></a>
+			<a href="films.jsp"><span class="l"></span><span class="r"></span><span class="t">Кинофильмы</span></a>
 			<ul>
 				<li>
-                    <a href="./filmList.jsp">Список кинофильмов</a>
+                    <a href="filmList.jsp">Список кинофильмов</a>
 
                 </li>
 				<li>
-                    <a href="./addFilm.jsp">Добавить кинофильм</a>
+                    <a href="addFilm.jsp">Добавить кинофильм</a>
 
                 </li>
 			</ul>
@@ -114,17 +114,17 @@
                 <div class="cleared"></div>
                                 <div class="art-postcontent">
 
-<p style="text-align:center;"><span style="font-weight:bold;"><span style="font-size:16px;">Саратовский  Государственный   Технический университет</span></span></p>
+<p style="text-align:center;"><span style="font-weight:bold;"><span style="font-size:16px;">Саратовский  Государственный   Технический университет</span></span></p>
 <p style="text-align:center;"><span style="font-weight:bold;"><span style="font-size:16px;">Кафедра Информатика и вычислительна техника</span></span></p>
-<p style="text-align:center;"><span style="font-weight:bold;"><span style="font-size:16px;"><br /></span></span></p>
-<p style="text-align:center;"><span style="font-weight:bold;"><span style="font-size:16px;"><br /></span></span></p>
-<p style="text-align:center;"><span style="font-weight:bold;"><span style="font-size:16px;"><br /></span></span></p>
+<p><br /></p>
+<p><br /></p>  
+<p><br /></p> 
 <p style="text-align:center;"><span style="font-weight:bold;"><span style="font-size:28px;">Курсовая работа</span></span></p>
-<p style="text-align:right;"><span style="font-size:16px;"><span style="font-weight:bold;"><br /></span></span></p>
-<p style="text-align:right;"><span style="font-size:16px;"><span style="font-weight:bold;"><br /></span></span></p>
-<p style="text-align:right;"><span style="font-size:16px;"><span style="font-weight:bold;"><br /></span></span></p>
-<p style="text-align:right;"><span style="font-size:16px;"><span style="font-weight:bold;"> Выполнили:</span></span></p>
-<p style="text-align:right;"><span style="font-size:16px;"><span style="font-weight:bold;"> </span></span><span style="font-size:16px;font-weight:bold;">студенты группы </span></p>
+<p><br /></p>  
+<p><br /></p>  
+<p><br /></p> 
+<p style="text-align:right;"><span style="font-size:16px;"><span style="font-weight:bold;"> Выполнили:</span></span></p>
+<p style="text-align:right;"><span style="font-size:16px;"><span style="font-weight:bold;"> </span></span><span style="font-size:16px;font-weight:bold;">студенты группы </span></p>
 <p style="text-align:right;"><span style="font-size:16px;font-weight:bold;">мИВЧТ-21</span></p>
 <p style="text-align:right;"><span style="font-size:16px;font-weight:bold;">Казурова Вера</span></p>
 <p style="text-align:right;"><span style="font-size:16px;font-weight:bold;">Ручкина Ирина</span></p>
