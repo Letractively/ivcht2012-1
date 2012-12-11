@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"[]>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"[]>
 <html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US" xml:lang="en">
 <head>
 
@@ -64,7 +64,7 @@
                 <script type="text/javascript">    swfobject.switchOffAutoHideShow(); swfobject.registerObject("art-flash-object", "9.0.0", "../expressInstall.swf");</script>
                 <div class="art-logo">
                                  <h1 class="art-logo-name"><a href="index.html">Кино -</a></h1>
-                                                 <h2 class="art-logo-text">это жизнь, из которой                  вырезано всё скучное</h2>
+                                                 <h2 class="art-logo-text">это жизнь, из которой                  вырезано всё скучное</h2>
                                 </div>
             </div>
             <div class="cleared reset-box"></div>
@@ -126,16 +126,19 @@
 				<td style="text-align:center;width:403px;"><span style="font-weight:bold;"><span style="color:rgb(62, 37, 35);">Наименование</span></span></td>
 				<td style="text-align:center;width:525px;"><span style="font-weight:bold;"><span style="color:rgb(62, 37, 35);">Описание</span></span></td>
 				<td style="text-align:center;width:200px;"><span style="font-weight:bold;"><span style="color:rgb(62, 37, 35);">Дата добавления</span></span></td>
-				<td style="text-align:center;width:118px;"><span style="font-weight:bold;"><span style="color:rgb(62, 37, 35);">  Действия</span></span><br /></td>
+				<td style="text-align:center;width:118px;"><span style="font-weight:bold;"><span style="color:rgb(62, 37, 35);">  Действия</span></span><br /></td>
 			</tr>
-			<tr>
-				<td style="width:50px;"><br /></td>
-				<td style="width:403px;"><br /></td>
-				<td style="width:525px;"><br /></td>
-				<td style="width:200px;"><br /></td>
-				<td style="width:118px;"><span class="art-button-wrapper"><span class="art-button-l"> </span><span class="art-button-r"> </span><a href="" target="_self" class="art-button" style="padding-right:16px !important;padding-left:16px !important;color:rgb(255, 255, 255) !important;position:relative;top:0;display:inline-block;vertical-align:middle;white-space:nowrap;text-align:center;width:auto;height:33px;cursor:pointer;">Редактировать</a></span> <br /><span class="art-button-wrapper"><span class="art-button-l"> </span><span class="art-button-r"> </span><a title="Удалить" class="art-button" style="padding-right:16px !important;padding-left:16px !important;color:rgb(255, 255, 255) !important;position:relative;top:0;display:inline-block;vertical-align:middle;white-space:nowrap;text-align:center;width:auto;height:33px;cursor:pointer;">     Удалить    </a></span><br /></td>
-			</tr>
-		</tbody>
+
+ <c:forEach items="${students}" var="film">
+            <tr>
+                <td><c:out value="${genre.id}"></c:out></td>
+                <td><c:out value="${genre.name}"></c:out></td>
+                <td><c:out value="${genre.info}"></c:out></td>
+                <td><c:out value="${genre.date}"></c:out></td>
+                <td><a href="DeleteGenre?id=<c:out value='${genre.id}'></c:out>">удалить</a></td>
+                <td><a href="showGenre?id=<c:out value='${genre.id}'></c:out>">редактировать</a></td>
+            </tr>
+        </c:forEach>		</tbody>
 	</table>
 	<br />
 </p>
