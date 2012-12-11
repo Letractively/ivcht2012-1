@@ -115,36 +115,21 @@
                                 <h2 class="art-postheader">
                 Добавление нового кинофильма
                                 </h2>
+                                
+
 
     <form action="addFilm" method="post">
-        <table class="example">
+        <table class="art-article" border="0" cellspacing="0" cellpadding="0" style="width:100%;"><tbody >
             <tr>
-                <td>Название</td>
+                <td> Наименование</td>
                 <td><input type="text" name="name"/></td>
             </tr>
-            <tr>
-                <td>инфо</td>
-                <td><input type="text" name="info" /></td>
-            </tr>
-            <tr>
-                <td>Страна</td>
-                <td><input type="text" name="country" /></td>
-            </tr>
-            <tr>
-                <td>3D</td>
-                <td><input type="text" name="D3" /></td>
-            </tr>
-            <tr>
-                <td>Дата рождения(01.01.1999)</td>
-                <td><input type="text" name="date" /></td>
-            </tr>
-
-            <tr>
+             <tr>
                 <td>жанр</td>
                 <td>
 
                     <select name="genreId">
-                        <option disabled>Выберите группу</option>
+                        <option disabled>Выберите жанр</option>
                         <c:forEach items="${genres}" var="genre">
                             <option value="<c:out value='${genre.id}'></c:out>"><c:out value="${genre.genre}"></c:out></option>
                         </c:forEach>
@@ -153,14 +138,35 @@
                 </td>
 
             </tr>
+            <tr> 
             <tr>
-                <td>
+                <td>Описание</td>
+                <td><input type="text" name="info" /></td>
+            </tr>
+            <tr>
+                <td>Страна</td>
+                <td><input type="radio" name="country" checked="checked" />Россия</td>
+                <td><input type="radio" name="country" />Италия</td> 
+                <td><input type="radio" name="country" />Франция</td> 
+                <td><input type="radio" name="country" />Германия</td> 
+                <td><input type="radio" name="country" />Америка</td> 
+                <td><input type="radio" name="country" />Другое</td> 
+            </tr>
+            <tr>
+                <td>3D</td>
+                <td><input type="checkbox" name="D3" />Есть в 3D</td>
+            </tr>
+            <tr>
+                <td>Дата выхода(01.01.1900)</td>
+                <td><input type="text" name="date" /></td>
+            </tr>
+                         
                 <td>
                     <input type="submit" value="Добавить"/>
                     <input type="reset" value="Очистить"/>
                 </td>
             </tr>
-        </table>
+     </tbody>   </table>
     </form>
 
     <c:if test="${not empty result}">
@@ -174,7 +180,7 @@
     <br/>
     <br/>
 
-    <a href="filmList">К списку студентов</a><br/>
+    <a href="filmList.jsp">К списку фильмов</a><br/>
     <a href="index.jsp">На главную</a><br/>
 
 
