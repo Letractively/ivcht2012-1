@@ -37,7 +37,14 @@
         <servlet-name>AddAutoController</servlet-name>
         <servlet-class>edu.sstu.ivcht.term2012.controller.AddAutoController</servlet-class>
     </servlet>
-
+    <servlet>
+        <servlet-name>EditAutoController</servlet-name>
+        <servlet-class>edu.sstu.ivcht.term2012.controller.EditAutoController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ReadAutoController</servlet-name>
+        <servlet-class>edu.sstu.ivcht.term2012.controller.ReadAutoController</servlet-class>
+    </servlet>
 
     <servlet-mapping>
         <servlet-name>DatabaseController</servlet-name>
@@ -70,5 +77,13 @@
     <servlet-mapping>
         <servlet-name>AddAutoController</servlet-name>
         <url-pattern>/addauto</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>EditAutoController</servlet-name>
+        <url-pattern>/editauto</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ReadAutoController</servlet-name>
+        <url-pattern>/readauto</url-pattern>
     </servlet-mapping>
 </web-app>
