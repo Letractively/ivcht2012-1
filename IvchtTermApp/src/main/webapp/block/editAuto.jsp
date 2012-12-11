@@ -59,8 +59,8 @@
         <tr>
             <td></td>
             <td>
-                <input type="submit" value="Добавить"/>
-                <input type="reset" value="Очистить"/>
+                <input type="submit" value="Запомнить изменения"/>
+                <input type="reset" value="Ввести все снова"/>
             </td>
         </tr>
     </table>
