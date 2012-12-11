@@ -59,6 +59,22 @@ public class Auto {
         this.datest=datest;
     }
 
+    public Auto(int id_brand, int id_types, String model, int height, int width, int len, int seat, int rating,String descr, double price) {
+        //To change body of created methods use File | Settings | File Templates.
+
+        this.id_brand = id_brand;
+        this.id_types=id_types;
+        this.height = height;
+        this.seat=seat;
+        this.len=len;
+        this.width=width;
+        this.descr=descr;
+        this.model=model;
+        this.price=price;
+        this.rating=rating;
+
+    }
+
     public String getTypes() {
         return types;
     }

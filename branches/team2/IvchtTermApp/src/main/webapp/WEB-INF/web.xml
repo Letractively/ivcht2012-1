@@ -33,6 +33,10 @@
         <servlet-name>AddUserController</servlet-name>
         <servlet-class>edu.sstu.ivcht.term2012.controller.AddUserController</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>AddAutoController</servlet-name>
+        <servlet-class>edu.sstu.ivcht.term2012.controller.AddAutoController</servlet-class>
+    </servlet>
 
 
     <servlet-mapping>
@@ -62,5 +66,9 @@
     <servlet-mapping>
         <servlet-name>AddUserController</servlet-name>
         <url-pattern>/adduser</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AddAutoController</servlet-name>
+        <url-pattern>/addauto</url-pattern>
     </servlet-mapping>
 </web-app>

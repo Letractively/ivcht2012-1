@@ -35,7 +35,7 @@ public class DatabaseService {
             "INSERT INTO Brand (id, brand) VALUES (5, 'Peugeot') "+
             "INSERT INTO Brand (id, brand) VALUES (6, 'Ваз')";
        //таблица автомобилей включает: ссылку на таблицу с брендами машин, число мест в авто, габариты авто и его описание
-    private final static String CREATE_TYPE_TABLE_AUTO = "CREATE TABLE Auto (id IDENTITY , id_brand  INTEGER, id_types INTEGER, seat  INTEGER, height  INTEGER, width  INTEGER, len INTEGER, descr VARCHAR(100), model VARCHAR(100),price FLOAT,rating INTEGER,datest DATE )";
+    private final static String CREATE_TYPE_TABLE_AUTO = "CREATE TABLE Auto (id IDENTITY , id_brand  INTEGER, id_types INTEGER, seat  INTEGER, height  INTEGER, width  INTEGER, len INTEGER, descr VARCHAR(100), model VARCHAR(100),price DOUBLE,rating INTEGER,datest DATE )";
     private final static String INSERT_TYPE_TABLE_AUTO = "INSERT INTO Auto (id, id_brand,id_types, seat, height, width, len, descr, model, price, rating, datest) VALUES (1, 1,1,5, 1500,1890,4305,'Первый автомобиль', 'Meriva',430005,5,'2010-01-01') "+
             "INSERT INTO Auto (id, id_brand,id_types, seat, height, width, len, descr, model, price, rating, datest) VALUES (2, 1,2,5, 1500,1890,4305,'Первый автомобиль', 'Astra',440005,5,'2009-01-01') "+
             "INSERT INTO Auto (id, id_brand,id_types, seat, height, width, len, descr, model, price, rating, datest) VALUES (3, 2,3,5, 1500,1990,4305,'Второй автомобиль', 'A4',450005,5,'2011-01-01') "+

@@ -51,16 +51,17 @@
                 </form>
                 </p>
                 <hr class="full">
-                <h6>
+                <h4>
                     <a href="createdatabase">Создать базу данных</a>    <br>
                     <a href="https://code.google.com/p/ivcht2012-1">Страница проекта</a>   <br>
                     <a href="listbrand">Список марок авто</a> <br>
                     <a href="listauto">Список авто</a> <br>
                     <a href="listtypes">Список кузовов</a> <br>
                     <a href="listpackage">Модели</a> <br>
-                    <a href="index.jsp">Вернуться на главную</a>
+                    <a href="index.jsp">Вернуться на главную</a> <br>
                     <a href="addpackage">Добавление модели</a> <br>
-                 </h6>
+                    <a href="addauto">Добавление авто</a> <br>
+                 </h4>
 
 </div>
 </div>

@@ -1,11 +1,9 @@
 package edu.sstu.ivcht.term2012.dao;
 
 import model.*;
+import model.Types;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.Statement;
+import java.sql.*;
 import java.text.SimpleDateFormat;
 import java.util.LinkedList;
 import java.util.List;
@@ -24,7 +22,8 @@ public class AutoDBDao implements AutoDao{
         //To change body of created methods use File | Settings | File Templates.
     }
 
-    public List<Auto> getAllAutos(int id, int tps) {
+
+            public List<Auto> getAllAutos(int id, int tps) {
         List<Auto> autoList = new LinkedList<Auto>();
         try {
             Connection connection =  DataBaseConnection.getConnection();
@@ -64,6 +63,35 @@ public class AutoDBDao implements AutoDao{
     }
 
     public void addAuto(Auto auto) {
+        try {
+            Connection connection =  DataBaseConnection.getConnection();
+            Statement statement = connection.createStatement();
+            // Statement statement = connection.createStatement();
+            String sql="select  max(id) as id1 from Auto";
+
+            ResultSet resultSet=statement.executeQuery(sql);
+            resultSet.next();
+            int tab_id=resultSet.getInt("id1")+1;
+
+          sql = "INSERT INTO Auto (id, id_brand,id_types, seat, height, width, len, descr, model, price, rating, datest) VALUES "+
+                    "("+tab_id+",?,?,?, ?,?,?,?,?,?,?,'2010-01-01')";
+            PreparedStatement pstm = connection.prepareStatement(sql);
+            pstm.setInt(1, auto.getId_brand());
+            pstm.setInt(2, auto.getId_types());
+            pstm.setInt(3, auto.getSeat());
+            pstm.setInt(4, auto.getHeight());
+            pstm.setInt(5, auto.getWidth());
+            pstm.setInt(6, auto.getLen());
+            pstm.setString(7, auto.getDescr());
+            pstm.setString(8, auto.getModel());
+            pstm.setDouble(9, auto.getPrice());
+            pstm.setInt(10, auto.getRating());
+           //statement.executeUpdate(sql);
+            pstm.executeUpdate();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
     }
 
