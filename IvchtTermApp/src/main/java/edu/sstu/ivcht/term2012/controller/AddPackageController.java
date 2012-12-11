@@ -60,8 +60,7 @@ public class AddPackageController extends HttpServlet {
             req.setAttribute("error", "Произошла ошибка при добавлении");
             e.printStackTrace();
         }
-        AutoService autoService = ServiceInstancer.getAutoService();
-        List<Auto> autoList = autoService.getAllAutos(0,0);     //получение списка авто для добавления к ним конкретной комплектации
+        List<Auto> autoList = packageService.getAllAutos(0,0);     //получение списка авто для добавления к ним конкретной комплектации
         req.setAttribute("autos", autoList);
         getServletContext().getRequestDispatcher("/block/addPackag.jsp").forward(req, resp);
     }
