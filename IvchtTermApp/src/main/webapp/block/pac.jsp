@@ -4,6 +4,9 @@
 <c:if test="${empty packag}">
     <jsp:forward page="/listpackage"/>
 </c:if>
+
+<html>
+<body>
 <table class="bordered">
     <tr>
         <th>Двигатель</th>
@@ -23,3 +26,5 @@
         </tr>
     </c:forEach>
 </table>
+</body>
+</html>

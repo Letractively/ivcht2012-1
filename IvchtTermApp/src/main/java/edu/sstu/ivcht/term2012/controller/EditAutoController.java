@@ -40,7 +40,7 @@ public class EditAutoController extends HttpServlet {
         req.setCharacterEncoding("UTF-8");
         // Integer id_auto2=0;
         String id_brand= req.getParameter("id_brand");
-        //  String price = req.getParameter("price");
+        String id = req.getParameter("id");
         String id_types = req.getParameter("id_types");
         String model = req.getParameter("model");
         String height = req.getParameter("height");
@@ -51,21 +51,27 @@ public class EditAutoController extends HttpServlet {
         String price=req.getParameter("price");
         String descr=req.getParameter("descr");
 
-
-
-        try {
-            Auto auto= new Auto(parseInt(id_brand), parseInt(id_types),model, parseInt(height), parseInt(width), parseInt(len), parseInt(seat), parseInt(rating),descr,Double.parseDouble(price));
-            autoService.addAuto(auto);
-            req.setAttribute("result", "Авто добавлено");
-
-        } catch (Exception e) {
-            req.setAttribute("error", "Произошла ошибка при добавлении");
-            e.printStackTrace();
-        }
         List<Brand> autoList = autoService.getAllBrand();
         req.setAttribute("brand", autoList);
         List<Types> typeList = autoService.getAllTypes();     //получение списка авто для добавления к ним конкретной комплектации
         req.setAttribute("types", typeList);
-        getServletContext().getRequestDispatcher("/block/addAuto.jsp").forward(req, resp);
+        String s1="0";
+
+        try {
+            Auto auto= new Auto(parseInt(id),parseInt(id_brand), parseInt(id_types),model, parseInt(height), parseInt(width), parseInt(len), parseInt(seat), parseInt(rating),descr,Double.parseDouble(price));
+            autoService.editAuto(auto);
+            s1="1";
+            req.setAttribute("result_editauto", "Авто добавлено");
+            getServletContext().getRequestDispatcher("/index.jsp").forward(req, resp);
+
+
+        } catch (Exception e) {
+            req.setAttribute("error", "");
+            e.printStackTrace();
+            String s= "/readauto?id="+parseInt(id)+"&flag="+s1;
+            getServletContext().getRequestDispatcher(s).forward(req, resp);
+        }
+
+
     }
 }

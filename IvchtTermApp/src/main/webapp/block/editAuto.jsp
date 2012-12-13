@@ -7,6 +7,7 @@
 </head>
 <body>
 <form action="editauto" accept="" method="post">
+    <input type="hidden" name="id" value="<c:out value="${auto.id}"></c:out>"/>
     <table class="example">
         <tr>
             <td>Производитель</td>
@@ -60,18 +61,14 @@
             <td></td>
             <td>
                 <input type="submit" value="Запомнить изменения"/>
-                <input type="reset" value="Ввести все снова"/>
             </td>
         </tr>
     </table>
 </form>
 
-<c:if test="${not empty result}">
-    <span> <c:out value="${result}"></c:out></span>
-</c:if>
 
-<c:if test="${not empty error}">
-    <span class="error"><c:out value="${error}"></c:out></span>
+<c:if test="${not empty flag}">
+    <script type="text/javascript">alert("Ошибка в данных, попробуйте еще раз...")</script>
 </c:if>
 </body>
 

@@ -52,22 +52,25 @@ public class AddAutoController extends HttpServlet {
         String price=req.getParameter("price");
         String descr=req.getParameter("descr");
 
-
-
-        try {
-          Auto  auto= new Auto(parseInt(id_brand), parseInt(id_types),model, parseInt(height), parseInt(width), parseInt(len), parseInt(seat), parseInt(rating),descr,Double.parseDouble(price));
-            autoService.addAuto(auto);
-            req.setAttribute("result", "Авто добавлено");
-
-        } catch (Exception e) {
-            req.setAttribute("error", "Произошла ошибка при добавлении");
-            e.printStackTrace();
-        }
         List<Brand> autoList = autoService.getAllBrand();
         req.setAttribute("brand", autoList);
         List<Types> typeList = autoService.getAllTypes();     //получение списка авто для добавления к ним конкретной комплектации
         req.setAttribute("types", typeList);
-        getServletContext().getRequestDispatcher("/block/addAuto.jsp").forward(req, resp);
+        try {
+            if(parseInt(id_brand)>0){
+                req.setAttribute("error", "Произошла ошибка при добавлении");
+                Auto  auto= new Auto(0,parseInt(id_brand), parseInt(id_types),model, parseInt(height), parseInt(width), parseInt(len), parseInt(seat), parseInt(rating),descr,Double.parseDouble(price));
+            autoService.addAuto(auto);
+            req.setAttribute("result_addauto", "Авто добавлено");
+            getServletContext().getRequestDispatcher("/index.jsp").forward(req, resp);
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            getServletContext().getRequestDispatcher("/block/addAuto.jsp").forward(req, resp);
+        }
+
+
     }
 }
 

@@ -101,12 +101,53 @@ public class AutoDBDao implements AutoDao{
     }
 
     public void editAuto(Auto auto) {
+        try {
+            Connection connection =  DataBaseConnection.getConnection();
+            Statement statement = connection.createStatement();
+            // Statement statement = connection.createStatement();
+           // String sql="select  max(id) as id1 from Auto";
+
+            ResultSet resultSet=statement.executeQuery(sql);
+            //resultSet.next();
+            //int tab_id=resultSet.getInt("id1")+1;
+
+            sql = "UPDATE Auto SET  id_brand=?,id_types=?, seat=?, height=?, width=?, len=?, descr=?, model=?, price=?, rating=?, datest='2010-01-01' where id="+auto.getId();
+
+            PreparedStatement pstm = connection.prepareStatement(sql);
+            pstm.setInt(1, auto.getId_brand());
+            pstm.setInt(2, auto.getId_types());
+            pstm.setInt(3, auto.getSeat());
+            pstm.setInt(4, auto.getHeight());
+            pstm.setInt(5, auto.getWidth());
+            pstm.setInt(6, auto.getLen());
+            pstm.setString(7, auto.getDescr());
+            pstm.setString(8, auto.getModel());
+            pstm.setDouble(9, auto.getPrice());
+            pstm.setInt(10, auto.getRating());
+                       //statement.executeUpdate(sql);
+            pstm.executeUpdate();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         //To change body of implemented methods use File | Settings | File Templates.
     }
 
 
     public void deleteAuto(int id) {
-        //To change body of implemented methods use File | Settings | File Templates.
+        try {
+            Connection connection =  DataBaseConnection.getConnection();
+            Statement statement = connection.createStatement();
+            sql="delete from Auto where id="+id;
+            statement.executeUpdate(sql);
+            sql="delete from Package where id_auto="+id;
+            statement.executeUpdate(sql);
+            statement.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        //To cha //To change body of implemented methods use File | Settings | File Templates.
     }
 
     @Override
@@ -229,7 +270,7 @@ public class AutoDBDao implements AutoDao{
 
          }
 
-              public void addUser(Usr usr){
+    public void addUser(Usr usr){
                   try {
                       Connection connection =  DataBaseConnection.getConnection();
                       Statement statement = connection.createStatement();
@@ -251,9 +292,11 @@ public class AutoDBDao implements AutoDao{
                       e.printStackTrace();
                   }
               }
+
     public void deleteUser(int id){
 
     }
+
     public List<Usr> getAllUser() {
         List<Usr> userList = new LinkedList<Usr>();
         try {

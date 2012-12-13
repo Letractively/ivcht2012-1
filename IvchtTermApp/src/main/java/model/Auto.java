@@ -42,7 +42,7 @@ public class Auto {
         this.descr=descr;
     }*/
 
-    public Auto( int id, int id_brand,int id_types, String types, int seat, int len, int width, int height, String descr, String brand, String model, double  price, int rating,String datest) {
+    public Auto( int id, int id_brand,int id_types, String types, int seat, int height, int width,int len,  String descr, String brand, String model, double  price, int rating,String datest) {
         this.id = id;
         this.id_brand = id_brand;
         this.id_types=id_types;
@@ -59,9 +59,9 @@ public class Auto {
         this.datest=datest;
     }
 
-    public Auto(int id_brand, int id_types, String model, int height, int width, int len, int seat, int rating,String descr, double price) {
+    public Auto(int id, int id_brand, int id_types, String model, int height, int width, int len, int seat, int rating, String descr, double price) {
         //To change body of created methods use File | Settings | File Templates.
-
+        this.id=id;
         this.id_brand = id_brand;
         this.id_types=id_types;
         this.height = height;
@@ -74,6 +74,8 @@ public class Auto {
         this.rating=rating;
 
     }
+
+
 
     public String getTypes() {
         return types;
