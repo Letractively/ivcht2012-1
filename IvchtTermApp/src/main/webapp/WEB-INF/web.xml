@@ -20,7 +20,7 @@
         <servlet-name>ListGenreFilmController</servlet-name>
         <servlet-class>edu.sstu.controller.ListGenreFilmController</servlet-class>
     </servlet>
-    ListGrStudentController
+
     <servlet>
         <servlet-name>ListFilmController</servlet-name>
         <servlet-class>edu.sstu.controller.ListFilmController</servlet-class>
@@ -80,6 +80,5 @@
         <servlet-name>ListGenreFilmController</servlet-name>
         <url-pattern>/filmGenreList</url-pattern>
     </servlet-mapping>
-
 
 </web-app>

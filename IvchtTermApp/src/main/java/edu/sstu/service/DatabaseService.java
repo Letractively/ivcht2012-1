@@ -9,8 +9,8 @@ import java.sql.Statement;
  * @author dkinzel
  */
 public class DatabaseService {
-    private final static String CREATE_FILM_TABLE = "CREATE TABLE films (id IDENTITY , name VARCHAR(100), info VARCHAR (1000), country VARCHAR (100), D3 Boolean, date DATE,  genreId INTEGER)";
-    private final static String CREATE_GENRE_TABLE = "CREATE TABLE genres (id IDENTITY , genre VARCHAR(100), info VARCHAR (1000), date DATE)";
+    private final static String CREATE_FILM_TABLE = "CREATE TABLE films (id IDENTITY , name VARCHAR(100), info VARCHAR (1000), country VARCHAR (100), d3 Boolean, date DATE,  genreId INTEGER)";
+    private final static String CREATE_GENRE_TABLE = "CREATE TABLE genres (id IDENTITY , name VARCHAR(100), info VARCHAR (100), text VARCHAR (100) )";
 
     public void createDatabaseTables()  throws Exception{
         Connection connection = DataBaseConnection.getConnection();

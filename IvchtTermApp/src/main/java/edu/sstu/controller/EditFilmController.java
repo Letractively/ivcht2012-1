@@ -38,7 +38,7 @@ public class EditFilmController extends HttpServlet {
         String name = req.getParameter("name");
         String info = req.getParameter("info");
         String country = req.getParameter("country");
-        Boolean D3 =  Boolean.parseBoolean( req.getParameter("D3"));
+        Boolean d3 =  Boolean.parseBoolean(req.getParameter("d3"));
         String date = req.getParameter("date");
         String genreId = req.getParameter("genreId");
 
@@ -47,7 +47,7 @@ public class EditFilmController extends HttpServlet {
                     name,
                     info,
                     country,
-                    D3,
+                    d3,
                     sdf.parse(date),
                     Integer.parseInt(genreId)
             );

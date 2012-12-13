@@ -134,11 +134,13 @@
                 <tr>
                     <td><c:out value="${film.id}"></c:out></td>
                     <td><c:out value="${film.name}"></c:out></td>
+                    <td><c:out value="${genreMap[film.genreId]}"/><br/></td>
                     <td><c:out value="${film.info}"></c:out></td>
                     <td><c:out value="${film.country}"></c:out></td>
-                    <td><c:out value="${film.D3}"></c:out></td>
                     <td><c:out value="${film.date}"></c:out></td>
-                    <td><c:out value="${groupMap[film.genreId]}"/><br/></td>
+                    <td><c:out value="${film.d3}"></c:out></td>
+
+
                     <td><a href="DeleteFilm?id=<c:out value='${film.id}'></c:out>">удалить</a>
                     <a href="showFilm?id=<c:out value='${film.id}'></c:out>">редактировать</a></td>
 
