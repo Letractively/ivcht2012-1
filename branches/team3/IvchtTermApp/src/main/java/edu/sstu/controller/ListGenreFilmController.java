@@ -45,7 +45,7 @@ public class ListGenreFilmController extends HttpServlet {
 
         HashMap genreMap = new HashMap<Integer, String>();
         for (Genre genre : genreList){
-            genreMap.put(genre.getId(), genre.getGenre());
+            genreMap.put(genre.getId(), genre.getName());
         }
 
         req.setAttribute("genres", genreList);

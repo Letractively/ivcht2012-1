@@ -1,7 +1,6 @@
 package edu.sstu.model;
 
 import java.text.SimpleDateFormat;
-import java.util.Date;
 
 /**
  * Created with IntelliJ IDEA.
@@ -13,22 +12,24 @@ import java.util.Date;
 public class Genre {
     private static SimpleDateFormat sdf = new SimpleDateFormat("dd.MM.yyyy");
     private int id;
-    private String genre;
+    private String name;
     private String info;
-    private Date date;
+    private String text;
 
-    public Genre(int id, String genre, String info, Date date) {
+
+    public Genre(int id, String name, String info, String text) {
         this.id = id;
-        this.genre = genre;
+        this.name = name;
         this.info = info;
-        this.date = date;
+        this.text = text;
+
     }
 
-    public Genre(String genre, String info, Date date) {
-        this.genre = genre;
+    public Genre(String name, String info, String text) {
+        this.name = name;
         this.info = info;
-        this.date = date;
-    }
+        this.text = text;
+      }
 
     public static SimpleDateFormat getSdf() {
         return sdf;
@@ -46,12 +47,12 @@ public class Genre {
         this.id = id;
     }
 
-    public String getGenre() {
-        return genre;
+    public String getName() {
+        return name;
     }
 
-    public void setGenre(String genre) {
-        this.genre = genre;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getInfo() {
@@ -62,14 +63,16 @@ public class Genre {
         this.info = info;
     }
 
-    public Date getDate() {
-        return date;
+
+
+    public void setText(String text1) {
+        this.text = text;
     }
 
-    public void setDate(Date date) {
-        this.date = date;
-    }
 
+    public String getText() {
+        return text;
+    }
 
 
 }

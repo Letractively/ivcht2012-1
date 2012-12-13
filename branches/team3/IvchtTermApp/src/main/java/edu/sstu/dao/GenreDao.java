@@ -10,7 +10,7 @@ public interface GenreDao {
 
     public List<Genre> getAllGenres();
 
-    public void addGenre(Genre genre);
+    public void addGenre(Genre gn);
 
     public Film editGenre(Genre Genre);
 

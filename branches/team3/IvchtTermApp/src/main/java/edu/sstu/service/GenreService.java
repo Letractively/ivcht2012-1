@@ -10,9 +10,9 @@ public interface GenreService {
 
     public List<Genre> getAllGenres();
 
-    public void addGenre(Genre genre);
+    public void addGenre(Genre gn);
 
-   public Film editGenre(Genre Genre);
+   public Film editGenre(Genre genre);
 
     public Film showGenre(int id);
 

@@ -1,4 +1,4 @@
- <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+﻿ <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ page pageEncoding="UTF-8" %>
 <%@ taglib uri="http://java.sun.com/jstl/core" prefix="c" %><html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US" xml:lang="en">
 <head>
@@ -131,7 +131,7 @@
                     <select name="genreId">
                         <option disabled>Выберите жанр</option>
                         <c:forEach items="${genres}" var="genre">
-                            <option value="<c:out value='${genre.id}'></c:out>"><c:out value="${genre.genre}"></c:out></option>
+                            <option value="<c:out value='${genre.id}'></c:out>"><c:out value="${genre.name}"></c:out></option>
                         </c:forEach>
                     </select>
 
@@ -145,16 +145,16 @@
             </tr>
             <tr>
                 <td>Страна</td>
-                <td><input type="radio" name="country" checked="checked" />Россия</td>
-                <td><input type="radio" name="country" />Италия</td> 
-                <td><input type="radio" name="country" />Франция</td> 
-                <td><input type="radio" name="country" />Германия</td> 
-                <td><input type="radio" name="country" />Америка</td> 
-                <td><input type="radio" name="country" />Другое</td> 
+                <td><input type="radio" name="country" checked="checked" value="Россия"/>Россия</td>
+                <td><input type="radio" name="country" value="Италия"/>Италия</td>
+                <td><input type="radio" name="country" value="Франци"/>Франция</td>
+                <td><input type="radio" name="country" value="Германия"/>Германия</td>
+                <td><input type="radio" name="country" value="Америк"/>Америка</td>
+                <td><input type="radio" name="country" value="Другое"/>Другое</td>
             </tr>
             <tr>
                 <td>3D</td>
-                <td><input type="checkbox" name="D3" />Есть в 3D</td>
+                <td><input type="checkbox" name="d3" checked value="1"/>Есть в 3D</td>
             </tr>
             <tr>
                 <td>Дата выхода(01.01.1900)</td>

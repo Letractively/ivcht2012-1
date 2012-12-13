@@ -1,6 +1,5 @@
 package edu.sstu.controller;
 
-import edu.sstu.model.Film;
 import edu.sstu.model.Genre;
 import edu.sstu.service.GenreService;
 import edu.sstu.utils.ServiceInstancer;
@@ -30,23 +29,21 @@ public class AddGenreController extends HttpServlet {
         req.setCharacterEncoding("UTF-8");
 
 
-        String genre = req.getParameter("genre");
+        String name = req.getParameter("name");
         String info = req.getParameter("info");
-        String date = req.getParameter("date");
-
-
+        String text = req.getParameter("text");
+       // String date1 = "01.02.2000";
 
 
         try {
             Genre gn = new Genre(
-                    genre,
+                    name,
                     info,
-                   sdf.parse(date)
+                    text
             );
             genreService.addGenre(gn);
-            req.setAttribute("result", "Фильм успешно добавлен");
-            genreService.getAllGenres();
-            req.setAttribute("result", "Фильм успешно добавлен");
+            req.setAttribute("result", "Жанр успешно добавлен");
+
         } catch (Exception e) {
             req.setAttribute("error", "Произошла ошибка при добавлении фильма");
             e.printStackTrace();

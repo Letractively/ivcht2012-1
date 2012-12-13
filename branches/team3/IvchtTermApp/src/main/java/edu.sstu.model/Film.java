@@ -10,7 +10,7 @@ public class Film {
     private String name;
     private String info;
     private String country;
-    private Boolean D3;
+    private Boolean d3;
     private Date date;
     public int genreId;
 
@@ -21,7 +21,7 @@ public class Film {
         this.name = name;
         this.info = info;
         this.country = country;
-        D3 = d3;
+        this.d3 = d3;
         this.date = date;
         this.genreId = genreId;
     }
@@ -31,7 +31,7 @@ public class Film {
         this.name = name;
         this.info = info;
         this.country = country;
-        D3 = d3;
+        this.d3 = d3;
         this.date = date;
         this.genreId = genreId;
     }
@@ -77,11 +77,11 @@ public class Film {
     }
 
     public Boolean getD3() {
-        return D3;
+        return d3;
     }
 
     public void setD3(Boolean d3) {
-        D3 = d3;
+        d3 = d3;
     }
 
     public Date getDate() {

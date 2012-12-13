@@ -1,4 +1,5 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"[]>
+﻿<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib uri="http://java.sun.com/jstl/core" prefix="c" %>
 <html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US" xml:lang="en">
 <head>
 
@@ -80,7 +81,7 @@
 			<a href="genres.jsp" class="active"><span class="l"></span><span class="r"></span><span class="t">Жанры</span></a>
 			<ul>
 				<li>
-                    <a href="genresList.jsp" class="active">Список жанров</a>
+                    <a href="genreList.jsp" class="active">Список жанров</a>
 
                 </li>
 				<li>
@@ -125,16 +126,16 @@
 				<td style="text-align:center;width:50px;"><span style="font-weight:bold;"><span style="color:rgb(62, 37, 35);">Код</span></span></td>
 				<td style="text-align:center;width:403px;"><span style="font-weight:bold;"><span style="color:rgb(62, 37, 35);">Наименование</span></span></td>
 				<td style="text-align:center;width:525px;"><span style="font-weight:bold;"><span style="color:rgb(62, 37, 35);">Описание</span></span></td>
-				<td style="text-align:center;width:200px;"><span style="font-weight:bold;"><span style="color:rgb(62, 37, 35);">Дата добавления</span></span></td>
+				<td style="text-align:center;width:200px;"><span style="font-weight:bold;"><span style="color:rgb(62, 37, 35);">text</span></span></td>
 				<td style="text-align:center;width:118px;"><span style="font-weight:bold;"><span style="color:rgb(62, 37, 35);">  Действия</span></span><br /></td>
 			</tr>
 
- <c:forEach items="${students}" var="film">
+ <c:forEach items="${genres}" var="genre">
             <tr>
                 <td><c:out value="${genre.id}"></c:out></td>
                 <td><c:out value="${genre.name}"></c:out></td>
                 <td><c:out value="${genre.info}"></c:out></td>
-                <td><c:out value="${genre.date}"></c:out></td>
+                <td><c:out value="${genre.text}"></c:out></td>
                 <td><a href="DeleteGenre?id=<c:out value='${genre.id}'></c:out>">удалить</a></td>
                 <td><a href="showGenre?id=<c:out value='${genre.id}'></c:out>">редактировать</a></td>
             </tr>

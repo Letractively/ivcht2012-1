@@ -1,6 +1,9 @@
- <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"[]>
-<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US" xml:lang="en">
+﻿<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib uri="http://java.sun.com/jstl/core" prefix="c" %>
+
+<html>
 <head>
+
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <title>Добавление нового жанра</title>
 
@@ -76,7 +79,7 @@
 			<a href="genres.jsp" class="active"><span class="l"></span><span class="r"></span><span class="t">Жанры</span></a>
 			<ul>
 				<li>
-                    <a href="genresList.jsp">Список жанров</a>
+                    <a href="genreList">Список жанров</a>
 
                 </li>
 				<li>
@@ -89,7 +92,7 @@
 			<a href="films.jsp"><span class="l"></span><span class="r"></span><span class="t">Кинофильмы</span></a>
 			<ul>
 				<li>
-                    <a href="filmList.jsp">Список кинофильмов</a>
+                    <a href="filmList">Список кинофильмов</a>
 
                 </li>
 				<li>
@@ -111,7 +114,7 @@
                                 <h2 class="art-postheader">
                 Добавление нового жанра
                                 </h2>
-                                    <form action="addFilm" method="post">
+                                    <form action="addGenre" method="post">
         <table class="art-article" border="0" cellspacing="0" cellpadding="0" style="width:100%;"><tbody >
             <tr>
                 <td> Наименование</td>
@@ -124,8 +127,8 @@
             
            
             <tr>
-                <td>Дата выхода(01.01.1900)</td>
-                <td><input type="text" name="date" /></td>
+                <td>text</td>
+                <td><input type="text" name="text" /></td>
             </tr>
                          
                 <td>

@@ -24,9 +24,10 @@ public class GenreDBDao implements GenreDao {
             while (resultSet.next()) {
                 Genre genre = new Genre(
                         resultSet.getInt("id"),
-                        resultSet.getString("genre"),
+                        resultSet.getString("name"),
                         resultSet.getString("info"),
-                        resultSet.getDate("date")
+                        resultSet.getString("text")
+
                 );
                 genreList.add(genre);
             }
@@ -38,15 +39,15 @@ public class GenreDBDao implements GenreDao {
         return genreList;
           }
 
-    public void addGenre(Genre genre) {
+    public void addGenre(Genre gn) {
         try {
 
             Connection connection =  DataBaseConnection.getConnection();
             Statement statement = connection.createStatement();
-            String sql = "INSERT INTO genres (genre, info, date) VALUES (" +
-                    "'" + genre.getGenre() + "', " +
-                    "'" + genre.getInfo() + "', " +
-                    "'" + genre.getDate() + "')";
+            String sql = "INSERT INTO genres (name, info, text) VALUES (" +
+                    "'" + gn.getName() + "', " +
+                    "'" + gn.getInfo() + "', " +
+                    "'" + gn.getText() + "')";
             statement.executeUpdate(sql);
 
         } catch (Exception e) {

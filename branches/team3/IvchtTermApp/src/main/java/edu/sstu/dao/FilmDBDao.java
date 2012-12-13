@@ -24,7 +24,7 @@ public class FilmDBDao implements FilmDao {
                         resultSet.getString("name"),
                         resultSet.getString("info"),
                         resultSet.getString("country"),
-                        resultSet.getBoolean("D3"),
+                        resultSet.getBoolean("d3"),
                         resultSet.getDate("date"),
                         resultSet.getInt("genreId")
                 );
@@ -50,7 +50,7 @@ public class FilmDBDao implements FilmDao {
                         resultSet.getString("name"),
                         resultSet.getString("info"),
                         resultSet.getString("country"),
-                        resultSet.getBoolean("D3"),
+                        resultSet.getBoolean("d3"),
                         resultSet.getDate("date"),
                         resultSet.getInt("genreId")
                 );
@@ -102,7 +102,7 @@ public class FilmDBDao implements FilmDao {
            film.setName(resultSet.getString("name"));
            film.setInfo(resultSet.getString("info"));
            film.setCountry(resultSet.getString("country"));
-           film.setD3(resultSet.getBoolean("D3"));
+           film.setD3(resultSet.getBoolean("d3"));
            film.setDate(resultSet.getDate("date"));
            film.setGenreId(resultSet.getInt("genreId"));
            resultSet.close();
@@ -129,7 +129,7 @@ public class FilmDBDao implements FilmDao {
            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
             Connection connection =  DataBaseConnection.getConnection();
             Statement statement = connection.createStatement();
-            String sql = "UPDATE films SET name='"+ film.getName()+"', info='" + film.getInfo() + "', country='" + film.getCountry() + "', D3='" + film.getD3() +
+            String sql = "UPDATE films SET name='"+ film.getName()+"', info='" + film.getInfo() + "', country='" + film.getCountry() + "', d3='" + film.getD3() +
 			"', Date='" + sdf.format(film.getDate()) + film.getGenreId() + "' where id=" + film.getId();
             statement.executeUpdate(sql);
             statement.close();

@@ -1,8 +1,6 @@
 package edu.sstu.controller;
 
-import edu.sstu.model.Film;
 import edu.sstu.model.Genre;
-import edu.sstu.service.FilmService;
 import edu.sstu.service.GenreService;
 import edu.sstu.utils.ServiceInstancer;
 
@@ -37,15 +35,15 @@ public class EditGenreController extends HttpServlet {
     private void processRequest(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException{
         req.setCharacterEncoding("UTF-8");
         Integer id =  Integer.parseInt(req.getParameter("id"));
-        String genre = req.getParameter("genre");
+        String name = req.getParameter("genre");
         String info = req.getParameter("info");
-        String date = req.getParameter("date");
+        String text = req.getParameter("text");
 
         try {
             Genre gn = new Genre( id,
-                    genre,
+                    name,
                     info,
-                    sdf.parse(date)
+                    text
             );
             genreService.editGenre(gn);
             req.setAttribute("result", "Данные обновлены");
