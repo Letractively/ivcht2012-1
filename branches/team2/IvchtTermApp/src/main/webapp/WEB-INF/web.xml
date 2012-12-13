@@ -45,6 +45,14 @@
         <servlet-name>ReadAutoController</servlet-name>
         <servlet-class>edu.sstu.ivcht.term2012.controller.ReadAutoController</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>CheckController</servlet-name>
+        <servlet-class>edu.sstu.ivcht.term2012.controller.CheckController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>DeleteAutoController</servlet-name>
+        <servlet-class>edu.sstu.ivcht.term2012.controller.DeleteAutoController</servlet-class>
+    </servlet>
 
     <servlet-mapping>
         <servlet-name>DatabaseController</servlet-name>
@@ -85,5 +93,13 @@
     <servlet-mapping>
         <servlet-name>ReadAutoController</servlet-name>
         <url-pattern>/readauto</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CheckController</servlet-name>
+        <url-pattern>/check</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DeleteAutoController</servlet-name>
+        <url-pattern>/deleteauto</url-pattern>
     </servlet-mapping>
 </web-app>

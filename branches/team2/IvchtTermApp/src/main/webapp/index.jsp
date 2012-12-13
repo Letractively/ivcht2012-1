@@ -1,6 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ page pageEncoding="UTF-8" %>
 <%@ taglib uri="http://java.sun.com/jstl/core" prefix="c" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jstl/fmt" %>
 
 <html>
 <head>
@@ -41,7 +42,8 @@
                             <td><c:out value="${auto.descr}"></c:out></td>
                             <td><c:out value="${auto.rating}"></c:out></td>
                             <td><c:out value="${auto.price}"></c:out></td>
-                                <td><button value="readauto?id=<c:out value="${auto.brand}"></c:out>"></button></td>
+                                <td><a href="readauto?id=<c:out value="${auto.id}"></c:out>">Редактировать</a></td>
+                                <td><a href="deleteauto?id=<c:out value="${auto.id}"></c:out>" onclick="confirm('Вы подтверждаете удаление?')">Удалить</a></td>
                              </form>
                         </tr>
                     </c:forEach>
@@ -50,9 +52,6 @@
 
             </div>
             <div id="foot"><jsp:include page="block/foot.jsp"></jsp:include>
-                <p id="inp"><form action="">
-                    <input type="text"></input>
-                </form>
                 </p>
                 <hr class="full">
                 <h4>
@@ -66,8 +65,22 @@
                     <a href="addpackage">Добавление модели</a> <br>
                     <a href="addauto">Добавление авто</a> <br>
                  </h4>
+                <c:if test="${not empty result_editauto}">
+                    <script type="text/javascript">alert("Изменения модели зафиксированы")</script>
 
-</div>
+                </c:if>
+                <c:if test="${not empty result_addauto}">
+                    <script type="text/javascript">alert("Внесена новая модель авто")</script>
+                </c:if>
+                <c:if test="${not empty result_deleteauto}">
+                    <script type="text/javascript">alert("Авто удалено")</script>
+                </c:if>
+                <c:if test="${not empty error_deleteauto}">
+                    <script type="text/javascript">alert("Ошибка при удалении авто")</script>
+                </c:if>
+
+
+            </div>
 </div>
 </body>
 </html>
