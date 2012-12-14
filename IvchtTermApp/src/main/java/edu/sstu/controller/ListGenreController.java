@@ -38,5 +38,9 @@ public class ListGenreController extends HttpServlet{
 
             getServletContext().getRequestDispatcher("/genreList.jsp").forward(req,resp);
         }
+        if (i==3) {
+
+            getServletContext().getRequestDispatcher("/showFilm.jsp").forward(req,resp);
+        }
     }
 }

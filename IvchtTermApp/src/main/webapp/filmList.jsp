@@ -78,7 +78,7 @@
 			<a href="genres.jsp"><span class="l"></span><span class="r"></span><span class="t">Жанры</span></a>
 			<ul>
 				<li>
-                    <a href="genresList.jsp">Список жанров</a>
+                    <a href="genreList?i=2">Список жанров</a>
 
                 </li>
 				<li>
@@ -91,11 +91,11 @@
 			<a href="films.jsp" class="active"><span class="l"></span><span class="r"></span><span class="t">Кинофильмы</span></a>
 			<ul>
 				<li>
-                    <a href="filmList.jsp" class="active">Список кинофильмов</a>
+                    <a href="filmList" class="active">Список кинофильмов</a>
 
                 </li>
 				<li>
-                    <a href="addFilm.jsp">Добавить кинофильм</a>
+                    <a href="genreList?i=1">Добавить кинофильм</a>
 
                 </li>
 			</ul>
@@ -138,8 +138,8 @@
                     <td><c:out value="${film.info}"></c:out></td>
                     <td><c:out value="${film.country}"></c:out></td>
                     <td><c:out value="${film.date}"></c:out></td>
-                    <td><c:out value="${film.d3}"></c:out></td>
 
+                    <td><input type="checkbox" name="d3"   <c:if test="${film.d3}">checked</c:if>    value="1"/>Есть в 3D</td>
 
                     <td><a href="DeleteFilm?id=<c:out value='${film.id}'></c:out>">удалить</a>
                     <a href="showFilm?id=<c:out value='${film.id}'></c:out>">редактировать</a></td>
