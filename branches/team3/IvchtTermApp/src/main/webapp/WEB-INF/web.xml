@@ -9,6 +9,10 @@
         <servlet-class>edu.sstu.controller.DeleteFilmController</servlet-class>
     </servlet>
     <servlet>
+        <servlet-name>DeleteGenreController</servlet-name>
+        <servlet-class>edu.sstu.controller.DeleteGenreController</servlet-class>
+    </servlet>
+    <servlet>
         <servlet-name>EditFilmController</servlet-name>
         <servlet-class>edu.sstu.controller.EditFilmController</servlet-class>
     </servlet>
@@ -67,6 +71,10 @@
     <servlet-mapping>
         <servlet-name>DeleteFilmController</servlet-name>
         <url-pattern>/DeleteFilm</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DeleteGenreController</servlet-name>
+        <url-pattern>/deleteGenre</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>EditFilmController</servlet-name>

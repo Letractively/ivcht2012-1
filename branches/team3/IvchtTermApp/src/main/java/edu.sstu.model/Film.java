@@ -81,7 +81,7 @@ public class Film {
     }
 
     public void setD3(Boolean d3) {
-        d3 = d3;
+        this.d3 = d3;
     }
 
     public Date getDate() {

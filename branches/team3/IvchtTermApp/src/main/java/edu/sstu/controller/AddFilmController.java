@@ -30,10 +30,9 @@ public class AddFilmController extends HttpServlet {
         req.setCharacterEncoding("UTF-8");
         String name = req.getParameter("name");
         String info = req.getParameter("info");
-        String d31 = (req.getParameter("d3"));
-        Boolean d3 =  d31.equals("1");
-       // if(d31.equals("1")) {Boolean d3 = true;  }
-      //  if(d31.equals("1")) {Boolean d3 = true;  }
+//        String d31 = (req.getParameter("d3"));
+        Boolean d3 =  req.getParameter("d3")== null ? false : true;
+
         String country = req.getParameter("country");
         String date = req.getParameter("date");
         Integer genreId =  Integer.parseInt( req.getParameter("genreId"));

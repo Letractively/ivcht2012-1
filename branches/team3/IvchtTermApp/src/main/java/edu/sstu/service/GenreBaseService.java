@@ -42,6 +42,6 @@ public class GenreBaseService implements GenreService {
     }
 
     public void deleteGenre(int id) {
-        //To change body of implemented methods use File | Settings | File Templates.
+        dao.deleteGenre(id);
     }
 }

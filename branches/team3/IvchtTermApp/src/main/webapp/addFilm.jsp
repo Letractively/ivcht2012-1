@@ -93,11 +93,11 @@
 			<a href="films.jsp" class="active"><span class="l"></span><span class="r"></span><span class="t">Кинофильмы</span></a>
 			<ul>
 				<li>
-                    <a href="filmList.jsp">Список кинофильмов</a>
+                    <a href="filmList">Список кинофильмов</a>
 
                 </li>
 				<li>
-                    <a href="addFilm.jsp" class="active">Добавить кинофильм</a>
+                    <a href="genreList?i=1" class="active">Добавить кинофильм</a>
 
                 </li>
 			</ul>
@@ -154,7 +154,7 @@
             </tr>
             <tr>
                 <td>3D</td>
-                <td><input type="checkbox" name="d3" checked value="1"/>Есть в 3D</td>
+                <td><input type="checkbox" name="d3" checked="checked" value="1"/>Есть в 3D</td>
             </tr>
             <tr>
                 <td>Дата выхода(01.01.1900)</td>

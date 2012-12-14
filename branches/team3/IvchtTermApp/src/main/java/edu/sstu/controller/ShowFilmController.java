@@ -44,7 +44,7 @@ public class ShowFilmController extends HttpServlet {
             e.printStackTrace();
         }
 
-        getServletContext().getRequestDispatcher("/editFilm.jsp").forward(req, resp);
+        getServletContext().getRequestDispatcher("/showFilm.jsp").forward(req, resp);
     }
 
 }

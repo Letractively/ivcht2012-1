@@ -64,7 +64,16 @@ public class GenreDBDao implements GenreDao {
     }
 
     public void deleteGenre(int id) {
-        //To change body of implemented methods use File | Settings | File Templates.
+
+            try {
+                Connection connection =  DataBaseConnection.getConnection();
+                Statement statement = connection.createStatement();
+                String sql = "delete from genres where id="+id;
+                statement.executeUpdate(sql);
+
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
     }
 
 
