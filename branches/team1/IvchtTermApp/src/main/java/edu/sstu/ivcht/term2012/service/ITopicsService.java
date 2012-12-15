@@ -1,12 +1,13 @@
-package edu.sstu.ivcht.term2012.dao;
+package edu.sstu.ivcht.term2012.service;
 
 import edu.sstu.ivcht.term2012.model.Topic;
 import java.util.List;
 
 /**
- * Интерфейс, для объединения вариантов источников данных
+ * Интерфейс, описывающий необходимые методы и операции с темами, требующиеся для сайта
  */
-public interface ITopicsDao {
+public interface ITopicsService {
+
     /**
      * Метод, возвращающий список всех тем
      * @return Список всех тем
@@ -30,4 +31,5 @@ public interface ITopicsDao {
      * @param id Идентификатор темы
      */
     public void deleteTopic(int id);
+
 }

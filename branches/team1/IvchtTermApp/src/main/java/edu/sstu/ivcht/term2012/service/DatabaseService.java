@@ -19,7 +19,7 @@ public class DatabaseService {
     /**
      * Константная строка - SQL запрос создания таблицы сообщений
      */
-    private final static String CREATE_MESSAGES_TABLE = "CREATE TABLE messages (id IDENTITY, subject VARCHAR(100), text VARCHAR (100), createDate DATE, topicId INTEGER)";
+    private final static String CREATE_MESSAGES_TABLE = "CREATE TABLE messages (id IDENTITY, subject VARCHAR(100), text VARCHAR (100), createDate DATE, topicID INTEGER)";
 
     /**
      * Метод, создающий необходимые таблицы в базе данных
