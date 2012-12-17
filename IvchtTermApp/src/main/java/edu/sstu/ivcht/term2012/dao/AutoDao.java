@@ -13,7 +13,7 @@ import java.util.List;
  */
 public interface AutoDao {
 
-    public List<Auto> getAllAutos(int id, int tps);
+    public List<Auto> getAllAutos(int id, int tps,int raiting);
 
     public void addAuto(Auto auto);
 

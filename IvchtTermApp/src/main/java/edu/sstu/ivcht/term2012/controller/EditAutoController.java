@@ -1,6 +1,7 @@
 package edu.sstu.ivcht.term2012.controller;
 
 import edu.sstu.ivcht.term2012.service.AutoService;
+import edu.sstu.ivcht.term2012.service.DatabaseService;
 import edu.sstu.ivcht.term2012.util.ServiceInstancer;
 import model.Auto;
 import model.Brand;
@@ -51,10 +52,7 @@ public class EditAutoController extends HttpServlet {
         String price=req.getParameter("price");
         String descr=req.getParameter("descr");
 
-        List<Brand> autoList = autoService.getAllBrand();
-        req.setAttribute("brand", autoList);
-        List<Types> typeList = autoService.getAllTypes();     //получение списка авто для добавления к ним конкретной комплектации
-        req.setAttribute("types", typeList);
+        DatabaseService.getPageData(getServletContext(), req);
         String s1="0";
 
         try {

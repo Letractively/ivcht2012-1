@@ -13,7 +13,7 @@ import sun.awt.image.PixelConverter;
  * To change this template use File | Settings | File Templates.
  */
 public interface AutoService {
-    public List<Auto> getAllAutos(int id, Integer tps);
+    public List<Auto> getAllAutos(int id, Integer tps,int raiting);
 
     public List<Brand> getAllBrand();
 

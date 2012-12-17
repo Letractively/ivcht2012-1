@@ -1,6 +1,7 @@
 package edu.sstu.ivcht.term2012.controller;
 
 import edu.sstu.ivcht.term2012.service.AutoService;
+import edu.sstu.ivcht.term2012.service.DatabaseService;
 import model.Brand;
 import edu.sstu.ivcht.term2012.util.*;
 import model.Packag;
@@ -11,6 +12,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
+import java.util.Map;
 
 /**
  * Created with IntelliJ IDEA.
@@ -43,6 +45,12 @@ public class ListPackageController extends HttpServlet {
         }
         List<Packag> autoList = autoService.getAllPackag(id);
         req.setAttribute("packag", autoList);
-        getServletContext().getRequestDispatcher("/block/pac.jsp").forward(req,resp);
+        if(Integer.parseInt(req.getParameter("page"))==1){
+        getServletContext().getRequestDispatcher("/page1.jsp").forward(req,resp);
+    }
+        else
+        {
+            getServletContext().getRequestDispatcher("/index.jsp").forward(req,resp);
+        }
     }
 }

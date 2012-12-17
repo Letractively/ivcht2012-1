@@ -1,6 +1,7 @@
 package edu.sstu.ivcht.term2012.controller;
 
 import edu.sstu.ivcht.term2012.service.AutoService;
+import edu.sstu.ivcht.term2012.service.DatabaseService;
 import edu.sstu.ivcht.term2012.util.ServiceInstancer;
 import model.Auto;
 import model.Brand;
@@ -38,12 +39,9 @@ public class ReadAutoController extends HttpServlet {
 
     private void processRequest(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
         req.setCharacterEncoding("UTF-8");
-        List<Brand> autoList = autoService.getAllBrand();
-        req.setAttribute("brand", autoList);
-        List<Types> typeList = autoService.getAllTypes();     //получение списка авто для добавления к ним конкретной комплектации
-        req.setAttribute("types", typeList);
+        DatabaseService.getPageData(getServletContext(), req);
         req.setAttribute("flag",req.getParameter("flag"));
         req.setAttribute("auto",  autoService.readAuto(parseInt(req.getParameter("id"))));
-        getServletContext().getRequestDispatcher("/block/editAuto.jsp").forward(req, resp);
+        getServletContext().getRequestDispatcher("/editpageauto.jsp").forward(req, resp);
     }
 }
