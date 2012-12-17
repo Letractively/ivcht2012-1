@@ -1,11 +1,12 @@
 package edu.sstu.dao;
 
-import edu.sstu.model.Genre;
 import edu.sstu.model.Film;
+import edu.sstu.model.Genre;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import java.text.SimpleDateFormat;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -55,15 +56,20 @@ public class GenreDBDao implements GenreDao {
         }
     }
 
-    public Film editGenre(Genre Genre) {
-        return null;  //To change body of implemented methods use File | Settings | File Templates.
+    public Genre editGenre(Genre genre) {
+        try {
+            Connection connection =  DataBaseConnection.getConnection();
+            Statement statement = connection.createStatement();
+            String sql = "UPDATE genres SET name='"+ genre.getName()+"', info='" + genre.getInfo() + "', text='" + genre.getText()  + "' where id=" + genre.getId();
+            statement.executeUpdate(sql);
+            statement.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return genre;
     }
 
-    public Film showGenre(int id) {
-        return null;  //To change body of implemented methods use File | Settings | File Templates.
-    }
-
-    public void deleteGenre(int id) {
+        public void deleteGenre(int id) {
 
             try {
                 Connection connection =  DataBaseConnection.getConnection();
@@ -76,6 +82,27 @@ public class GenreDBDao implements GenreDao {
             }
     }
 
+    public Genre showGenre(int id) {
+        Genre genre = new Genre();
+        try {
+            Connection connection = DataBaseConnection.getConnection();
+            Statement statement = connection.createStatement();
+            String sql = "SELECT * FROM genres where id=" + id;
+            ResultSet resultSet = statement.executeQuery(sql);
+            resultSet.next();
+            genre.setId(resultSet.getInt("id"));
+            genre.setName(resultSet.getString("name"));
+            genre.setInfo(resultSet.getString("info"));
+            genre.setText(resultSet.getString("text"));
+            resultSet.close();
+            statement.close();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return genre;
+    }
 
     /*  private static SimpleDateFormat sdf = new SimpleDateFormat("dd.MM.yyyy");
 public List<Film> getAllGrupps() {

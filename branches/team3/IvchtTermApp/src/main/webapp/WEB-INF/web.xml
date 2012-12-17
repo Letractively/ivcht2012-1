@@ -17,8 +17,16 @@
         <servlet-class>edu.sstu.controller.EditFilmController</servlet-class>
     </servlet>
     <servlet>
+        <servlet-name>EditGenreController</servlet-name>
+        <servlet-class>edu.sstu.controller.EditGenreController</servlet-class>
+    </servlet>
+    <servlet>
         <servlet-name>ShowFilmController</servlet-name>
         <servlet-class>edu.sstu.controller.ShowFilmController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ShowGenreController</servlet-name>
+        <servlet-class>edu.sstu.controller.ShowGenreController</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>ListGenreFilmController</servlet-name>
@@ -81,8 +89,16 @@
         <url-pattern>/editFilm</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
+        <servlet-name>EditGenreController</servlet-name>
+        <url-pattern>/editGenre</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
         <servlet-name>ShowFilmController</servlet-name>
         <url-pattern>/showFilm</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ShowGenreController</servlet-name>
+        <url-pattern>/showGenre</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>ListGenreFilmController</servlet-name>

@@ -25,7 +25,7 @@ public class FilmDBDao implements FilmDao {
                         resultSet.getString("info"),
                         resultSet.getString("country"),
                         resultSet.getBoolean("d3"),
-                        resultSet.getDate("date"),
+                       resultSet.getDate("date"),
                         resultSet.getInt("genreId")
                 );
                 filmList.add(film);
@@ -68,7 +68,8 @@ public class FilmDBDao implements FilmDao {
 
     public void addFilm(Film film) {
         try {
-           SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+//          SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+          SimpleDateFormat sdf = new SimpleDateFormat("dd.MM.yyyy");
             Connection connection =  DataBaseConnection.getConnection();
 
             PreparedStatement pstmt = connection.prepareStatement("INSERT INTO films (name, info, country, D3, date, genreId) VALUES ( ?, ?, ?, ?, ?, ?)");
@@ -87,18 +88,14 @@ public class FilmDBDao implements FilmDao {
 
 
     public Film showFilm(int id) {
-
-        Film film = new Film();
+              Film film = new Film();
         try {
             Connection connection = DataBaseConnection.getConnection();
             Statement statement = connection.createStatement();
             String sql = "SELECT * FROM films where id=" + id;
-
-
           ResultSet resultSet = statement.executeQuery(sql);
             resultSet.next();
-
-              film.setId(resultSet.getInt("id"));
+           film.setId(resultSet.getInt("id"));
            film.setName(resultSet.getString("name"));
            film.setInfo(resultSet.getString("info"));
            film.setCountry(resultSet.getString("country"));
@@ -126,11 +123,12 @@ public class FilmDBDao implements FilmDao {
 
     public Film editFilm(Film film) {
         try {
+          // SimpleDateFormat sdf = new SimpleDateFormat("dd.MM.yyyy");
            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
             Connection connection =  DataBaseConnection.getConnection();
             Statement statement = connection.createStatement();
             String sql = "UPDATE films SET name='"+ film.getName()+"', info='" + film.getInfo() + "', country='" + film.getCountry() + "', d3='" + film.getD3() +
-			"', Date='" + sdf.format(film.getDate()) + film.getGenreId() + "' where id=" + film.getId();
+			"', Date='" + sdf.format(film.getDate()) + "', genreId='" + film.getGenreId() + "' where id=" + film.getId();
             statement.executeUpdate(sql);
             statement.close();
         } catch (Exception e) {

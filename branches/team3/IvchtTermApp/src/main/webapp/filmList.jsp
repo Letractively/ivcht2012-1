@@ -66,7 +66,12 @@
                                 </div>
             </div>
             <div class="cleared reset-box"></div>
-<div class="art-nav">
+
+
+            <c:import url="/menu.jsp"></c:import>
+
+
+            <div class="art-nav">
 	<div class="art-nav-l"></div>
 	<div class="art-nav-r"></div>
 <div class="art-nav-outer">
@@ -138,11 +143,11 @@
                     <td><c:out value="${film.info}"></c:out></td>
                     <td><c:out value="${film.country}"></c:out></td>
                     <td><c:out value="${film.date}"></c:out></td>
-
                     <td><input type="checkbox" name="d3"   <c:if test="${film.d3}">checked</c:if>    value="1"/>Есть в 3D</td>
+                    <%--<td><a href="DeleteFilm?id=<c:out value='${film.id}'></c:out>">удалить</a>--%>
+                    <td><a onclick="if(confirm('Вы уверены, что хотите удалить запись?'))location.href='deleteFilm?id=<c:out value='${film.id}'></c:out>'">удалить</a></td>
 
-                    <td><a href="DeleteFilm?id=<c:out value='${film.id}'></c:out>">удалить</a>
-                    <a href="showFilm?id=<c:out value='${film.id}'></c:out>">редактировать</a></td>
+                    <td><a href="showFilm?id=<c:out value='${film.id}'></c:out>">редактировать</a></td>
 
                 </tr>
             </c:forEach>

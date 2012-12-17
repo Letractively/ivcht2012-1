@@ -49,8 +49,8 @@ public class AddFilmController extends HttpServlet {
             );
             filmService.addFilm(fl);
             req.setAttribute("result", "Фильм успешно добавлен");
-            genreService.getAllGenres();
-            req.setAttribute("result", "Фильм успешно добавлен");
+//            genreService.getAllGenres();
+//            req.setAttribute("result", "Фильм успешно добавлен");
         } catch (Exception e) {
             req.setAttribute("error", "Произошла ошибка при добавлении фильма");
             e.printStackTrace();

@@ -38,7 +38,7 @@ public class EditFilmController extends HttpServlet {
         String name = req.getParameter("name");
         String info = req.getParameter("info");
         String country = req.getParameter("country");
-        Boolean d3 =  Boolean.parseBoolean(req.getParameter("d3"));
+        Boolean d3 =  req.getParameter("d3")== null ? false : true;
         String date = req.getParameter("date");
         String genreId = req.getParameter("genreId");
 
@@ -58,7 +58,8 @@ public class EditFilmController extends HttpServlet {
             e.printStackTrace();
         }
 
-        getServletContext().getRequestDispatcher("/editFilm.jsp").forward(req, resp);
+        getServletContext().getRequestDispatcher("/filmList").forward(req, resp);
+//        getServletContext().getRequestDispatcher("/showFilm?id='${film.id}'").forward(req, resp);
 
     }
 }

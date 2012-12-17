@@ -2,7 +2,6 @@ package edu.sstu.service;
 
 import edu.sstu.dao.GenreDBDao;
 import edu.sstu.dao.GenreDao;
-import edu.sstu.model.Film;
 import edu.sstu.model.Genre;
 
 import java.util.List;
@@ -33,12 +32,12 @@ public class GenreBaseService implements GenreService {
         dao.addGenre(gn);
     }
 
-    public Film editGenre(Genre genre) {
-        return null;  //To change body of implemented methods use File | Settings | File Templates.
+    public Genre editGenre(Genre gn) {
+        return dao.editGenre(gn);  //To change body of implemented methods use File | Settings | File Templates.
     }
 
-    public Film showGenre(int id) {
-        return null;  //To change body of implemented methods use File | Settings | File Templates.
+    public Genre showGenre(int id) {
+        return dao.showGenre(id);  //To change body of implemented methods use File | Settings | File Templates.
     }
 
     public void deleteGenre(int id) {

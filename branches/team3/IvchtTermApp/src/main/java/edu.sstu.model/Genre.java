@@ -16,6 +16,8 @@ public class Genre {
     private String info;
     private String text;
 
+    public Genre() {
+    }
 
     public Genre(int id, String name, String info, String text) {
         this.id = id;
@@ -43,7 +45,7 @@ public class Genre {
         return id;
     }
 
-    public void setId(int id) {
+    public  void setId(int id) {
         this.id = id;
     }
 
@@ -65,7 +67,7 @@ public class Genre {
 
 
 
-    public void setText(String text1) {
+    public void setText(String text) {
         this.text = text;
     }
 

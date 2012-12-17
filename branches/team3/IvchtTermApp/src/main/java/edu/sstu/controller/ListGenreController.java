@@ -27,20 +27,10 @@ public class ListGenreController extends HttpServlet{
     }
 
     private void processRequest(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException{
-        Integer i = Integer.parseInt(req.getParameter("i"));
 
         List<Genre> genreList = genreService.getAllGenres();
         req.setAttribute("genres", genreList);
-        if (i==1) {
-        getServletContext().getRequestDispatcher("/addFilm.jsp").forward(req,resp);
-        }
-       if (i==2) {
+        getServletContext().getRequestDispatcher("/genreList.jsp").forward(req,resp);
 
-            getServletContext().getRequestDispatcher("/genreList.jsp").forward(req,resp);
-        }
-        if (i==3) {
-
-            getServletContext().getRequestDispatcher("/showFilm.jsp").forward(req,resp);
-        }
     }
 }

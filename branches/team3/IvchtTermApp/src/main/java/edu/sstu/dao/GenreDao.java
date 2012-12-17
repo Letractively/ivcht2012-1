@@ -1,6 +1,5 @@
 package edu.sstu.dao;
 
-import edu.sstu.model.Film;
 import edu.sstu.model.Genre;
 
 import java.util.List;
@@ -12,9 +11,9 @@ public interface GenreDao {
 
     public void addGenre(Genre gn);
 
-    public Film editGenre(Genre Genre);
+    public Genre editGenre(Genre gn);
 
-    public Film showGenre(int id);
+    public Genre showGenre(int id);
 
     public void deleteGenre(int id);
 
