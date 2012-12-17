@@ -80,7 +80,7 @@
 			<a href="genres.jsp"><span class="l"></span><span class="r"></span><span class="t">Жанры</span></a>
 			<ul>
 				<li>
-                    <a href="genresList.jsp">Список жанров</a>
+                    <a href="/genresList">Список жанров</a>
 
                 </li>
 				<li>
@@ -93,7 +93,7 @@
 			<a href="films.jsp" class="active"><span class="l"></span><span class="r"></span><span class="t">Кинофильмы</span></a>
 			<ul>
 				<li>
-                    <a href="filmList">Список кинофильмов</a>
+                    <a href="/filmList">Список кинофильмов</a>
 
                 </li>
 				<li>
@@ -145,7 +145,7 @@
             </tr>
             <tr>
                 <td>Страна</td>
-                <td><input type="radio" name="country" checked="checked" value="Россия"/>Россия</td>
+                <td><input type="radio" name="country" checked value="Россия"/>Россия</td>
                 <td><input type="radio" name="country" value="Италия"/>Италия</td>
                 <td><input type="radio" name="country" value="Франци"/>Франция</td>
                 <td><input type="radio" name="country" value="Германия"/>Германия</td>
@@ -180,7 +180,7 @@
     <br/>
     <br/>
 
-    <a href="filmList.jsp">К списку фильмов</a><br/>
+    <a href="filmList">К списку фильмов</a><br/>
     <a href="index.jsp">На главную</a><br/>
 
 

@@ -65,6 +65,8 @@
                                 </div>
             </div>
             <div class="cleared reset-box"></div>
+
+
 <div class="art-nav">
 	<div class="art-nav-l"></div>
 	<div class="art-nav-r"></div>
@@ -77,7 +79,7 @@
 			<a href="genres.jsp"><span class="l"></span><span class="r"></span><span class="t">Жанры</span></a>
 			<ul>
 				<li>
-                    <a href="genreList.jsp">Список жанров</a>
+                    <a href="genreList">Список жанров</a>
 
                 </li>
 				<li>
@@ -90,7 +92,7 @@
 			<a href="films.jsp"><span class="l"></span><span class="r"></span><span class="t">Кинофильмы</span></a>
 			<ul>
 				<li>
-                    <a href="filmList.jsp">Список кинофильмов</a>
+                    <a href="filmList">Список кинофильмов</a>
 
                 </li>
 				<li>

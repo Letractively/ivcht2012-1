@@ -80,7 +80,7 @@
 			<a href="genres.jsp"><span class="l"></span><span class="r"></span><span class="t">Жанры</span></a>
 			<ul>
 				<li>
-                    <a href="genresList.jsp">Список жанров</a>
+                    <a href="genresList">Список жанров</a>
 
                 </li>
 				<li>
@@ -118,11 +118,12 @@
                                 
 
 
-    <form action="addFilm" method="post">
+    <form action="editFilm" method="post">
         <table class="art-article" border="0" cellspacing="0" cellpadding="0" style="width:100%;"><tbody >
             <tr>
                 <td> Наименование</td>
-                <td><input type="text" name="name" value="<c:out value='${film.name}'></c:out>"/></td>
+                <td><input type="hidden"  name="id" value="<c:out value='${film.id}'></c:out>"/>
+                    <input type="text" name="name" value="<c:out value='${film.name}'></c:out>"/></td>
             </tr>
              <tr>
                 <td>жанр</td>
@@ -131,7 +132,8 @@
                     <select name="genreId">
                         <option disabled>Выберите жанр</option>
                         <c:forEach items="${genres}" var="genre">
-                            <option value="<c:out value='${genre.id}'></c:out>"><c:out value="${genre.name}"></c:out></option>
+                            <%--<c:if test="${film.genreId eq genre.id}">selected</c:if>--%>
+                            <option  value="<c:out value='${genre.id}'></c:out>"><c:out value="${genre.name}"></c:out></option>
                         </c:forEach>
                     </select>
 
@@ -145,12 +147,12 @@
             </tr>
             <tr>
                 <td>Страна</td>
-                <td><input type="radio" name="country"   <c:if test="${film.country}.equals('Россия')">checked="checked"</c:if> value="Россия"/>Россия</td>
-                <td><input type="radio" name="country" value="Италия"/>Италия</td>
-                <td><input type="radio" name="country" value="Франци"/>Франция</td>
-                <td><input type="radio" name="country" value="Германия"/>Германия</td>
-                <td><input type="radio" name="country" value="Америк"/>Америка</td>
-                <td><input type="radio" name="country" value="Другое"/>Другое</td>
+                <td><input type="radio" name="country"  <c:if test="${film.country eq 'Россия'}">checked </c:if> value="Россия"/>Россия </td>
+                <td><input type="radio" name="country" <c:if test="${film.country eq 'Италия'}">checked </c:if> value="Италия"/>Италия</td>
+                <td><input type="radio" name="country" <c:if test="${film.country eq 'Франция'}">checked </c:if> value="Франция"/>Франция</td>
+                <td><input type="radio" name="country" <c:if test="${film.country eq 'Германия'}">checked </c:if> value="Германия"/>Германия</td>
+                <td><input type="radio" name="country" <c:if test="${film.country eq 'Америка'}">checked </c:if> value="Америка"/>Америка</td>
+                <td><input type="radio" name="country" <c:if test="${film.country eq 'Другое'}">checked </c:if> value="Другое"/>Другое</td>
 
 
 
@@ -165,7 +167,7 @@
             </tr>
                          
                 <td>
-                    <input type="submit" value="Добавить"/>
+                    <input type="submit" value="Изменить"/>
                     <input type="reset" value="Очистить"/>
                 </td>
             </tr>
@@ -183,7 +185,7 @@
     <br/>
     <br/>
 
-    <a href="filmList.jsp">К списку фильмов</a><br/>
+    <a href="filmList">К списку фильмов</a><br/>
     <a href="index.jsp">На главную</a><br/>
 
 

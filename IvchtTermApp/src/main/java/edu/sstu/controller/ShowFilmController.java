@@ -1,7 +1,9 @@
 package edu.sstu.controller;
 
 import edu.sstu.model.Film;
+import edu.sstu.model.Genre;
 import edu.sstu.service.FilmService;
+import edu.sstu.service.GenreService;
 import edu.sstu.utils.ServiceInstancer;
 
 import javax.servlet.ServletException;
@@ -9,6 +11,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.List;
 
 /**
  * Created with IntelliJ IDEA.
@@ -20,7 +23,7 @@ import java.io.IOException;
 public class ShowFilmController extends HttpServlet {
 
     FilmService filmService = ServiceInstancer.getFilmService();
-
+    GenreService genreService=ServiceInstancer.getGenreService();
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         processRequest(req, resp);
@@ -39,8 +42,15 @@ public class ShowFilmController extends HttpServlet {
             Integer id = Integer.parseInt(req.getParameter("id"));
             Film film = filmService.showFilm(id);
             req.setAttribute("film", film);
+
+            List<Genre> genreList = genreService.getAllGenres();
+            req.setAttribute("genres", genreList);
+
             } catch (Exception e) {
-            req.setAttribute("error", "Произошла ошибка при добавлении студента");
+           // req.setAttribute("error", "Произошла ошибка при добавлении студента");
+            List<Genre> genreList = genreService.getAllGenres();
+            req.setAttribute("genres", genreList);
+            getServletContext().getRequestDispatcher("/addFilm.jsp").forward(req, resp);
             e.printStackTrace();
         }
 
