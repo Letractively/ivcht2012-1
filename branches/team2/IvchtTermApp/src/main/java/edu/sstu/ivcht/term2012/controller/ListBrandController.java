@@ -1,6 +1,7 @@
 package edu.sstu.ivcht.term2012.controller;
 
 import edu.sstu.ivcht.term2012.service.AutoService;
+import edu.sstu.ivcht.term2012.service.DatabaseService;
 import model.Brand;
 import edu.sstu.ivcht.term2012.util.*;
 import javax.servlet.ServletException;
@@ -31,8 +32,9 @@ public class ListBrandController extends HttpServlet {
     }
 
     private void processRequest(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException{
-        List<Brand> autoList = autoService.getAllBrand();
-        req.setAttribute("brand", autoList);
+       // List<Brand> autoList = autoService.getAllBrand();
+       // req.setAttribute("brand", autoList);
+        DatabaseService.getPageData(getServletContext(), req);
         getServletContext().getRequestDispatcher("/index.jsp").forward(req,resp);
     }
 }

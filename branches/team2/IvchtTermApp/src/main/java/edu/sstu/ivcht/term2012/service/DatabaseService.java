@@ -2,12 +2,21 @@ package edu.sstu.ivcht.term2012.service;
 
 
 import edu.sstu.ivcht.term2012.dao.DataBaseConnection;
+import edu.sstu.ivcht.term2012.util.ServiceInstancer;
+import model.Brand;
+import model.Types;
 
 
+import javax.servlet.Servlet;
+import javax.servlet.ServletContext;
+import javax.servlet.http.HttpServletRequest;
 import java.sql.Connection;
 import java.sql.Statement;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 /**
  * @author dkinzel
@@ -79,6 +88,26 @@ public class DatabaseService {
          statement.executeUpdate(INSERT_TYPE_TABLE_KONTROL);
         // ... create other table
         statement.close();
+    }
+
+
+    public static void getPageData(ServletContext context, HttpServletRequest request){
+        AutoService autoService = ServiceInstancer.getAutoService();
+        if (context.getAttribute("brand") == null) {
+            List<Brand> brand = autoService.getAllBrand(); //делаем вызов ы ДАО и получаем список;
+            context.setAttribute("brand",brand);
+
+            //...
+        }
+        if (context.getAttribute("types") == null) {
+            List<Types> types=autoService.getAllTypes();
+                    context.setAttribute("types", types); //делаем вызов ы ДАО и получаем список;
+
+            //...
+        }
+
+        request.setAttribute("brand", context.getAttribute("brand"));
+        request.setAttribute("types",context.getAttribute("types"));
     }
 
 }

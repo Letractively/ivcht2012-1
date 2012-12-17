@@ -10,7 +10,7 @@
 <title>Автомобили</title>
 <body>
 
-<%--<jsp:forward page="/createdatabase"/> -%>// Создание БД     --%>
+<%--<jsp:forward page="/createdatabase"/> -%>// Создание БД     &ndash;%&gt;--%>
 <div class="block">
             <div id="head"><jsp:include page="block/head.jsp"></jsp:include></div>
             <div id="navi" class="nav"><jsp:include page="block/navi.jsp"></jsp:include></div>
@@ -31,19 +31,23 @@
 
 
                     </tr>
+                    <c:if test="${empty autos}">
+                        <jsp:forward page="/listauto?raiting=1"/>
+                    </c:if >
                     <c:forEach items="${autos}" var="auto">
 
                         <tr>
                             <form>
                             <td><c:out value="${auto.brand}"></c:out></td>
-                            <td><a href="listpackage?tps=<c:out value="${auto.id}"></c:out>"><c:out value="${auto.model}"></c:out></a></td>
+                            <td><a href="listpackage?tps=<c:out value="${auto.id}"></c:out>&page=1"><c:out value="${auto.model}"></c:out></a></td>
                             <td><c:out value="${auto.seat}"></c:out></td>
                             <td><c:out value="${auto.len}"></c:out>x<c:out value="${auto.width}"></c:out>x<c:out value="${auto.height}"></c:out></td>
                             <td><c:out value="${auto.descr}"></c:out></td>
                             <td><c:out value="${auto.rating}"></c:out></td>
                             <td><c:out value="${auto.price}"></c:out></td>
-                                <td><a href="readauto?id=<c:out value="${auto.id}"></c:out>">Редактировать</a></td>
-                                <td><a href="deleteauto?id=<c:out value="${auto.id}"></c:out>" onclick="confirm('Вы подтверждаете удаление?')">Удалить</a></td>
+                                <td><input type=button value="Edit" onClick="location.href='readauto?id=<c:out value="${auto.id}"></c:out>&page=1'"></td>
+                                <td><a href="deleteauto?id=<c:out value="${auto.id}"></c:out>" onclick="confirm('Вы подтверждаете удаление?')
+                                ">Удалить</a></td>
                              </form>
                         </tr>
                     </c:forEach>

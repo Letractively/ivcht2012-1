@@ -1,6 +1,7 @@
 package edu.sstu.ivcht.term2012.controller;
 
 import edu.sstu.ivcht.term2012.service.AutoService;
+import edu.sstu.ivcht.term2012.service.DatabaseService;
 import model.Brand;
 import edu.sstu.ivcht.term2012.util.*;
 import model.Types;
@@ -33,8 +34,9 @@ public class ListTypesController extends HttpServlet {
     }
 
     private void processRequest(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException{
-        List<Types> autoList = autoService.getAllTypes();
-        req.setAttribute("types", autoList);
+       // List<Types> autoList = autoService.getAllTypes();
+      //  req.setAttribute("types", autoList);
+        DatabaseService.getPageData(getServletContext(), req);
         getServletContext().getRequestDispatcher("/index.jsp").forward(req,resp);
     }
 }

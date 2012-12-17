@@ -28,14 +28,14 @@ public class AutoDBDao implements AutoDao{
             public void getPackage(int id_package){
 
             }
-            public List<Auto> getAllAutos(int id, int tps) {
+            public List<Auto> getAllAutos(int id, int tps,int raiting) {
         List<Auto> autoList = new LinkedList<Auto>();
         try {
             Connection connection =  DataBaseConnection.getConnection();
             Statement statement = connection.createStatement();
             ResultSet resultSet=null;
 
-
+            if(raiting==0){
             if (id==0){
                 if(tps>0){
                     sql="SELECT    Auto.*, Brand.brand, Types.types FROM Auto INNER JOIN Brand ON Auto.id_brand = Brand.id INNER JOIN Types ON Auto.id_types = Types.id where id_types="+tps+" order by Brand.brand";
@@ -50,6 +50,11 @@ public class AutoDBDao implements AutoDao{
             else {
                   sql="SELECT    Auto.*, Brand.brand, Types.types FROM  Auto INNER JOIN Brand ON Auto.id_brand = Brand.id INNER JOIN Types ON Auto.id_types = Types.id where id_brand="+id+" order by Brand.brand";
         }
+            }
+            else
+            {
+                sql="SELECT   top 5  Auto.*, Brand.brand, Types.types FROM Auto INNER JOIN Brand ON Auto.id_brand = Brand.id INNER JOIN Types ON Auto.id_types = Types.id order by  Auto.rating desc";
+            }
             resultSet =  statement.executeQuery(sql);
             while (resultSet.next()) {
                 Auto auto = new Auto(resultSet.getInt("id"),resultSet.getInt("id_brand"), resultSet.getInt("id_types"), resultSet.getString("types"),resultSet.getInt("seat"),resultSet.getInt("height"),resultSet.getInt("width"),resultSet.getInt("len"),resultSet.getString("descr"), resultSet.getString("brand"),resultSet.getString("model"),resultSet.getDouble("price"),resultSet.getInt("rating"),resultSet.getString("datest"));
