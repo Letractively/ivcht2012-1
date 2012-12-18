@@ -27,5 +27,28 @@
 
 <body>
 topic list
+<!-- TODO: result получение переменной из сервлета -->
+
+<h2>Список тем</h2>
+<table class="example">
+    <tr>
+        <th>ID</th>
+        <th>Название</th>
+        <th>Описание</th>
+        <th>Дата создания</th>
+        <th>Изменение</th>
+        <th>Удаление</th>
+    </tr>
+    <c:forEach items="${topics}" var="topic">
+        <tr>
+            <td><c:out value="${topic.id}"></c:out></td>
+            <td><c:out value="${topic.subject}"></c:out></td>
+            <td><c:out value="${topic.description}"></c:out></td>
+            <td><c:out value="${topic.formattedDate}"></c:out></td>
+            <td><a href="editStudent?id=<c:out value="${student.id}"></c:out>">Изменить</a></td>
+            <td><a href="delStudent?id=<c:out value="${student.id}"></c:out>">Удалить</a></td>
+        </tr>
+    </c:forEach>
+</table>
 </body>
 </html>

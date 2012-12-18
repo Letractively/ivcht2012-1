@@ -52,7 +52,6 @@ Src
       messageSearchResult.jsp -- Search Message result
 
 TODO:
-2. Заполнение БД тестовыми темами
 3. Выведение списка тем
 4. Редактирование темы
 5. Удаление темы

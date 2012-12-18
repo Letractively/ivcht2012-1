@@ -9,10 +9,28 @@
         <servlet-name>DatabaseCreationController</servlet-name>
         <servlet-class>edu.sstu.ivcht.term2012.controller.DatabaseCreationController</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>DatabaseFillingController</servlet-name>
+        <servlet-class>edu.sstu.ivcht.term2012.controller.DatabaseFillingController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>TopicListController</servlet-name>
+        <servlet-class>edu.sstu.ivcht.term2012.controller.TopicListController</servlet-class>
+    </servlet>
+
+
 
     <servlet-mapping>
         <servlet-name>DatabaseCreationController</servlet-name>
         <url-pattern>/createDatabase</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DatabaseFillingController</servlet-name>
+        <url-pattern>/fillDatabase</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>TopicListController</servlet-name>
+        <url-pattern>/topicList</url-pattern>
     </servlet-mapping>
 
 </web-app>
