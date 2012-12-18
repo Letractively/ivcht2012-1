@@ -8,5 +8,15 @@
     <li><c:forEach items="${brand}" var="brand">
     <a href="listauto?id=<c:out value="${brand.id}"></c:out>"><c:out value="${brand.brand}"></c:out></a>    <br>
 </c:forEach>   </li>
+    <br>
+    <br>
+    <br>
+    <a href="pageselect.jsp">Подбор по параметрам</a>
+    <br>
+    <br>
+    <a href="addauto">Добавить автомобиль</a>
+    <br>
+    <br>
+    <a href="addpackage">Добавить комплектацию</a>
 </ul>
 

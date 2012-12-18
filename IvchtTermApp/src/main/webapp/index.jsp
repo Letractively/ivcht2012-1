@@ -46,8 +46,8 @@
                             <td><c:out value="${auto.rating}"></c:out></td>
                             <td><c:out value="${auto.price}"></c:out></td>
                                 <td><input type=button value="Edit" onClick="location.href='readauto?id=<c:out value="${auto.id}"></c:out>&page=1'"></td>
-                                <td><a href="deleteauto?id=<c:out value="${auto.id}"></c:out>" onclick="confirm('Вы подтверждаете удаление?')
-                                ">Удалить</a></td>
+                                <td><input type=button value="Delete"  onclick="if (confirm('Вы подтверждаете удаление?')){location.href='deleteauto?id=<c:out value="${auto.id}"></c:out>'}"></td>
+
                              </form>
                         </tr>
                     </c:forEach>
@@ -64,7 +64,7 @@
                     <a href="listbrand">Список марок авто</a> <br>
                     <a href="listauto">Список авто</a> <br>
                     <a href="listtypes">Список кузовов</a> <br>
-                    <a href="listpackage">Модели</a> <br>
+                    <a href="listpackage?page=1">Модели</a> <br>
                     <a href="index.jsp">Вернуться на главную</a> <br>
                     <a href="addpackage">Добавление модели</a> <br>
                     <a href="addauto">Добавление авто</a> <br>
@@ -82,6 +82,13 @@
                 <c:if test="${not empty error_deleteauto}">
                     <script type="text/javascript">alert("Ошибка при удалении авто")</script>
                 </c:if>
+                <c:if test="${not empty result_addpackage}">
+                    <script type="text/javascript">alert("Добавлена новая конфигурация")</script>
+                </c:if>
+                <c:if test="${not empty error_autos}">
+                    <script type="text/javascript">alert("Нет таких автомобилей")</script>
+                </c:if>
+
 
 
             </div>

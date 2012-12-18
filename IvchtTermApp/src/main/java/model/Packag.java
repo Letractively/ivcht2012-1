@@ -54,7 +54,9 @@ public class Packag {
         this.price=price;
     }
 
-
+    public Packag(Object aPackage) {
+        //To change body of created methods use File | Settings | File Templates.
+    }
 
 
     public double getPrice() {

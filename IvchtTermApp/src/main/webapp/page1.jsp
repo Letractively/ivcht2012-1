@@ -20,10 +20,7 @@
 
 
 
-                <p id="inp"><form action="">
-                    <input type="text"></input>
-                </form>
-                </p>
+
                 <hr class="full">
                 <h6>
                     <a href="createdatabase">Создать базу данных</a>    <br>
@@ -31,7 +28,7 @@
                     <a href="listbrand">Список марок авто</a> <br>
                     <a href="listauto">Список авто</a> <br>
                     <a href="listtypes">Список кузовов</a> <br>
-                    <a href="listpackage">Модели</a> <br>
+                    <a href="listpackage?page=1">Модели</a> <br>
                     <a href="index.jsp">Вернуться на главную</a>
                 </h6>
             </div>

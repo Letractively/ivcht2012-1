@@ -74,4 +74,12 @@ public class AutoBaseService implements AutoService {
     public List<Usr> getAllUser() {
         return dao.getAllUser();
     }
+
+
+    public Packag readPackag(int id) {
+        return  dao.readPackag(id);//To change body of implemented methods use File | Settings | File Templates.
+    }
+    public void deletePackag(int id) {
+        dao.deletePackag(id);
+    }
 }

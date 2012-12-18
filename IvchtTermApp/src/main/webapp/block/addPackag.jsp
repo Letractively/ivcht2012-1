@@ -68,18 +68,12 @@
     </table>
 </form>
 
-<c:if test="${not empty result}">
-    <span> <c:out value="${result}"></c:out></span>
-</c:if>
 
+
+<br/>
+<br/>
 <c:if test="${not empty error}">
-    <span class="error"><c:out value="${error}"></c:out></span>
+    <script type="text/javascript">alert("Ошибка в данных, попробуйте еще раз...")</script>
 </c:if>
-
-<br/>
-<br/>
-
-
-<a href="index.jsp">На главную</a><br/>
 </body>
 </html>
