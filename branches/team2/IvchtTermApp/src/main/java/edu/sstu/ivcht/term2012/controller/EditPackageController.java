@@ -10,17 +10,17 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.text.SimpleDateFormat;
+import java.util.LinkedList;
 import java.util.List;
 
 /**
  * Created with IntelliJ IDEA.
  * User: roman
- * Date: 05.12.12
- * Time: 9:58
+ * Date: 18.12.12
+ * Time: 15:41
  * To change this template use File | Settings | File Templates.
  */
-public class AddPackageController extends HttpServlet {
+public class EditPackageController extends HttpServlet {
 
     AutoService packageService = ServiceInstancer.getAutoService();
 
@@ -36,9 +36,9 @@ public class AddPackageController extends HttpServlet {
 
     private void processRequest(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
         req.setCharacterEncoding("UTF-8");
-       // Integer id_auto2=0;
-           String id_auto= req.getParameter("id_auto");
-      //  String price = req.getParameter("price");
+        // Integer id_auto2=0;
+        String id_auto= req.getParameter("id_auto");
+        //  String price = req.getParameter("price");
         String motor = req.getParameter("motor");
         String transmission = req.getParameter("transmission");
         String drive = req.getParameter("drive");
@@ -46,18 +46,24 @@ public class AddPackageController extends HttpServlet {
         String checked = req.getParameter("checked");
         Integer chk=0;
         Packag packag=null;
-
+        List listtransm=new LinkedList();
+         listtransm.add("AT");
+        listtransm.add("MT");
+        List listprivod=new LinkedList();
+        listtransm.add("Передний");
+        listtransm.add("Задний");
+        listtransm.add("Полный");
         try {
-         if (checked=="on"){
-            chk=1;
-         }
-            List<Auto> autoList = packageService.getAllAutos(0,0,0);     //получение списка авто для добавления к ним конкретной комплектации
-            req.setAttribute("autos", autoList);
+          /*  if (checked=="on"){
+                chk=1;
+            }*/
+           // List<Auto> autoList = packageService.getAllAutos(0,0,0);     //получение списка авто для добавления к ним конкретной комплектации
+           // req.setAttribute("autos", autoList);
             if(req.getParameter("id_auto")!=null){
-            packag= new Packag(Integer.parseInt(id_auto),Integer.parseInt(motor),transmission,drive,Double.parseDouble(price),chk);
+                packag= new Packag(Integer.parseInt(id_auto),Integer.parseInt(motor),transmission,drive,Double.parseDouble(price),chk);
                 packageService.addPackage(packag);
                 req.setAttribute("result", "Комплектация добавлена");
-            getServletContext().getRequestDispatcher("/index.jsp").forward(req, resp);
+                getServletContext().getRequestDispatcher("/index.jsp").forward(req, resp);
             }
             else
             {
@@ -73,4 +79,3 @@ public class AddPackageController extends HttpServlet {
 
     }
 }
-

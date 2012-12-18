@@ -48,8 +48,13 @@ public class AutoDBDao implements AutoDao{
                 }
                      }
             else {
+                if(tps>0){
+                    sql="SELECT    Auto.*, Brand.brand, Types.types FROM Auto INNER JOIN Brand ON Auto.id_brand = Brand.id INNER JOIN Types ON Auto.id_types = Types.id where Auto.id_types="+tps+" and Auto.id_brand="+id+" order by Auto.rating desc";
+                }
+                else{
                   sql="SELECT    Auto.*, Brand.brand, Types.types FROM  Auto INNER JOIN Brand ON Auto.id_brand = Brand.id INNER JOIN Types ON Auto.id_types = Types.id where id_brand="+id+" order by Brand.brand";
-        }
+                    }
+            }
             }
             else
             {
@@ -221,17 +226,17 @@ public class AutoDBDao implements AutoDao{
 
             if (id==0){
 
-              sql="SELECT Package.*, Types.types FROM Package INNER JOIN Types ON Package.id_types = Types.id INNER JOIN Auto ON Package.id_auto=Auto.id";
+              sql="SELECT Package.*, Types.types, Auto.id as id_auto FROM Package INNER JOIN Types ON Package.id_types = Types.id INNER JOIN Auto ON Package.id_auto=Auto.id";
             }
             else
             {
-                sql="SELECT Package.*, Types.types FROM Package INNER JOIN Types ON Package.id_types = Types.id INNER JOIN Auto ON Package.id_auto=Auto.id where id_auto="+id;
+                sql="SELECT Package.*, Types.types, Auto.id as id_auto FROM Package INNER JOIN Types ON Package.id_types = Types.id INNER JOIN Auto ON Package.id_auto=Auto.id where id_auto="+id;
             }
 
 
             ResultSet resultSet =  statement.executeQuery(sql);
                while (resultSet.next()) {
-               Packag packag= new Packag(resultSet.getInt("id"), resultSet.getInt("id_types"),resultSet.getInt("id_types"), resultSet.getString("types"), resultSet.getInt("motor"), resultSet.getString("transmission"), resultSet.getString("drive"), resultSet.getDouble("price"), resultSet.getInt("rating"), resultSet.getString("datestart"), resultSet.getInt("checked"));
+               Packag packag= new Packag(resultSet.getInt("id"), resultSet.getInt("id_types"),resultSet.getInt("id_auto"), resultSet.getString("types"), resultSet.getInt("motor"), resultSet.getString("transmission"), resultSet.getString("drive"), resultSet.getDouble("price"), resultSet.getInt("rating"), resultSet.getString("datestart"), resultSet.getInt("checked"));
                packageList.add(packag);
 
             }
@@ -318,5 +323,37 @@ public class AutoDBDao implements AutoDao{
             e.printStackTrace();
         }
         return userList;
+    }
+
+    @Override
+    public Packag readPackag(int id) {
+        Packag packag=null;
+        try {
+            Connection connection =  DataBaseConnection.getConnection();
+            Statement statement = connection.createStatement();
+            sql="SELECT Package.*, Types.types, Auto.id as id_auto FROM Package INNER JOIN Types ON Package.id_types = Types.id INNER JOIN Auto ON Package.id_auto=Auto.id where id="+id;
+            ResultSet resultSet =  statement.executeQuery(sql);
+            resultSet.next();
+            packag= new Packag(resultSet.getInt("id"), resultSet.getInt("id_types"),resultSet.getInt("id_auto"), resultSet.getString("types"), resultSet.getInt("motor"), resultSet.getString("transmission"), resultSet.getString("drive"), resultSet.getDouble("price"), resultSet.getInt("rating"), resultSet.getString("datestart"), resultSet.getInt("checked"));
+            resultSet.close();
+            statement.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return packag;
+    }
+
+    @Override
+    public void deletePackag(int id) {
+        try {
+            Connection connection =  DataBaseConnection.getConnection();
+            Statement statement = connection.createStatement();
+            sql="delete from Package where id="+id;
+            statement.executeUpdate(sql);
+            statement.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }

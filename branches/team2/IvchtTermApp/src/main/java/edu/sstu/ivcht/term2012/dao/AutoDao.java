@@ -36,4 +36,8 @@ public interface AutoDao {
     void deleteUser(int id);
 
     public List<Usr> getAllUser();
+
+    public Packag readPackag(int id);
+
+    void deletePackag(int id);
 }

@@ -34,5 +34,7 @@ public interface AutoService {
     public void deleteUser(int id);
     public  List<Usr> getAllUser();
 
+    public Packag readPackag(int id);
+    public void deletePackag(int id);
 }
 

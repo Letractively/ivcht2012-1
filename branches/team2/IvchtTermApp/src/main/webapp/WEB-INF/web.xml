@@ -53,6 +53,14 @@
         <servlet-name>DeleteAutoController</servlet-name>
         <servlet-class>edu.sstu.ivcht.term2012.controller.DeleteAutoController</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>SelectAutoController</servlet-name>
+        <servlet-class>edu.sstu.ivcht.term2012.controller.SelectAutoController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ReadPackageController</servlet-name>
+        <servlet-class>edu.sstu.ivcht.term2012.controller.ReadPackageController</servlet-class>
+    </servlet>
 
     <servlet-mapping>
         <servlet-name>DatabaseController</servlet-name>
@@ -101,5 +109,13 @@
     <servlet-mapping>
         <servlet-name>DeleteAutoController</servlet-name>
         <url-pattern>/deleteauto</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>SelectAutoController</servlet-name>
+        <url-pattern>/selectauto</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ReadPackageController</servlet-name>
+        <url-pattern>/readpackag</url-pattern>
     </servlet-mapping>
 </web-app>

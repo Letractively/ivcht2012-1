@@ -67,7 +67,7 @@ public class AddAutoController extends HttpServlet {
 
         } catch (Exception e) {
             e.printStackTrace();
-            getServletContext().getRequestDispatcher("/block/addAuto.jsp").forward(req, resp);
+            getServletContext().getRequestDispatcher("/pageaddauto.jsp").forward(req, resp);
         }
 
 
