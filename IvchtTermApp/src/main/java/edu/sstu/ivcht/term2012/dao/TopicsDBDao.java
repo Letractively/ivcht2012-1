@@ -39,7 +39,7 @@ public class TopicsDBDao implements ITopicsDao,ITopicsService {
                 Topic topic = new Topic(
                         resultSet.getInt("id"),
                         resultSet.getString("subject"),
-                        resultSet.getString("desciption"),
+                        resultSet.getString("description"),
                         resultSet.getDate("createDate")
                 );
                 topicList.add(topic);

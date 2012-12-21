@@ -37,6 +37,7 @@ public class TopicListController extends HttpServlet {
 
         //Устанавливает атрибут, передающийся странице. Атрибут - это список тем как раз
         req.setAttribute("topics", topicList);
+        req.setAttribute("count", topicList.size());
 
         //Вызывает страницу, не забывая передать все атрибуты
         getServletContext().getRequestDispatcher("/topicList.jsp").forward(req,resp);

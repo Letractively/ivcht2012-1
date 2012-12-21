@@ -49,6 +49,7 @@ topic list
             <td><a href="delStudent?id=<c:out value="${student.id}"></c:out>">Удалить</a></td>
         </tr>
     </c:forEach>
+    Количество тем на форуме: <c:out value="${count}"></c:out>
 </table>
 </body>
 </html>

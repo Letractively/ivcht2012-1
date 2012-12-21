@@ -15,10 +15,10 @@ public class TopicsDaoService implements ITopicsService {
     //                          Поля
 
     //Один экземпляр службы должен быть, здесь его и храним
-    private static TopicsDaoService topicsDaoService;
+    private static TopicsDaoService _topicsDaoService;
 
     //Задает вариант использования DAO
-    private ITopicsDao topicsDao = new TopicsDBDao();
+    private ITopicsDao _topicsDao = new TopicsDBDao();
 
     //                          Конструкторы
 
@@ -35,10 +35,10 @@ public class TopicsDaoService implements ITopicsService {
      * @return Экземпляр службы обработки тем
      */
     public static TopicsDaoService getInstance() {
-        if (topicsDaoService == null) {
-            topicsDaoService = new TopicsDaoService();
+        if (_topicsDaoService == null) {
+            _topicsDaoService = new TopicsDaoService();
         }
-        return topicsDaoService;
+        return _topicsDaoService;
     }
 
     //                          Обертки
@@ -48,7 +48,7 @@ public class TopicsDaoService implements ITopicsService {
      * @return Список всех тем
      */
     public List<Topic> getAllTopics() {
-        return topicsDao.getAllTopics();
+        return _topicsDao.getAllTopics();
     }
 
     /**
@@ -56,7 +56,7 @@ public class TopicsDaoService implements ITopicsService {
      * @param topic Новая тема
      */
     public void addTopic(Topic topic) {
-        topicsDao.addTopic(topic);
+        _topicsDao.addTopic(topic);
     }
 
     /**
