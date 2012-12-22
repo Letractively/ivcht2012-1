@@ -17,7 +17,10 @@
         <servlet-name>TopicListController</servlet-name>
         <servlet-class>edu.sstu.ivcht.term2012.controller.TopicListController</servlet-class>
     </servlet>
-
+    <servlet>
+        <servlet-name>TopicAddController</servlet-name>
+        <servlet-class>edu.sstu.ivcht.term2012.controller.TopicAddController</servlet-class>
+    </servlet>
 
 
     <servlet-mapping>
@@ -29,8 +32,8 @@
         <url-pattern>/fillDatabase</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>TopicListController</servlet-name>
-        <url-pattern>/topicList</url-pattern>
+        <servlet-name>TopicAddController</servlet-name>
+        <url-pattern>/topicAdd</url-pattern>
     </servlet-mapping>
 
 </web-app>

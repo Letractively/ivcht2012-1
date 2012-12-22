@@ -1,5 +1,6 @@
 package edu.sstu.ivcht.term2012.utils;
 
+import edu.sstu.ivcht.term2012.service.ITopicsService;
 import edu.sstu.ivcht.term2012.service.TopicsDaoService;
 
 /**
@@ -14,8 +15,8 @@ public class ServiceInstancer {
      * Статичный метод получения экземпляра сервиса работы с темами из service
      * @return Служба работы с темами
      */
-    public static TopicsDaoService getTopicService(){
-        //Получить же
+    public static ITopicsService getTopicService(){
+        //Получить же конкретно выбранный вариант !!!
         return TopicsDaoService.getInstance();
     }
 

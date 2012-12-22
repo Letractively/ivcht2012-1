@@ -15,6 +15,7 @@ public class MessagesDBDao implements IMessagesDao{
      * @return Список всех сообщений
      */
     public List<Message> getAllMessages() {
+        //TODO: fill message
         return null;  //To change body of implemented methods use File | Settings | File Templates.
     }
 
@@ -24,6 +25,7 @@ public class MessagesDBDao implements IMessagesDao{
      * @return Список сообщений темы
      */
     public List<Message> getTopicMessages(int topicId) {
+        //TODO: fill message
         return null;  //To change body of implemented methods use File | Settings | File Templates.
     }
 
@@ -33,6 +35,7 @@ public class MessagesDBDao implements IMessagesDao{
      * @param message Экземпляр сообщения
      */
     public void addMessage(Message message) {
+        //TODO: fill message
         //To change body of implemented methods use File | Settings | File Templates.
     }
 
@@ -42,6 +45,7 @@ public class MessagesDBDao implements IMessagesDao{
      * @param id Идентификатор сообщения
      */
     public void editMessage(int id) {
+        //TODO: fill message
         //To change body of implemented methods use File | Settings | File Templates.
     }
 
@@ -51,6 +55,7 @@ public class MessagesDBDao implements IMessagesDao{
      * @param id Идентификатор сообщения
      */
     public void deleteMessage(int id) {
+        //TODO: fill message
         //To change body of implemented methods use File | Settings | File Templates.
     }
 }

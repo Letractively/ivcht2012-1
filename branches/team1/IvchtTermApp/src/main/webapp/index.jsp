@@ -36,7 +36,7 @@
     </tr>
     <tr>
         <td>
-            <a href="createDatabase">На страницу приветствия</a>
+            <a href="topicList">Список тем</a>
         </td>
     </tr>
 </table>
