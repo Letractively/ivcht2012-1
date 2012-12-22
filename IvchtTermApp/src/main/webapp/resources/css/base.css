@@ -8,7 +8,8 @@ body {
 h1 {
    color: #000;
 }
- h6 {color: #ffffff;
+ h6 {
+    color: #ffffff;
 }
 p {
     font-family: "Tahoma, Arial";
@@ -118,8 +119,6 @@ transform: scale(1.09) rotate(-2deg);
 .nav a:hover {
     color: #f6f6f6;
     text-decoration: underline;
-
-
 }
 
 /*Для полей, чтобы красивее смотрелись*/
@@ -196,3 +195,11 @@ table {
     text-shadow: 0 1px 0 rgba(255,255,255,.5); 
 }
 
+.btn{
+    appearance:push-button;
+}
+.bord {
+    border: 1px red dotted;
+    margin: 15px 45px;
+    padding: 5px;
+}

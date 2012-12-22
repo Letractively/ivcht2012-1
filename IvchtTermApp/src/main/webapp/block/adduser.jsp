@@ -8,13 +8,8 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ page pageEncoding="UTF-8" %>
 <%@ taglib uri="http://java.sun.com/jstl/core" prefix="c" %>
-<html>
-<head>
-    <title></title>
-</head>
-<body>
 <form name="f1"  action="adduser">
-    <table> <tr><td>Пользователь</td>
+    <table class="bordered"> <tr><td>Пользователь</td>
         <td><input type="text" name="user"/></td>
     </tr>
     <tr><td>Пароль</td>
@@ -37,7 +32,7 @@
     </table>
 </form>
 <form name="f2" action="deleteuser">
-<table class="example">
+<table class="bordered">
     <tr>
         <th>ID</th>
         <th>Пользователь</th>
@@ -53,7 +48,4 @@
         <td><input type="checkbox" name="check<c:out value='${usr.id}'></c:out>" checked="checked"/></td>
     </tr>
     </c:forEach>
-
 </form>
-</body>
-</html>

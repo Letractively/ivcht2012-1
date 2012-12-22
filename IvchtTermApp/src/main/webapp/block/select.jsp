@@ -8,18 +8,13 @@
   Time: 13:02
   To change this template use File | Settings | File Templates.
 --%>
-
-<html>
-<head>
-    <title></title>
-</head>
-<body>
-<h3>Подбор авто по параметрам</h3>
+<div>
+<h1 align="center">Подбор авто по параметрам</h1>
 <form action="selectauto" accept="" method="post">
     <c:if test="${not empty error}">
         <script type="text/javascript">alert("Нет машин по заданным параметрам, попробуйте еще раз...")</script>
     </c:if>
-    <table class="example">
+    <table class="bordered">
     <tr>
         <td>Производитель</td>
         <td>
@@ -39,10 +34,9 @@
                 <c:forEach items="${types}" var="types">
                     <option value="<c:out value="${types.id}"></c:out>"><c:out value="${types.types}"></c:out></option>
                 </c:forEach>
-            </c:if>  </select></td>
+            </c:if></select></td>
     </tr>
+    <tr><td><input type="submit" value="Search"></td><td>&nbsp</td></tr>
     </table>
-<td><input type="submit" value="Search"></td>
  </form>
-</body>
-</html>
+</div>

@@ -1,7 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ page pageEncoding="UTF-8" %>
 <%@ taglib uri="http://java.sun.com/jstl/core" prefix="c" %>
-
 <html>
 <head>
     <link rel=stylesheet href="resources/css/base.css" type="text/css">
@@ -15,12 +14,6 @@
 
             <div id="cont"><jsp:include page="block/pac.jsp"></jsp:include> </div>
             <div id="foot"><jsp:include page="block/foot.jsp"></jsp:include>
-
-
-
-
-
-
                 <hr class="full">
                 <h6>
                     <a href="createdatabase">Создать базу данных</a>    <br>

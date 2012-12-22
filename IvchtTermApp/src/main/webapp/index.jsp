@@ -45,7 +45,7 @@
                             <td><c:out value="${auto.descr}"></c:out></td>
                             <td><c:out value="${auto.rating}"></c:out></td>
                             <td><c:out value="${auto.price}"></c:out></td>
-                                <td><input type=button value="Edit" onClick="location.href='readauto?id=<c:out value="${auto.id}"></c:out>&page=1'"></td>
+                                <td><input class="btn" type=button value="Edit" onClick="location.href='readauto?id=<c:out value="${auto.id}"></c:out>&page=1'"></td>
                                 <td><input type=button value="Delete"  onclick="if (confirm('Вы подтверждаете удаление?')){location.href='deleteauto?id=<c:out value="${auto.id}"></c:out>'}"></td>
 
                              </form>
@@ -58,7 +58,7 @@
             <div id="foot"><jsp:include page="block/foot.jsp"></jsp:include>
                 </p>
                 <hr class="full">
-                <h4>
+                <h6>
                     <a href="createdatabase">Создать базу данных</a>    <br>
                     <a href="https://code.google.com/p/ivcht2012-1">Страница проекта</a>   <br>
                     <a href="listbrand">Список марок авто</a> <br>
@@ -68,7 +68,7 @@
                     <a href="index.jsp">Вернуться на главную</a> <br>
                     <a href="addpackage">Добавление модели</a> <br>
                     <a href="addauto">Добавление авто</a> <br>
-                 </h4>
+                 </h6>
                 <c:if test="${not empty result_editauto}">
                     <script type="text/javascript">alert("Изменения модели зафиксированы")</script>
 
