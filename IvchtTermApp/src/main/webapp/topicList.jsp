@@ -30,7 +30,8 @@ topic list
 <!-- TODO: result получение переменной из сервлета -->
 
 <h2>Список тем</h2>
-<table class="example">
+<a href="topicAdd.jsp">Добавить тему</a>
+<table class="example" border="1">
     <tr>
         <th>ID</th>
         <th>Название</th>
@@ -45,11 +46,13 @@ topic list
             <td><c:out value="${topic.subject}"></c:out></td>
             <td><c:out value="${topic.description}"></c:out></td>
             <td><c:out value="${topic.formattedDate}"></c:out></td>
-            <td><a href="editStudent?id=<c:out value="${student.id}"></c:out>">Изменить</a></td>
-            <td><a href="delStudent?id=<c:out value="${student.id}"></c:out>">Удалить</a></td>
+            <td><a href="topicEdit?id=<c:out value="${topic.id}"></c:out>">Изменить</a></td>
+            <td><a href="topicDelete?id=<c:out value="${topic.id}"></c:out>">Удалить</a></td>
         </tr>
     </c:forEach>
-    Количество тем на форуме: <c:out value="${count}"></c:out>
 </table>
+Количество тем на форуме: <c:out value="${count}"></c:out>
+<br/>
+<a href="index.jsp">На главную страницу</a>
 </body>
 </html>

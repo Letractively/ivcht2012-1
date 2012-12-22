@@ -56,6 +56,8 @@ public class DatabaseFillingController extends HttpServlet {
                     new Date()
             ));
 
+            //TODO: fill message - Добавление тестовых сообщений
+
             req.setAttribute("result", "Тестовые темы успешно добавлены");
         } catch (Exception e) {
             req.setAttribute("result", "Произошла ошибка при добавлении тестовых тем");

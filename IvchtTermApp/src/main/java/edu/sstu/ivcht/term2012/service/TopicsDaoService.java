@@ -15,7 +15,7 @@ public class TopicsDaoService implements ITopicsService {
     //                          Поля
 
     //Один экземпляр службы должен быть, здесь его и храним
-    private static TopicsDaoService _topicsDaoService;
+    private static ITopicsService _topicsService;
 
     //Задает вариант использования DAO
     private ITopicsDao _topicsDao = new TopicsDBDao();
@@ -34,11 +34,11 @@ public class TopicsDaoService implements ITopicsService {
      * Метод статический, позволяющий всегда иметь один экземпляр данного класса
      * @return Экземпляр службы обработки тем
      */
-    public static TopicsDaoService getInstance() {
-        if (_topicsDaoService == null) {
-            _topicsDaoService = new TopicsDaoService();
+    public static ITopicsService getInstance() {
+        if (_topicsService == null) {
+            _topicsService = new TopicsDaoService(); //Self
         }
-        return _topicsDaoService;
+        return _topicsService;
     }
 
     //                          Обертки

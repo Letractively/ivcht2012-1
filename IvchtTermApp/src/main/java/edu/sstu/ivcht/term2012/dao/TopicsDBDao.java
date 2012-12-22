@@ -85,7 +85,7 @@ public class TopicsDBDao implements ITopicsDao,ITopicsService {
      * @param id Идентификатор темы
      */
     public void editTopic(int id) {
-        //TODO: fill
+        //TODO: fill topic
     }
 
     /**
@@ -93,6 +93,6 @@ public class TopicsDBDao implements ITopicsDao,ITopicsService {
      * @param id Идентификатор темы
      */
     public void deleteTopic(int id) {
-        //TODO: fill
+        //TODO: fill topic
     }
 }
