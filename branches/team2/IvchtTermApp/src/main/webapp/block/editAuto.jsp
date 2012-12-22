@@ -1,14 +1,10 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ page pageEncoding="UTF-8" %>
 <%@ taglib uri="http://java.sun.com/jstl/core" prefix="c" %>
-<html>
-<head>
-    <title></title>
-</head>
-<body>
+<div class="bord">
 <form action="editauto" accept="" method="post">
     <input type="hidden" name="id" value="<c:out value="${auto.id}"></c:out>"/>
-    <table class="example">
+    <table class="bordered">
         <tr>
             <td>Производитель</td>
             <td>
@@ -65,11 +61,8 @@
         </tr>
     </table>
 </form>
-
+</div>
 
 <c:if test="${not empty flag}">
     <script type="text/javascript">alert("Ошибка в данных, попробуйте еще раз...")</script>
 </c:if>
-</body>
-
-</html>

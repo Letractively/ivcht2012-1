@@ -11,62 +11,27 @@
 
 <html>
 <head>
-    <title></title>
+    <link rel=stylesheet href="resources/css/base.css" type="text/css">
+    <title>Редактирование авто</title>
 </head>
 <body>
-<form action="editpackage" method="post">
-    <input type="hidden" name="id" value="<c:out value="${packag.id_auto}"></c:out>"/>
-    <table class="example">
-        <%--<tr>--%>
-        <%--<td>Код</td>--%>
-        <%--<td><input type="text" name="id"/></td>--%>
-        <%--</tr>--%>
-        <tr>
-            <td>Марка авто</td>
-            <td><input type="text" name="id_auto"value="<c:out value="${auto.brand}"></c:out>   <c:out value="${auto.model}"></c:out>    <c:out value="${auto.types}"></c:out>"/>
-              </td>
-        </tr>
-        <tr>
-            <td>Двигатель, см</td>
-            <td><input type="text" name="motor" value="<c:out value="${packag.motor}"></c:out>"/></td>
-        </tr>
-        <tr>
-            <td>Трансмиссия</td>
-
-            <td><select name="transmission" id="Select2" size="1" required>
-                <option>AT</option>
-                <option>MT</option>
-            </select></td>
-        </tr>
-        <tr>
-            <td>Привод</td>
-            <td><select name="drive" id="Select3" size="1" required>
-                <option>Передний</option>
-                <option>Задний</option>
-                <option>Полный</option>
-            </select></td>
-        </tr>
-        <tr>
-            <td>Цена комплектации</td>
-            <td><input type="text" name="price"/></td>
-        </tr>
-
-        <tr>
-            <td></td>
-            <td>
-                <input type="submit" value="Сохранить изменения"/>
-
-            </td>
-        </tr>
-    </table>
-</form>
-
-
-
-<br/>
-<br/>
-<c:if test="${not empty error}">
-    <script type="text/javascript">alert("Ошибка в данных, попробуйте еще раз...")</script>
-</c:if>
+<div class="block">
+    <div id="head"><jsp:include page="block/head.jsp"></jsp:include></div>
+    <div id="navi" class="nav"><jsp:include page="block/navi.jsp"></jsp:include></div>
+    <div id="left" class="links"><jsp:include page="block/left.jsp"></jsp:include></div>
+    <div id="cont"><jsp:include page="block/editpackage.jsp"></jsp:include></div>
+    <div id="foot"><jsp:include page="block/foot.jsp"></jsp:include>
+        <hr class="full">
+        <h6>
+            <a href="createdatabase">Создать базу данных</a>    <br>
+            <a href="https://code.google.com/p/ivcht2012-1">Страница проекта</a>   <br>
+            <a href="listbrand">Список марок авто</a> <br>
+            <a href="listauto">Список авто</a> <br>
+            <a href="listtypes">Список кузовов</a> <br>
+            <a href="listpackage?page=1">Модели</a> <br>
+            <a href="index.jsp">Вернуться на главную</a>
+        </h6>
+    </div>
+</div>
 </body>
 </html>
