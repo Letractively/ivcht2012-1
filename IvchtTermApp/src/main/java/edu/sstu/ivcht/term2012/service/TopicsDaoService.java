@@ -64,7 +64,7 @@ public class TopicsDaoService implements ITopicsService {
      * @param id Уникальный идентификатор темы
      */
     public void editTopic(int id) {
-        //TODO: fill
+        _topicsDao.editTopic(id);
     }
 
     /**
@@ -72,6 +72,6 @@ public class TopicsDaoService implements ITopicsService {
      * @param id Уникальный идентификатор темы
      */
     public void deleteTopic(int id) {
-        //TODO: fill
+        _topicsDao.editTopic(id);
     }
 }
