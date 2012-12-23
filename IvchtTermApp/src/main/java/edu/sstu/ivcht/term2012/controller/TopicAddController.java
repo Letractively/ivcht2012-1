@@ -14,7 +14,7 @@ import java.util.Date;
 /**
  * Контроллер-сервлет, вызывающший страницу со списком тем
  */
-public class TopicAddController  extends HttpServlet {
+public class TopicAddController extends HttpServlet {
 
     //Получение службы работы с темами
     ITopicsService _topicService = ServiceInstancer.getTopicService();

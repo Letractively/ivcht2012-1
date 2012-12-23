@@ -21,7 +21,14 @@
         <servlet-name>TopicAddController</servlet-name>
         <servlet-class>edu.sstu.ivcht.term2012.controller.TopicAddController</servlet-class>
     </servlet>
-
+    <servlet>
+        <servlet-name>TopicDeleteController</servlet-name>
+        <servlet-class>edu.sstu.ivcht.term2012.controller.TopicDeleteController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>TopicEditController</servlet-name>
+        <servlet-class>edu.sstu.ivcht.term2012.controller.TopicEditController</servlet-class>
+    </servlet>
 
     <servlet-mapping>
         <servlet-name>DatabaseCreationController</servlet-name>
@@ -38,6 +45,14 @@
     <servlet-mapping>
         <servlet-name>TopicAddController</servlet-name>
         <url-pattern>/topicAdd</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>TopicDeleteController</servlet-name>
+        <url-pattern>/topicDelete</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>TopicEditController</servlet-name>
+        <url-pattern>/topicEdit</url-pattern>
     </servlet-mapping>
 
 </web-app>
