@@ -30,12 +30,9 @@ topic add
 
 <h2>Добавление новой темы</h2>
 
+<%-- Форма отправки запроса добавления темы --%>
 <form action="topicAdd" method="post">
     <table class="add">
-        <%--<tr>--%>
-        <%--<td>Код</td>--%>
-        <%--<td><input type="text" name="id"/></td>--%>
-        <%--</tr>--%>
         <tr>
             <td>Название темы</td>
             <td><input type="text" name="subject" size="50"/></td>
@@ -54,9 +51,13 @@ topic add
     </table>
 </form>
 
+<%-- Обработка результата запроса - result --%>
+
 <c:if test="${not empty result}">
     <span> <c:out value="${result}"></c:out></span>
 </c:if>
+
+<%-- Обработка ошибок запроса - error --%>
 
 <c:if test="${not empty error}">
     <span class="error"><c:out value="${error}"></c:out></span>
