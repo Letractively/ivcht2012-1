@@ -1,0 +1,91 @@
+<!DOCTYPE web-app PUBLIC
+ "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+ "http://java.sun.com/dtd/web-app_2_3.dtd" >
+
+<web-app>
+  <display-name>Archetype Created Web Application</display-name>
+
+    <servlet>
+        <servlet-name>DatabaseCreationController</servlet-name>
+        <servlet-class>edu.sstu.ivcht.term2012.controller.DatabaseCreationController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>DatabaseFillingController</servlet-name>
+        <servlet-class>edu.sstu.ivcht.term2012.controller.DatabaseFillingController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>TopicListController</servlet-name>
+        <servlet-class>edu.sstu.ivcht.term2012.controller.TopicListController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>TopicAddController</servlet-name>
+        <servlet-class>edu.sstu.ivcht.term2012.controller.TopicAddController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>TopicDeleteController</servlet-name>
+        <servlet-class>edu.sstu.ivcht.term2012.controller.TopicDeleteController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>TopicEditController</servlet-name>
+        <servlet-class>edu.sstu.ivcht.term2012.controller.TopicEditController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>MessageEditController</servlet-name>
+        <servlet-class>edu.sstu.ivcht.term2012.controller.MessageEditController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>MessageListController</servlet-name>
+        <servlet-class>edu.sstu.ivcht.term2012.controller.MessageListController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>MessageAddController</servlet-name>
+        <servlet-class>edu.sstu.ivcht.term2012.controller.MessageAddController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>MessageDeleteController</servlet-name>
+        <servlet-class>edu.sstu.ivcht.term2012.controller.MessageDeleteController</servlet-class>
+    </servlet>
+
+
+    <servlet-mapping>
+        <servlet-name>DatabaseCreationController</servlet-name>
+        <url-pattern>/createDatabase</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DatabaseFillingController</servlet-name>
+        <url-pattern>/fillDatabase</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>TopicListController</servlet-name>
+        <url-pattern>/topicList</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>TopicAddController</servlet-name>
+        <url-pattern>/topicAdd</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>TopicDeleteController</servlet-name>
+        <url-pattern>/topicDelete</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>TopicEditController</servlet-name>
+        <url-pattern>/topicEdit</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>MessageEditController</servlet-name>
+        <url-pattern>/MessageEdit</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>MessageAddController</servlet-name>
+        <url-pattern>/MessageAdd</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>MessageListController</servlet-name>
+        <url-pattern>/MessageList</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>MessageDeleteController</servlet-name>
+        <url-pattern>/MessageDelete</url-pattern>
+    </servlet-mapping>
+
+</web-app>
