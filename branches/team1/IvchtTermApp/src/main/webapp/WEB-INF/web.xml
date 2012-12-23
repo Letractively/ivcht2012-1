@@ -32,6 +32,10 @@
         <url-pattern>/fillDatabase</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
+        <servlet-name>TopicListController</servlet-name>
+        <url-pattern>/topicList</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
         <servlet-name>TopicAddController</servlet-name>
         <url-pattern>/topicAdd</url-pattern>
     </servlet-mapping>
