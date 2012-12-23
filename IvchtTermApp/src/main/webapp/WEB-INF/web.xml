@@ -29,6 +29,23 @@
         <servlet-name>TopicEditController</servlet-name>
         <servlet-class>edu.sstu.ivcht.term2012.controller.TopicEditController</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>MessageEditController</servlet-name>
+        <servlet-class>edu.sstu.ivcht.term2012.controller.MessageEditController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>MessageListController</servlet-name>
+        <servlet-class>edu.sstu.ivcht.term2012.controller.MessageListController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>MessageAddController</servlet-name>
+        <servlet-class>edu.sstu.ivcht.term2012.controller.MessageAddController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>MessageDeleteController</servlet-name>
+        <servlet-class>edu.sstu.ivcht.term2012.controller.MessageDeleteController</servlet-class>
+    </servlet>
+
 
     <servlet-mapping>
         <servlet-name>DatabaseCreationController</servlet-name>
@@ -53,6 +70,22 @@
     <servlet-mapping>
         <servlet-name>TopicEditController</servlet-name>
         <url-pattern>/topicEdit</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>MessageEditController</servlet-name>
+        <url-pattern>/MessageEdit</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>MessageAddController</servlet-name>
+        <url-pattern>/MessageAdd</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>MessageListController</servlet-name>
+        <url-pattern>/MessageList</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>MessageDeleteController</servlet-name>
+        <url-pattern>/MessageDelete</url-pattern>
     </servlet-mapping>
 
 </web-app>
