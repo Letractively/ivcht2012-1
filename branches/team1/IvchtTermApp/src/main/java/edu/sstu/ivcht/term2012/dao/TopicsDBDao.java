@@ -81,11 +81,65 @@ public class TopicsDBDao implements ITopicsDao,ITopicsService {
     }
 
     /**
-     * Метод, изменяющий данные указанного экземпляра темы
+     * Метод, возвращающий экземпляр темы по её идентификатору
+     *
      * @param id Идентификатор темы
+     * @return Найденная тема
      */
-    public void editTopic(int id) {
-        //TODO: fill topic редактирование темы
+    public Topic getTopicByID(int id) {
+
+        //Создаем переменную темы, которую будем возвращать
+        Topic topic = new Topic();
+
+        try {
+            //Создаем или получаем подключение
+            Connection connection = ConnectionDBDao.getConnection();
+            //Создаем запрос?
+            Statement statement = connection.createStatement();
+            //Создаем и получаем результат запроса
+            String sql = "SELECT * FROM topics WHERE id="+id;
+            ResultSet resultSet =  statement.executeQuery(sql);
+
+            resultSet.next();
+
+            //Применяем изменения
+                topic.setSubject(resultSet.getString("subject"));
+            topic.setDescription(resultSet.getString("description"));
+
+            resultSet.close();
+            statement.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return topic;
+    }
+
+    /**
+     * Метод, изменяющий данные указанного экземпляра темы
+     * @param topic Измененная темы
+     */
+    public void editTopic(Topic topic) {
+        try {
+            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+            //Создаем или получаем подключение
+            Connection connection = ConnectionDBDao.getConnection();
+
+            //Создаем запрос?
+            Statement statement = connection.createStatement();
+
+            //Создаем строку запроса и выполняем запрос
+            String sql = "UPDATE topics SET subject="+topic.getSubject()
+                    + ", description="+topic.getDescription()
+                    + ", createDate="+sdf.format(topic.getCreateDate())
+                    + " WHERE id="+topic.getId();
+
+            statement.executeUpdate(sql);
+
+            statement.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     /**

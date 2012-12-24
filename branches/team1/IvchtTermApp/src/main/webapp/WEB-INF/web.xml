@@ -27,7 +27,7 @@
     </servlet>
     <servlet>
         <servlet-name>TopicEditController</servlet-name>
-        <servlet-class>edu.sstu.ivcht.term2012.controller.TopicEditController</servlet-class>
+        <servlet-class>edu.sstu.ivcht.term2012.controller.TopicEditShowController</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>MessageEditController</servlet-name>
