@@ -12,7 +12,7 @@
 <html>
 <head>
 
-    <title>N/A</title>
+    <title>Добавление темы</title>
 
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 
@@ -26,8 +26,6 @@
 </head>
 
 <body>
-topic add
-
 <h2>Добавление новой темы</h2>
 
 <%-- Форма отправки запроса добавления темы --%>

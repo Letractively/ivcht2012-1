@@ -12,7 +12,7 @@
 <html>
 <head>
 
-    <title>N/A</title>
+    <title>Список тем</title>
 
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 
@@ -26,9 +26,6 @@
 </head>
 
 <body>
-topic list
-<!-- TODO: result получение переменной из сервлета -->
-
 <h2>Список тем</h2>
 <a href="topicAdd.jsp">Добавить тему</a>
 <table class="example" border="1">
@@ -53,6 +50,27 @@ topic list
 </table>
 Количество тем на форуме: <c:out value="${count}"></c:out>
 <br/>
+
+<br/>
+
+<%-- Форма отправки запроса поиска темы --%>
+<form action="topicSearch" method="post">
+    <table class="search">
+        <tr>
+            <td>Поиск темы</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>
+                <input type="text" name="searchString" size="50"/>
+            </td>
+            <td>
+                <input type="submit" value="Поиск"/>
+            </td>
+        </tr>
+    </table>
+</form>
+
 <%-- Обработка результата запроса - result --%>
 
 <c:if test="${not empty result}">
