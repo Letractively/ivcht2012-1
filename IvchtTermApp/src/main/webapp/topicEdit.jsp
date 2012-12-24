@@ -53,7 +53,6 @@ topic edit
             <td></td>
             <td>
                 <input type="submit" value="Изменить"/>
-                <input type="reset" value="Очистить"/>
             </td>
         </tr>
     </table>

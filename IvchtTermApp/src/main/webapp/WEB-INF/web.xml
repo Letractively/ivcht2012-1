@@ -34,6 +34,10 @@
         <servlet-class>edu.sstu.ivcht.term2012.controller.TopicEditApplyController</servlet-class>
     </servlet>
     <servlet>
+        <servlet-name>TopicSearchController</servlet-name>
+        <servlet-class>edu.sstu.ivcht.term2012.controller.TopicSearchController</servlet-class>
+    </servlet>
+    <servlet>
         <servlet-name>MessageEditController</servlet-name>
         <servlet-class>edu.sstu.ivcht.term2012.controller.MessageEditController</servlet-class>
     </servlet>
@@ -78,6 +82,10 @@
     <servlet-mapping>
         <servlet-name>TopicEditApplyController</servlet-name>
         <url-pattern>/topicEditApply</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>TopicSearchController</servlet-name>
+        <url-pattern>/topicSearch</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>MessageEditController</servlet-name>

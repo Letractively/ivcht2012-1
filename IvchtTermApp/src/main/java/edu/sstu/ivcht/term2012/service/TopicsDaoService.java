@@ -70,6 +70,16 @@ public class TopicsDaoService implements ITopicsService {
     }
 
     /**
+     * Поиск тем по строке
+     *
+     * @param searchString Строка, по которой будет производиться поиск
+     * @return Список найденных тем
+     */
+    public List<Topic> getSearchTopicsByString(String searchString) {
+        return _topicsDao.getSearchTopicsByString(searchString);
+    }
+
+    /**
      * Редактировать тему
      * @param topic Измененная тема
      */

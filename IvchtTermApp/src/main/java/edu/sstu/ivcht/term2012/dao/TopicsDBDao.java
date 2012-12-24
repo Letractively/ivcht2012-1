@@ -118,6 +118,44 @@ public class TopicsDBDao implements ITopicsDao,ITopicsService {
     }
 
     /**
+     * Поиск тем по строке
+     *
+     * @param searchString Строка, по которой будет производиться поиск
+     * @return Список найденных тем
+     */
+    public List<Topic> getSearchTopicsByString(String searchString) {
+        //Создаем список студентов в виде связанного списка
+        List<Topic> topicList = new LinkedList<Topic>();
+
+        try {
+            //Создаем или получаем подключение
+            Connection connection = ConnectionDBDao.getConnection();
+            //Создаем запрос?
+            Statement statement = connection.createStatement();
+            //Создаем и получаем результат запроса
+            ResultSet resultSet =  statement.executeQuery("SELECT * FROM topics WHERE subject LIKE '%"+searchString+"%'");
+
+            //Заполнение списка
+            while (resultSet.next()) {
+                Topic topic = new Topic(
+                        resultSet.getInt("id"),
+                        resultSet.getString("subject"),
+                        resultSet.getString("description"),
+                        resultSet.getDate("createDate")
+                );
+                topicList.add(topic);
+            }
+
+            resultSet.close();
+            statement.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return topicList;
+    }
+
+    /**
      * Метод, изменяющий данные указанного экземпляра темы
      * @param topic Измененная темы
      */
