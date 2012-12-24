@@ -70,6 +70,15 @@ public class Topic {
      * Получение значения уникального идентификатора
      * @return Уникальный идентификатор
      */
+    public void setId(int id) {
+        this.id=id;
+    }
+
+
+    /**
+     * Получение значения уникального идентификатора
+     * @return Уникальный идентификатор
+     */
     public int getId() {
         return id;
     }

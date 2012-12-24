@@ -103,8 +103,10 @@ public class TopicsDBDao implements ITopicsDao,ITopicsService {
             resultSet.next();
 
             //Применяем изменения
+                     topic.setId(resultSet.getInt("id"));
                 topic.setSubject(resultSet.getString("subject"));
             topic.setDescription(resultSet.getString("description"));
+             topic.setCreateDate(resultSet.getDate("createDate"));
 
             resultSet.close();
             statement.close();
