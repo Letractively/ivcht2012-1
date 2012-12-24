@@ -19,7 +19,7 @@ p {
 .block {
 	width:1000px;
  	height:auto; 
-	min-height:1000px; 
+	min-height:800px;
 	background-color:#fff; 
 	color:#000; 
 	border:solid 1px #000; 
@@ -42,13 +42,13 @@ p {
 #left{
 	float:left; 
 	width:200px;  
-	min-height:832px;
+	min-height:632px;
 	background-color:#fff;
 	border-right:1px dotted #000;
 	}
 #cont{
 	margin-left:201px; 
-	min-height:800px; 
+	min-height:600px;
 	background-color:#fff; 
 	width:799px;}
 #foot{

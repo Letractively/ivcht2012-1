@@ -46,20 +46,29 @@
         <tr>
             <td>Трансмиссия</td>
 
+            <%--<td><select name="transmission" id="Select2" size="1" required>--%>
+                <%--<c:forEach var="i" begin="0" end="1">--%>
+
+                    <%--<option <c:if test="${i==1}"> SELECTED="" </c:if>><c:out value="${listtransm[i]}"/></option>--%>
+
+                    <%--&lt;%&ndash;<option <c:if test="${i==1}"> SELECTED="" </c:if>><c:out value="${packag.drive}"/> <c:out value="${listtransm[i]}"/></option>&ndash;%&gt;--%>
+                <%--</c:forEach>--%>
+            <%--</select></td>--%>
+
             <td><select name="transmission" id="Select2" size="1" required>
-                <c:forEach var="i" begin="0" end="1">
+                <c:forEach items="${listtransm}" var="trans">
 
-                    <option <c:if test="${i==1}"> SELECTED="" </c:if>><c:out value="${listtransm[i]}"/></option>
-
-                    <%--<option <c:if test="${i==1}"> SELECTED="" </c:if>><c:out value="${packag.drive}"/> <c:out value="${listtransm[i]}"/></option>--%>
+                    <option <c:if test="${trans eq packag.transmission}"> SELECTED="" </c:if>><c:out value="${trans}"/></option>
                 </c:forEach>
+
             </select></td>
+
         </tr>
         <tr>
             <td>Привод</td>
             <td><select name="drive" id="Select3" size="1" required>
-                <c:forEach var="i" begin="0" end="2">
-                    <option <c:if test="${i==1}"> SELECTED="" </c:if>><c:out value="${listprivod[i]}"/></option>
+                <c:forEach items="${listprivod}" var="privod">
+                    <option <c:if test="${privod eq packag.drive}"> SELECTED="" </c:if>><c:out value="${privod}"/></option>
                 </c:forEach>
             </select></td>
         </tr>
