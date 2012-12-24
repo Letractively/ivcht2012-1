@@ -1,6 +1,7 @@
 package edu.sstu.ivcht.term2012.controller;
 
 import edu.sstu.ivcht.term2012.model.Topic;
+import edu.sstu.ivcht.term2012.service.IMessageService;
 import edu.sstu.ivcht.term2012.service.ITopicsService;
 import edu.sstu.ivcht.term2012.utils.ServiceInstancer;
 
@@ -21,6 +22,9 @@ public class DatabaseFillingController extends HttpServlet {
     //Получение службы работы с темами
     ITopicsService _topicService = ServiceInstancer.getTopicService();
 
+    //Получение службы работы с сообщениями
+    //!S! IMessageService _messageService =
+
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         processRequest(req, resp);
@@ -39,18 +43,21 @@ public class DatabaseFillingController extends HttpServlet {
             SimpleDateFormat sdf = new SimpleDateFormat("dd.MM.yyyy");
 
             _topicService.addTopic(new Topic(
+                    0,
                     "Первая тема",
                     "Тема созданная первой",
                     sdf.parse("17.12.2012")
             ));
 
             _topicService.addTopic(new Topic(
+                    1,
                     "Приветствие",
                     "Тема созданная для ознакомления",
                     sdf.parse("17.12.2012")
             ));
 
             _topicService.addTopic(new Topic(
+                    2,
                     "Текущая тема",
                     "Рабочая тема",
                     new Date()
@@ -58,7 +65,7 @@ public class DatabaseFillingController extends HttpServlet {
 
             //TODO: fill message - Добавление тестовых сообщений
 
-            req.setAttribute("result", "Тестовые темы успешно добавлены");
+            req.setAttribute("result", "Тестовые темы и сообщения успешно добавлены");
         } catch (Exception e) {
             req.setAttribute("result", "Произошла ошибка при добавлении тестовых тем");
             e.printStackTrace();
