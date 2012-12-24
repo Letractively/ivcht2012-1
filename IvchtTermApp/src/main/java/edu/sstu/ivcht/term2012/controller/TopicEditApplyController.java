@@ -64,6 +64,9 @@ public class TopicEditApplyController extends HttpServlet {
             //Применение изменений темы
             _topicService.editTopic(topic);
 
+            //Устанавливает атрибут, передающийся странице. Атрибут - это список тем как раз
+            req.setAttribute("topic", topic);
+
             req.setAttribute("result", "Тема успешно изменена");
 
         } catch (Exception e) {
