@@ -1,17 +1,36 @@
 body {
-    background-color: #ffffff;
+    background-color: #f4ffd9;
 }
 
-h1 {
-   color: #000000;
+
+table.example
+{
+    border:4px solid Grey;
+}
+table.example td, table.example th
+{
+
+    border:2px solid gray;
+    padding:4px;
+}
+table.example
+{
+    border-collapse:collapse;
+}
+table.example
+{
+    background-color:#FFFFCC;
 }
 
-.info {
-    font-style: italic;
-    font-weight: bolder;
-}
-
-hr .full{
-    width: 100%;
-    color: #2356aa
-}
+a:link	{
+    text-decoration: none;
+    color: #100c3e; }
+a:visited	{
+    text-decoration: none;
+    color: rgba(67, 17, 80, 0.54); }
+a:active	{
+    text-decoration: underline;
+    color: #00461a; }
+a:hover	{
+    text-decoration: underline;
+    color: #1e3250; }

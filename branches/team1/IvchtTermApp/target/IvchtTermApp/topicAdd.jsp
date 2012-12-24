@@ -12,22 +12,16 @@
 <html>
 <head>
 
-    <title>N/A</title>
+    <title>Добавление темы</title>
 
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 
-    <!-- Styles
+
     <link rel=stylesheet href="resources/css/base.css" type="text/css">
 
-    <style type="text/css">
-
-    </style>
-    -->
 </head>
 
 <body>
-topic add
-
 <h2>Добавление новой темы</h2>
 
 <%-- Форма отправки запроса добавления темы --%>

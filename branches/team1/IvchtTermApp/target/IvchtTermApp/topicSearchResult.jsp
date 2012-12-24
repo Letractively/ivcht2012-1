@@ -12,7 +12,7 @@
 <html>
 <head>
 
-    <title>N/A</title>
+    <title>Результат поиска тем</title>
 
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 
@@ -26,6 +26,45 @@
 </head>
 
 <body>
-topic search result
+<h2>Результат поиска</h2>
+<table class="example" border="1">
+    <tr>
+        <th>ID</th>
+        <th>Название</th>
+        <th>Описание</th>
+        <th>Дата создания</th>
+        <th>Изменение</th>
+        <th>Удаление</th>
+    </tr>
+    <c:forEach items="${topics}" var="topic">
+        <tr>
+            <td><c:out value="${topic.id}"></c:out></td>
+            <td><a href="messageList?id=<c:out value="${topic.id}"></c:out>"><c:out value="${topic.subject}"></c:out></a></td>
+            <td><c:out value="${topic.description}"></c:out></td>
+            <td><c:out value="${topic.formattedDate}"></c:out></td>
+            <td><a href="topicEdit?id=<c:out value="${topic.id}"></c:out>">Изменить</a></td>
+            <td><a href="topicDelete?id=<c:out value="${topic.id}"></c:out>">Удалить</a></td>
+        </tr>
+    </c:forEach>
+</table>
+Количество найденных тем: <c:out value="${count}"></c:out>
+<br/>
+<%-- Обработка результата запроса - result --%>
+
+<c:if test="${not empty result}">
+    <span> <c:out value="${result}"></c:out></span>
+    <br/>
+</c:if>
+
+<%-- Обработка ошибок запроса - error --%>
+
+<c:if test="${not empty error}">
+    <span class="error"><c:out value="${error}"></c:out></span>
+    <br/>
+</c:if>
+<br/>
+<a href="topicList">К списку тем</a>
+<br/>
+<a href="index.jsp">На главную страницу</a>
 </body>
 </html>
