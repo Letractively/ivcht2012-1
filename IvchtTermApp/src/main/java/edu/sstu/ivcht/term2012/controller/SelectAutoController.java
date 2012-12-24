@@ -32,22 +32,22 @@ public class SelectAutoController extends HttpServlet {
     }
 
     private void processRequest(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException{
-
+                            try{
         List<Auto> autoList =null;
         String str="where Auto.id>0 ";
              if(req.getParameter("ch1")!=null && req.getParameter("ch1").hashCode()=="on".hashCode()){
-             str=str+" and Auto.id_brand="+req.getParameter("id");
+             str=str+" and Auto.id_brand="+Integer.parseInt(req.getParameter("id"));
         }
 
         if(req.getParameter("ch2")!=null && req.getParameter("ch2").hashCode()=="on".hashCode()){
-            str=str+" and Auto.id_types="+req.getParameter("tps");
+            str=str+" and Auto.id_types="+Integer.parseInt(req.getParameter("tps"));
         }
 
         if(req.getParameter("ch3")!=null && req.getParameter("ch3").hashCode()=="on".hashCode()){
-            str=str+" and package.price>"+req.getParameter("price1");
+            str=str+" and package.price>"+Double.parseDouble(req.getParameter("price1"));
         }
         if(req.getParameter("ch4")!=null && req.getParameter("ch4").hashCode()=="on".hashCode()){
-            str=str+" and package.price<"+req.getParameter("price2");
+            str=str+" and package.price<"+Double.parseDouble(req.getParameter("price2"));
         }
         autoList=autoService.getSelectAutos(str);
            // autoList =autoService.getAllAutos(Integer.parseInt(req.getParameter("id")),Integer.parseInt(req.getParameter("tps")),0);
@@ -61,5 +61,10 @@ public class SelectAutoController extends HttpServlet {
         else{
         getServletContext().getRequestDispatcher("/index.jsp").forward(req,resp);
     }
+                            }
+                            catch (Exception e){
+                                req.setAttribute("error", "1");
+                                getServletContext().getRequestDispatcher("/pageselect.jsp").forward(req,resp);
+                            }
     }
 }

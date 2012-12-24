@@ -53,4 +53,7 @@
 
 </form>
 </body>
+<c:if test="${not empty error}">
+    <script type="text/javascript">alert("Некорректные данные для поиска...")</script>
+</c:if>
 </html>

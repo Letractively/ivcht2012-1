@@ -10,7 +10,7 @@
         <th>Трансмиссия</th>
         <th>Привод</th>
         <th>Цена</th>
-        <th>Наличие</th>
+        <th>Редактирование</th>
 
     </tr>
     <c:forEach items="${packag}" var="packag">
@@ -21,8 +21,7 @@
             <td><c:out value="${packag.price}"></c:out></td>
             <%--<td><c:out value="${packag.checked}"></c:out></td>--%>
             <td><input type=button value="Edit"
-                       onClick="location.href='readpackag?id=<c:out value="${packag.id}"></c:out>&page=1'"></td>
-            <td><input type=button value="Delete"
+                       onClick="location.href='readpackag?id=<c:out value="${packag.id}"></c:out>&page=1'"> <input type=button value="Delete"
                        onclick="if (confirm('Вы подтверждаете удаление?')){location.href='deletepackag?id=<c:out
                                value="${packag.id}"></c:out>'}"></td>
 
