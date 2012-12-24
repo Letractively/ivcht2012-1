@@ -10,11 +10,9 @@
 </head>
 <body>
     <h2>Страница приветствия</h2>
-    <span class="info">
-        <c:out value="${welcomeMessage}"></c:out>
-    </span>
+    <script type="text/javascript">alert("База данных создана")</script>
     <br/>
     <hr class="full">
-    <a href="index.jsp">Вернуться на главную</a>
+    <a href="/index.jsp">Вернуться на главную</a>
 </body>
 </html>

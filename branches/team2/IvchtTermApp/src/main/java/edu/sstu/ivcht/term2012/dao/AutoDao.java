@@ -40,4 +40,8 @@ public interface AutoDao {
     public Packag readPackag(int id);
 
     void deletePackag(int id);
+
+    void editPackage(Packag packag);
+    public List<Auto> getSelectAuto(String str);
+
 }

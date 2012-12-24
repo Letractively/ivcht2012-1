@@ -14,16 +14,17 @@
         <%--<td>Код</td>--%>
         <%--<td><input type="text" name="id"/></td>--%>
         <%--</tr>--%>
-            <tr>
-                <td>Марка авто</td>
-                <td><select name="id_auto" id="Select1" size="1" required>
-                    <c:if test="${not empty autos}">
+        <tr>
+            <td>Марка авто</td>
+            <td><select name="id_auto" id="Select1" size="1" required>
+                <c:if test="${not empty autos}">
                     <c:forEach items="${autos}" var="auto">
-                        <option value="<c:out value="${auto.id}"></c:out>"><c:out value="${auto.brand}"></c:out>   <c:out value="${auto.model}"></c:out>    <c:out value="${auto.types}"></c:out></option>
-                     </c:forEach>
-                     </c:if>
-                </select></td>
-            </tr>
+                        <option value="<c:out value="${auto.id}"></c:out>"><c:out value="${auto.brand}"></c:out> <c:out
+                                value="${auto.model}"></c:out> <c:out value="${auto.types}"></c:out></option>
+                    </c:forEach>
+                </c:if>
+            </select></td>
+        </tr>
         <tr>
             <td>Двигатель, см</td>
             <td><input type="text" name="motor"/></td>
@@ -36,22 +37,22 @@
                 <option>MT</option>
             </select></td>
         </tr>
-            <tr>
-                <td>Привод</td>
-                <td><select name="drive" id="Select3" size="1" required>
-                    <option>Передний</option>
-                    <option>Задний</option>
-                    <option>Полный</option>
-                </select></td>
-            </tr>
-            <tr>
-                <td>Цена комплектации</td>
-                 <td><input type="text" name="price"/></td>
-            </tr>
         <tr>
-            <td>Наличие</td>
-            <td><input type="checkbox" name="checked" checked="checked"/></td>
+            <td>Привод</td>
+            <td><select name="drive" id="Select3" size="1" required>
+                <option>Передний</option>
+                <option>Задний</option>
+                <option>Полный</option>
+            </select></td>
         </tr>
+        <tr>
+            <td>Цена комплектации</td>
+            <td><input type="text" name="price"/></td>
+        </tr>
+        <%--<tr>--%>
+        <%--<td>Наличие</td>--%>
+        <%--<td><input type="checkbox" name="checked" checked="checked"/></td>--%>
+        <%--</tr>--%>
         <tr>
             <td></td>
             <td>
@@ -60,8 +61,10 @@
             </td>
         </tr>
     </table>
+    <c:if test="${not empty packag_not_found}">
+        <script type="text/javascript">alert("Комплектации для выбранного авто нет, попробуйте добавить")</script>
+    </c:if>
 </form>
-
 
 
 <br/>

@@ -65,21 +65,21 @@ public class DatabaseService {
          //TODO Ошибка, не совпадают форматы даты....
 
 
-         INSERT_TYPE_TABLE_PACKAGE= "INSERT INTO Package (id, id_types, id_auto, motor, transmission, drive, price, rating, datestart,checked) VALUES (1, 1,1,2000, 'MT','2WD',430005,5,'2010-01-01',0) "+
-              "INSERT INTO Package (id, id_types,id_auto, motor, transmission, drive, price, rating, datestart,checked) VALUES (2, 2,1,1600, 'MT','2WD',430005,5,'2010-07-01',1) "+
-              "INSERT INTO Package (id, id_types,id_auto, motor, transmission, drive, price, rating, datestart,checked) VALUES (3, 3,2,2000, 'AT','4WD',530005,9,'2010-01-01',0) "+
-              "INSERT INTO Package (id, id_types,id_auto, motor, transmission, drive, price, rating, datestart,checked) VALUES (4, 4,3,3500, 'MT','2WD',477005,7,'2011-01-01',0) "+
-              "INSERT INTO Package (id, id_types,id_auto, motor, transmission, drive, price, rating, datestart,checked) VALUES (5, 5,4,2000, 'AT','2WD',830005,4,'2012-01-01',1) "+
-              "INSERT INTO Package (id, id_types,id_auto, motor, transmission, drive, price, rating, datestart,checked) VALUES (6, 6,5,2500, 'MT','4WD',430005,2,'2010-06-01',0) "+
-              "INSERT INTO Package (id, id_types,id_auto, motor, transmission, drive, price, rating, datestart,checked) VALUES (7, 6,6,2800, 'AT','2WD',930005,5,'2011-01-01',0) "+
-              "INSERT INTO Package (id, id_types,id_auto, motor, transmission, drive, price, rating, datestart,checked) VALUES (8, 2,3,1800, 'MT','2WD',730005,1,'2010-09-01',1) ";
+         INSERT_TYPE_TABLE_PACKAGE= "INSERT INTO Package (id, id_types, id_auto, motor, transmission, drive, price, rating, datestart,checked) VALUES (1, 1,1,2000, 'MT','Передний',430005,5,'2010-01-01',0) "+
+              "INSERT INTO Package (id, id_types,id_auto, motor, transmission, drive, price, rating, datestart,checked) VALUES (2, 2,1,1600, 'MT','Передний',430005,5,'2010-07-01',1) "+
+              "INSERT INTO Package (id, id_types,id_auto, motor, transmission, drive, price, rating, datestart,checked) VALUES (3, 3,2,2000, 'AT','Полный',530005,9,'2010-01-01',0) "+
+              "INSERT INTO Package (id, id_types,id_auto, motor, transmission, drive, price, rating, datestart,checked) VALUES (4, 4,3,3500, 'MT','Передний',477005,7,'2011-01-01',0) "+
+              "INSERT INTO Package (id, id_types,id_auto, motor, transmission, drive, price, rating, datestart,checked) VALUES (5, 5,4,2000, 'AT','Задний',830005,4,'2012-01-01',1) "+
+              "INSERT INTO Package (id, id_types,id_auto, motor, transmission, drive, price, rating, datestart,checked) VALUES (6, 6,5,2500, 'MT','Полный',430005,2,'2010-06-01',0) "+
+              "INSERT INTO Package (id, id_types,id_auto, motor, transmission, drive, price, rating, datestart,checked) VALUES (7, 6,6,2800, 'AT','Передний',930005,5,'2011-01-01',0) "+
+              "INSERT INTO Package (id, id_types,id_auto, motor, transmission, drive, price, rating, datestart,checked) VALUES (8, 2,3,1800, 'MT','Задний',730005,1,'2010-09-01',1) ";
 
          Connection connection =  DataBaseConnection.getConnection();
         Statement statement = connection.createStatement();
         statement.executeUpdate(CREATE_TYPE_TABLE);
         statement.executeUpdate(INSERT_TYPE_TABLE);
-         statement.executeUpdate(CREATE_TYPE_TABLE_BRAND);
-         statement.executeUpdate(INSERT_TYPE_TABLE_BRAND);
+        statement.executeUpdate(CREATE_TYPE_TABLE_BRAND);
+        statement.executeUpdate(INSERT_TYPE_TABLE_BRAND);
          statement.executeUpdate(CREATE_TYPE_TABLE_AUTO);
          statement.executeUpdate(INSERT_TYPE_TABLE_AUTO);
          statement.executeUpdate(CREATE_TYPE_TABLE_PACKAGE);

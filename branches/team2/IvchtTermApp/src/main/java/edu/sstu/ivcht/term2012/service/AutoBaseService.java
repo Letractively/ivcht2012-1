@@ -82,4 +82,16 @@ public class AutoBaseService implements AutoService {
     public void deletePackag(int id) {
         dao.deletePackag(id);
     }
+
+    @Override
+    public void editPackage(Packag packag) {
+        dao.editPackage(packag);
+    }
+
+    @Override
+    public List<Auto> getSelectAutos(String str) {
+        return dao.getSelectAuto(str);  //To change body of implemented methods use File | Settings | File Templates.
+    }
+
+
 }

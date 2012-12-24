@@ -63,7 +63,11 @@ public class ListAutoController extends HttpServlet {
         req.setAttribute("raiting",0);
         if(autoList.size()==0){
             req.setAttribute("error_autos", "Ошибка");
+            getServletContext().getRequestDispatcher("/addauto").forward(req,resp);
         }
+        else
+        {
         getServletContext().getRequestDispatcher("/index.jsp").forward(req,resp);
+    }
     }
 }

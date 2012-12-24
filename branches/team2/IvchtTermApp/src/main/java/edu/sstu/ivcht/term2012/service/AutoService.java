@@ -27,14 +27,23 @@ public interface AutoService {
 
     public Auto readAuto(int id);
 
-   public  List<Packag> getAllPackag(int id);
+    public  List<Packag> getAllPackag(int id);
 
-   public void addPackage(Packag packag);
+    public void addPackage(Packag packag);
+
     public void addUser(Usr usr);
+
     public void deleteUser(int id);
+
     public  List<Usr> getAllUser();
 
     public Packag readPackag(int id);
+
     public void deletePackag(int id);
+
+    void editPackage(Packag packag);
+
+    List<Auto> getSelectAutos(String str);
+
 }
 

@@ -61,6 +61,14 @@
         <servlet-name>ReadPackageController</servlet-name>
         <servlet-class>edu.sstu.ivcht.term2012.controller.ReadPackageController</servlet-class>
     </servlet>
+    <servlet>
+    <servlet-name>EditPackageController</servlet-name>
+    <servlet-class>edu.sstu.ivcht.term2012.controller.EditPackageController</servlet-class>
+</servlet>
+    <servlet>
+        <servlet-name>DeletePackageController</servlet-name>
+        <servlet-class>edu.sstu.ivcht.term2012.controller.DeletePackageController</servlet-class>
+    </servlet>
 
     <servlet-mapping>
         <servlet-name>DatabaseController</servlet-name>
@@ -117,5 +125,13 @@
     <servlet-mapping>
         <servlet-name>ReadPackageController</servlet-name>
         <url-pattern>/readpackag</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+    <servlet-name>EditPackageController</servlet-name>
+    <url-pattern>/editpackag</url-pattern>
+</servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DeletePackageController</servlet-name>
+        <url-pattern>/deletepackag</url-pattern>
     </servlet-mapping>
 </web-app>

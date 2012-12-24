@@ -8,18 +8,24 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ page pageEncoding="UTF-8" %>
 <%@ taglib uri="http://java.sun.com/jstl/core" prefix="c" %>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
 <form action="addauto" accept="" method="post">
-    <table class="bordered">
+    <table class="example">
         <tr>
             <td>Производитель</td>
             <td>
                 <select name="id_brand" id="Select1" size="1" required>
                     <c:if test="${not empty brand}">
-                <c:forEach items="${brand}" var="brand">
-                    <option value="<c:out value="${brand.id}"></c:out>"><c:out value="${brand.brand}"></c:out></option>
-                </c:forEach>
-                    </select>
-            </c:if></td>
+                    <c:forEach items="${brand}" var="brand">
+                        <option value="<c:out value="${brand.id}"></c:out>"><c:out
+                                value="${brand.brand}"></c:out></option>
+                    </c:forEach>
+                </select>
+                </c:if></td>
         </tr>
         <tr>
             <td>Марка</td>
@@ -27,12 +33,13 @@
         </tr>
         <tr>
             <td>Кузов</td>
-            <td> <select name="id_types" id="Select2" size="1" required>
+            <td><select name="id_types" id="Select2" size="1" required>
                 <c:if test="${not empty types}">
-                <c:forEach items="${types}" var="types">
-                    <option value="<c:out value="${types.id}"></c:out>"><c:out value="${types.types}"></c:out></option>
-            </c:forEach>
-                </c:if>  </select></td>
+                    <c:forEach items="${types}" var="types">
+                        <option value="<c:out value="${types.id}"></c:out>"><c:out
+                                value="${types.types}"></c:out></option>
+                    </c:forEach>
+                </c:if> </select></td>
         </tr>
         <tr>
             <td>Число мест</td>
@@ -40,20 +47,21 @@
         </tr>
         <tr>
             <td>Габариты(ВхШхД),мм</td>
-            <td><input type="text" name="height"/>x<input type="text" name="width"/>x<input type="text" name="len"/></td>
+            <td><input type="text" name="height"/>x<input type="text" name="width"/>x<input type="text" name="len"/>
+            </td>
         </tr>
         <tr>
             <td>Рейтинг</td>
             <td><select name="rating" id="Sel" size="1" required>
                 <c:forEach var="i" begin="1" end="10">
-                    <option> <c:out value="${i}"/></option>
+                    <option><c:out value="${i}"/></option>
                 </c:forEach>
-             </select></td>
+            </select></td>
         </tr>
-        <tr>
-            <td>Цена, от</td>
-            <td><input type="text" name="price"/></td>
-        </tr>
+        <%--<tr>--%>
+            <%--<td>Цена, от</td>--%>
+            <%--<td><input type="text" name="price"/></td>--%>
+        <%--</tr>--%>
         <tr>
             <td>Описание</td>
             <td><input type="textarea" name="descr" rows="3"/></td>
@@ -65,11 +73,15 @@
                 <input type="reset" value="Очистить"/>
             </td>
         </tr>
-             </table>
+    </table>
 </form>
-
 
 
 <c:if test="${not empty error}">
     <script type="text/javascript">alert("Ошибка в данных, попробуйте еще раз...")</script>
 </c:if>
+<c:if test="${not empty error_autos}">
+    <script type="text/javascript">alert("Нет таких автомобилей, попробуйте добавить...")</script>
+</c:if>
+</body>
+</html>
