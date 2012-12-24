@@ -131,10 +131,9 @@ public class TopicsDBDao implements ITopicsDao,ITopicsService {
             Statement statement = connection.createStatement();
 
             //Создаем строку запроса и выполняем запрос
-            String sql = "UPDATE topics SET subject="+topic.getSubject()
-                    + ", description="+topic.getDescription()
-                    + ", createDate="+sdf.format(topic.getCreateDate())
-                    + " WHERE id="+topic.getId();
+            String sql = "UPDATE topics SET subject='"+topic.getSubject()
+                    + "', description='"+topic.getDescription()
+                    + "' WHERE id="+topic.getId();
 
             statement.executeUpdate(sql);
 
