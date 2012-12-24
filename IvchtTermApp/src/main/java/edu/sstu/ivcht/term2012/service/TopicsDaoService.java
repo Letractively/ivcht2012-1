@@ -72,6 +72,6 @@ public class TopicsDaoService implements ITopicsService {
      * @param id Уникальный идентификатор темы
      */
     public void deleteTopic(int id) {
-        _topicsDao.editTopic(id);
+        _topicsDao.deleteTopic(id);
     }
 }
