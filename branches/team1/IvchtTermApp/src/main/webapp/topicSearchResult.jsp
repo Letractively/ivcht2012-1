@@ -64,6 +64,7 @@
 </c:if>
 <br/>
 <a href="topicList">К списку тем</a>
+<br/>
 <a href="index.jsp">На главную страницу</a>
 </body>
 </html>
