@@ -9,20 +9,17 @@
 <%@ page pageEncoding="UTF-8" %>
 <%@ taglib uri="http://java.sun.com/jstl/core" prefix="c" %>
 
+
+
 <html>
 <head>
 
     <title>Список тем</title>
-
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-
-    <!-- Styles
     <link rel=stylesheet href="resources/css/base.css" type="text/css">
 
-    <style type="text/css">
 
-    </style>
-    -->
+
 </head>
 
 <body>
@@ -34,8 +31,7 @@
         <th>Название</th>
         <th>Описание</th>
         <th>Дата создания</th>
-        <th>Изменение</th>
-        <th>Удаление</th>
+        <th></th>
     </tr>
     <c:forEach items="${topics}" var="topic">
         <tr>
@@ -43,8 +39,14 @@
             <td><a href="messageList?id=<c:out value="${topic.id}"></c:out>"><c:out value="${topic.subject}"></c:out></a></td>
             <td><c:out value="${topic.description}"></c:out></td>
             <td><c:out value="${topic.formattedDate}"></c:out></td>
-            <td><a href="topicEdit?id=<c:out value="${topic.id}"></c:out>">Изменить</a></td>
-            <td><a href="topicDelete?id=<c:out value="${topic.id}"></c:out>">Удалить</a></td>
+            <td><a href="topicEdit?id=<c:out value="${topic.id}"></c:out>">
+                <img src="resources/img/edit.png" >
+            </a>
+
+                <a href="topicDelete?id=<c:out value="${topic.id}"></c:out>">
+                    <img src="resources/img/Delete.png">
+                </a>
+            </td>
         </tr>
     </c:forEach>
 </table>

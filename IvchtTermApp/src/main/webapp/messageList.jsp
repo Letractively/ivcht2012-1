@@ -16,13 +16,8 @@
 
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 
-    <!-- Styles
-    <link rel=stylesheet href="resources/css/base.css" type="text/css">
 
-    <style type="text/css">
 
-    </style>
-    -->
 </head>
 
 <body>
@@ -40,15 +35,23 @@
         <th>Содержимое</th>
         <th>Дата сообщения</th>
         <th>Изменить</th>
-        <th>Удалить</th>
+
     </tr>
     <c:forEach items="${topics}" var="topic">
         <tr>
             <td><c:out value="${message.id}"></c:out></td>
             <td><c:out value="${message.subject}"></c:out></td>
             <td><c:out value="${message.formattedDate}"></c:out></td>
-            <td><a href="messageEdit?id=<c:out value="${message.id}"></c:out>">Изменить</a></td>
-            <td><a href="messageDelete?id=<c:out value="${message.id}"></c:out>">Удалить</a></td>
+            <td>
+                <a href="messageEdit?id=<c:out value="${topic.id}"></c:out>">
+                    <img src="resources/img/edit.png" >
+                </a>
+
+                <a href="messageDelete?id=<c:out value="${topic.id}"></c:out>">
+                    <img src="resources/img/Delete.png">
+                </a>
+            </td>
+
         </tr>
     </c:forEach>
 </table>
