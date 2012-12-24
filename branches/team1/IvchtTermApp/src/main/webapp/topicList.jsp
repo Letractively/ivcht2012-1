@@ -53,6 +53,20 @@ topic list
 </table>
 Количество тем на форуме: <c:out value="${count}"></c:out>
 <br/>
+<%-- Обработка результата запроса - result --%>
+
+<c:if test="${not empty result}">
+    <span> <c:out value="${result}"></c:out></span>
+    <br/>
+</c:if>
+
+<%-- Обработка ошибок запроса - error --%>
+
+<c:if test="${not empty error}">
+    <span class="error"><c:out value="${error}"></c:out></span>
+    <br/>
+</c:if>
+<br/>
 <a href="index.jsp">На главную страницу</a>
 </body>
 </html>

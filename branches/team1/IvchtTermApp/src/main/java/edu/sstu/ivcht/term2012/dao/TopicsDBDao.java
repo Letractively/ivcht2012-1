@@ -93,6 +93,20 @@ public class TopicsDBDao implements ITopicsDao,ITopicsService {
      * @param id Идентификатор темы
      */
     public void deleteTopic(int id) {
-        //TODO: fill topic удаление темы
+        try {
+            //Создаем или получаем подключение
+            Connection connection = ConnectionDBDao.getConnection();
+
+            //Создаем запрос?
+            Statement statement = connection.createStatement();
+
+            //Создаем строку запроса и выполняем запрос
+            String sql = "DELETE FROM topics WHERE id="+ id;
+            statement.executeUpdate(sql);
+
+            statement.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }
