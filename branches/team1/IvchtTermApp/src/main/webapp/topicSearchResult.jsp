@@ -12,7 +12,7 @@
 <html>
 <head>
 
-    <title>N/A</title>
+    <title>Результат поиска тем</title>
 
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 
@@ -26,8 +26,6 @@
 </head>
 
 <body>
-topic search result
-
 <h2>Результат поиска</h2>
 <table class="example" border="1">
     <tr>
@@ -65,6 +63,7 @@ topic search result
     <br/>
 </c:if>
 <br/>
+<a href="topicList">К списку тем</a>
 <a href="index.jsp">На главную страницу</a>
 </body>
 </html>

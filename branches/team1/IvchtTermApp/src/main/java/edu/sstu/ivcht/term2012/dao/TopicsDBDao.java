@@ -133,7 +133,7 @@ public class TopicsDBDao implements ITopicsDao,ITopicsService {
             //Создаем запрос?
             Statement statement = connection.createStatement();
             //Создаем и получаем результат запроса
-            ResultSet resultSet =  statement.executeQuery("SELECT * FROM topics WHERE subject LIKE '%"+searchString+"%'");
+            ResultSet resultSet =  statement.executeQuery("SELECT * FROM topics WHERE LOWER(subject) LIKE LOWER('%"+searchString+"%')");
 
             //Заполнение списка
             while (resultSet.next()) {
