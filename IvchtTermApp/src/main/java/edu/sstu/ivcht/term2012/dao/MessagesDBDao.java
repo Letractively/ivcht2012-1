@@ -85,6 +85,20 @@ public class MessagesDBDao implements IMessagesDao{
     }
 
     public void deleteMessage(int id) {
-        //To change body of implemented methods use File | Settings | File Templates.
+        try {
+            //Создаем или получаем подключение
+            Connection connection = ConnectionDBDao.getConnection();
+
+            //Создаем запрос?
+            Statement statement = connection.createStatement();
+
+            //Создаем строку запроса и выполняем запрос
+            String sql = "DELETE FROM messages WHERE id="+ id;
+            statement.executeUpdate(sql);
+
+            statement.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }
