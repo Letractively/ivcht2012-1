@@ -11,18 +11,7 @@
 
 <html>
 <head>
-    <script type="text/javascript">
-        function compare(s1, s2) {
-            if (s1.toString() == s2.toString()) {
-                return 1;
-                alert("=")
-            }
-            else {
-                return 0;
-                alert("<>")
-            }
-        }
-    </script>
+
     <title></title>
 </head>
 <body>

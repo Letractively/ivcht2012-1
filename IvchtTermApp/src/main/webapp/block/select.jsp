@@ -26,6 +26,7 @@
             <td>
                 <select name="id" id="Select1" size="1" required>
                     <c:if test="${not empty brand}">
+                    <option value=""></option>
                     <c:forEach items="${brand}" var="brand">
                         <option value="<c:out value="${brand.id}"></c:out>"><c:out
                                 value="${brand.brand}"></c:out></option>
