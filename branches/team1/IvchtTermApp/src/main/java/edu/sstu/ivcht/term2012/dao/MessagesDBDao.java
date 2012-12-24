@@ -2,6 +2,11 @@ package edu.sstu.ivcht.term2012.dao;
 
 import edu.sstu.ivcht.term2012.model.Message;
 
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.Statement;
+import java.text.SimpleDateFormat;
+import java.util.LinkedList;
 import java.util.List;
 
 /**
@@ -9,53 +14,77 @@ import java.util.List;
  */
 public class MessagesDBDao implements IMessagesDao{
 
-    /**
-     * Метод, возвращающий список всех сообщений
-     *
-     * @return Список всех сообщений
-     */
     public List<Message> getAllMessages() {
-        //TODO: fill message
         return null;  //To change body of implemented methods use File | Settings | File Templates.
     }
 
-    /**
-     * Метод, возвращающий список сообщений указанной темы
-     *
-     * @return Список сообщений темы
-     */
-    public List<Message> getTopicMessages(int topicId) {
-        //TODO: fill message
-        return null;  //To change body of implemented methods use File | Settings | File Templates.
-    }
-
-    /**
-     * Метод, добавляющий сообщение в хранилище
-     *
-     * @param message Экземпляр сообщения
-     */
     public void addMessage(Message message) {
-        //TODO: fill message
+        try {
+            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+            //Создаем или получаем подключение
+            Connection connection =  ConnectionDBDao.getConnection();
+            //Создаем запрос?
+            Statement statement = connection.createStatement();
+            //Формируем строку SQL запроса
+            StringBuilder sqlStringBuilder = new StringBuilder();
+            sqlStringBuilder.append("INSERT INTO messages (id, contents, createDate, topicID) VALUES (").append(
+                    "'" + message.getId() + "', ").append(
+                    "'" + message.getContents() + "', ").append(
+                    "'" + sdf.format(message.getCreateDate()) + "', ").append(
+                    "'" + message.getTopicID() + "')");
+
+            //Выполняем запрос
+            statement.executeUpdate(sqlStringBuilder.toString());
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public List<Message> getMessagesByTopicID(int topicID) {
+        //Создаем список студентов в виде связанного списка
+        List<Message> messageList = new LinkedList<Message>();
+
+
+        try {
+            //Создаем или получаем подключение
+            Connection connection = ConnectionDBDao.getConnection();
+            //Создаем запрос?
+            Statement statement = connection.createStatement();
+            //Создаем и получаем результат запроса
+            String sql = "SELECT * FROM messages WHERE topicID="+topicID;
+            ResultSet resultSet =  statement.executeQuery(sql);
+
+            //Заполнение списка
+            while (resultSet.next()) {
+                Message message = new Message(
+                        resultSet.getInt("id"),
+                        resultSet.getString("contents"),
+                        resultSet.getDate("createDate"),
+                        resultSet.getInt("topicID")
+                );
+                messageList.add(message);
+            }
+
+            resultSet.close();
+            statement.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+
+        return messageList;
+}
+
+    public List<Message> getSearchMessagesByString(String searchString) {
+        return null;  //To change body of implemented methods use File | Settings | File Templates.
+    }
+
+    public void editMessage(Message message) {
         //To change body of implemented methods use File | Settings | File Templates.
     }
 
-    /**
-     * Метод, изменяющий данные указанного экземпляра сообщения
-     *
-     * @param id Идентификатор сообщения
-     */
-    public void editMessage(int id) {
-        //TODO: fill message
-        //To change body of implemented methods use File | Settings | File Templates.
-    }
-
-    /**
-     * Метод, удаляющий указанное сообщение
-     *
-     * @param id Идентификатор сообщения
-     */
     public void deleteMessage(int id) {
-        //TODO: fill message
         //To change body of implemented methods use File | Settings | File Templates.
     }
 }

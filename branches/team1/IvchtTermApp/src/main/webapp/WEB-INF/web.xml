@@ -89,19 +89,19 @@
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>MessageEditController</servlet-name>
-        <url-pattern>/MessageEdit</url-pattern>
+        <url-pattern>/messageEdit</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>MessageAddController</servlet-name>
-        <url-pattern>/MessageAdd</url-pattern>
+        <url-pattern>/messageAdd</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>MessageListController</servlet-name>
-        <url-pattern>/MessageList</url-pattern>
+        <url-pattern>/messageList</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>MessageDeleteController</servlet-name>
-        <url-pattern>/MessageDelete</url-pattern>
+        <url-pattern>/messageDelete</url-pattern>
     </servlet-mapping>
 
 </web-app>
