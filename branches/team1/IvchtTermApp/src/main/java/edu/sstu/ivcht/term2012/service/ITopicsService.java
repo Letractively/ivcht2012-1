@@ -27,6 +27,12 @@ public interface ITopicsService {
      */
     public Topic getTopicByID(int id);
 
+    /**
+     * Поиск тем по строке
+     * @param searchString Строка, по которой будет производиться поиск
+     * @return Список найденных тем
+     */
+    public List<Topic> getSearchTopicsByString(String searchString);
 
     /**
      * Метод, изменяющий данные указанного экземпляра темы
