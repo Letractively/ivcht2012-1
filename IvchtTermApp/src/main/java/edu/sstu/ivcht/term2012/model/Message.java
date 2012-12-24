@@ -34,15 +34,15 @@ public class Message {
     /**
      * Конструктор с полями с уник. идентификатором
      * @param id Уникальный идентификатор
-     * @param topicID Уникальный идентификатор темы
      * @param contents содержимое сообщения
      * @param createDate Дата создания сообщения
+     * @param topicID Уникальный идентификатор темы
      */
-    public Message(int id, int topicID, String contents, Date createDate) {
+    public Message(int id, String contents, Date createDate, int topicID) {
         this.id = id;
-        this.topicID = topicID;
         this.contents = contents;
         this.createDate = createDate;
+        this.topicID = topicID;
     }
 
     //Геттеры и Сеттеры
@@ -50,6 +50,7 @@ public class Message {
     public int getId() {
         return id;
     }
+
     public int getTopicID() {
         return topicID;
     }
