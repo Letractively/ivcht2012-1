@@ -43,14 +43,25 @@ public class ListPackageController extends HttpServlet {
         {
             id=Integer.parseInt(req.getParameter("tps"));
         }
+
         List<Packag> autoList = autoService.getAllPackag(id);
-        req.setAttribute("packag", autoList);
-        if(Integer.parseInt(req.getParameter("page"))==1){
-        getServletContext().getRequestDispatcher("/page1.jsp").forward(req,resp);
-    }
-        else
-        {
-            getServletContext().getRequestDispatcher("/index.jsp").forward(req,resp);
-        }
+
+            req.setAttribute("packag", autoList);
+         if(autoList.size()==0){
+
+            req.setAttribute("packag_not_found", "1");
+            getServletContext().getRequestDispatcher("/addpackage").forward(req,resp);
+         }
+            else
+         {
+             if(Integer.parseInt(req.getParameter("page"))==1){
+                 getServletContext().getRequestDispatcher("/page1.jsp").forward(req,resp);
+             }
+             else
+             {
+                 getServletContext().getRequestDispatcher("/index.jsp").forward(req,resp);
+             }
+         }
+
     }
 }

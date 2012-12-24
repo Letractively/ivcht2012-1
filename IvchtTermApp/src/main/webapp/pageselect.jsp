@@ -13,7 +13,7 @@
     <div id="left" class="links"><jsp:include page="block/left.jsp"></jsp:include></div>
     <div id="cont"><jsp:include page="block/select.jsp"></jsp:include> </div>
     <div id="foot"><jsp:include page="block/foot.jsp"></jsp:include>
-        <hr class="full">
+       <%-- <hr class="full">
         <h6>
             <a href="createdatabase">Создать базу данных</a>    <br>
             <a href="https://code.google.com/p/ivcht2012-1">Страница проекта</a>   <br>
@@ -22,8 +22,11 @@
             <a href="listtypes">Список кузовов</a> <br>
             <a href="listpackage?page=1">Модели</a> <br>
             <a href="index.jsp">Вернуться на главную</a>
-        </h6>
+        </h6>--%>
     </div>
 </div>
 </body>
+<c:if test="${not empty error}">
+    <script type="text/javascript">alert("Нет авто с заданными параметрами, попробуйте задать другие...")</script>
+</c:if>
 </html>

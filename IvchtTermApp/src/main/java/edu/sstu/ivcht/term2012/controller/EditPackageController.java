@@ -38,43 +38,33 @@ public class EditPackageController extends HttpServlet {
         req.setCharacterEncoding("UTF-8");
         // Integer id_auto2=0;
         String id_auto= req.getParameter("id_auto");
-        //  String price = req.getParameter("price");
+        String id = req.getParameter("id");
         String motor = req.getParameter("motor");
         String transmission = req.getParameter("transmission");
         String drive = req.getParameter("drive");
         String price = req.getParameter("price");
-        String checked = req.getParameter("checked");
+        //String checked = req.getParameter("checked");
         Integer chk=0;
         Packag packag=null;
-        List listtransm=new LinkedList();
-         listtransm.add("AT");
-        listtransm.add("MT");
-        List listprivod=new LinkedList();
-        listtransm.add("Передний");
-        listtransm.add("Задний");
-        listtransm.add("Полный");
-        try {
-          /*  if (checked=="on"){
-                chk=1;
-            }*/
-           // List<Auto> autoList = packageService.getAllAutos(0,0,0);     //получение списка авто для добавления к ним конкретной комплектации
-           // req.setAttribute("autos", autoList);
-            if(req.getParameter("id_auto")!=null){
-                packag= new Packag(Integer.parseInt(id_auto),Integer.parseInt(motor),transmission,drive,Double.parseDouble(price),chk);
-                packageService.addPackage(packag);
-                req.setAttribute("result", "Комплектация добавлена");
-                getServletContext().getRequestDispatcher("/index.jsp").forward(req, resp);
-            }
-            else
-            {
-                getServletContext().getRequestDispatcher("/pageaddpackag.jsp").forward(req, resp);
-            }
 
-        } catch (Exception e) {
-            req.setAttribute("error", "Произошла ошибка при добавлении");
-            getServletContext().getRequestDispatcher("/pageaddpackag.jsp").forward(req, resp);
-            e.printStackTrace();
-        }
+
+
+                    try {
+                packag= new Packag(Integer.parseInt(id),Integer.parseInt(motor),transmission,drive,Double.parseDouble(price),chk);
+                packageService.editPackage(packag);
+                req.setAttribute("result_editpackag", "Комплектация изменена");
+
+                getServletContext().getRequestDispatcher("/index.jsp").forward(req, resp);
+                    }
+                    catch (Exception e) {
+                        req.setAttribute("error", "Произошла ошибка при изменении");
+                        getServletContext().getRequestDispatcher("/readpackag?id="+req.getParameter("id")).forward(req, resp);
+                        e.printStackTrace();
+                    }
+
+
+
+
 
 
     }

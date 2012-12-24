@@ -56,7 +56,7 @@ public class AddPackageController extends HttpServlet {
             if(req.getParameter("id_auto")!=null){
             packag= new Packag(Integer.parseInt(id_auto),Integer.parseInt(motor),transmission,drive,Double.parseDouble(price),chk);
                 packageService.addPackage(packag);
-                req.setAttribute("result", "Комплектация добавлена");
+                req.setAttribute("result_addpackage", "Комплектация добавлена");
             getServletContext().getRequestDispatcher("/index.jsp").forward(req, resp);
             }
             else

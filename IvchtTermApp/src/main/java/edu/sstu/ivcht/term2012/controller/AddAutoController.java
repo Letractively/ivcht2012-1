@@ -49,7 +49,7 @@ public class AddAutoController extends HttpServlet {
         String len = req.getParameter("len");
         String seat = req.getParameter("seat");
         String rating=req.getParameter("rating");
-        String price=req.getParameter("price");
+        String price="0";
         String descr=req.getParameter("descr");
 
         List<Brand> autoList = autoService.getAllBrand();

@@ -356,4 +356,47 @@ public class AutoDBDao implements AutoDao{
             e.printStackTrace();
         }
     }
+
+    @Override
+    public void editPackage(Packag packag) {
+        try {
+            Connection connection =  DataBaseConnection.getConnection();
+            Statement statement = connection.createStatement();
+            ResultSet resultSet=statement.executeQuery(sql);
+            sql = "Update Package SET  motor=?, transmission=?, drive=?, price=? where id="+packag.getId_auto();
+            PreparedStatement pstm = connection.prepareStatement(sql);
+            pstm.setInt(1, packag.getMotor());
+            pstm.setString(2, packag.getTransmission());
+            pstm.setString(3, packag.getDrive());
+            pstm.setDouble(4, packag.getPrice());
+            //statement.executeUpdate(sql);
+            pstm.executeUpdate();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }//To change body of implemented methods use File | Settings | File Templates.
+    }
+
+    @Override
+    public List<Auto> getSelectAuto(String str) {
+        List<Auto> autoList = new LinkedList<Auto>();
+        try {
+            Connection connection =  DataBaseConnection.getConnection();
+            Statement statement = connection.createStatement();
+                sql="SELECT    Auto.*, Brand.brand, Types.types FROM Auto INNER JOIN Brand ON Auto.id_brand = Brand.id INNER JOIN Types ON Auto.id_types = Types.id INNER JOIN Package ON Auto.id=Package.id_auto "+str;
+                ResultSet resultSet =  statement.executeQuery(sql);
+                while (resultSet.next()) {
+                Auto auto = new Auto(resultSet.getInt("id"),resultSet.getInt("id_brand"), resultSet.getInt("id_types"), resultSet.getString("types"),resultSet.getInt("seat"),resultSet.getInt("height"),resultSet.getInt("width"),resultSet.getInt("len"),resultSet.getString("descr"), resultSet.getString("brand"),resultSet.getString("model"),resultSet.getDouble("price"),resultSet.getInt("rating"),resultSet.getString("datest"));
+                autoList.add(auto);
+
+            }
+            resultSet.close();
+            statement.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return autoList;
+    }
+
+
 }
