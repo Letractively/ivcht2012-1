@@ -8,7 +8,7 @@ import java.util.List;
 /**
  * Интерфейс, описывающий необходимые методы и операции с сообщениями, требующиеся для сайта
  */
-public interface IMessageService {
+public interface IMessagesService {
 
     /**
      * Метод, возвращающий список всех сообщений

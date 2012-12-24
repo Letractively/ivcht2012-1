@@ -23,7 +23,7 @@ public class TopicsDBDao implements ITopicsDao,ITopicsService {
      */
     public List<Topic> getAllTopics() {
 
-        //Создаем список студентов в виде связанного списка
+        //Создаем список тем в виде связанного списка
         List<Topic> topicList = new LinkedList<Topic>();
 
         try {

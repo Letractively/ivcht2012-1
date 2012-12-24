@@ -36,7 +36,7 @@
     <c:forEach items="${topics}" var="topic">
         <tr>
             <td><c:out value="${topic.id}"></c:out></td>
-            <td><a href="messageList?id=<c:out value="${topic.id}"></c:out>"><c:out value="${topic.subject}"></c:out></a></td>
+            <td><a href="messageList?topicID=<c:out value="${topic.id}"></c:out>"><c:out value="${topic.subject}"></c:out></a></td>
             <td><c:out value="${topic.description}"></c:out></td>
             <td><c:out value="${topic.formattedDate}"></c:out></td>
             <td><a href="topicEdit?id=<c:out value="${topic.id}"></c:out>">
