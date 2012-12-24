@@ -31,4 +31,6 @@
 Автоматизация сборки: [http://maven.apache.org/ Apache Maven]
 
 
-_Перейти к [Team2Description Описанию проекта]_
+_[Team2Description Описанию проекта]_
+
+_[Team2DataBase Работа с базой данных]_
