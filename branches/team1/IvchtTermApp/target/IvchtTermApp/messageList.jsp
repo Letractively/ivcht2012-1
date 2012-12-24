@@ -15,9 +15,7 @@
     <title>Сообщения</title>
 
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-
-
-
+    <link rel=stylesheet href="resources/css/base.css" type="text/css">
 </head>
 
 <body>
@@ -34,22 +32,21 @@
         <th>ID</th>
         <th>Содержимое</th>
         <th>Дата сообщения</th>
-        <th>Изменить</th>
         <th>Удалить</th>
     </tr>
-    <c:forEach items="${topics}" var="topic">
+    <c:forEach items="${messages}" var="message">
         <tr>
             <td><c:out value="${message.id}"></c:out></td>
-            <td><c:out value="${message.subject}"></c:out></td>
+            <td><c:out value="${message.contents}"></c:out></td>
             <td><c:out value="${message.formattedDate}"></c:out></td>
-            <td><a href="messageEdit?id=<c:out value="${message.id}"></c:out>">Изменить</a></td>
-            <td><a href="messageDelete?id=<c:out value="${message.id}"></c:out>">Удалить</a></td>
+            <td><a href="messageDelete?id=<c:out value="${message.id}"></c:out>"><img src="resources/img/Delete.png"></a></td>
         </tr>
     </c:forEach>
 </table>
 Количество сообщений в теме: <c:out value="${count}"></c:out>
 <br/>
 <a href="topicList">К списку тем</a>
+<br/>
 <a href="index.jsp">На главную страницу</a>
 </body>
 </html>
