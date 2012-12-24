@@ -15,7 +15,7 @@
     <title>Сообщения</title>
 
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-
+    <link rel=stylesheet href="resources/css/base.css" type="text/css">
 </head>
 
 <body>
@@ -32,7 +32,6 @@
         <th>ID</th>
         <th>Содержимое</th>
         <th>Дата сообщения</th>
-        <th>Изменить</th>
         <th>Удалить</th>
     </tr>
     <c:forEach items="${messages}" var="message">
