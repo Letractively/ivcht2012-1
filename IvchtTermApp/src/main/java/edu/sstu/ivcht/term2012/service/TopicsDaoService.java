@@ -60,11 +60,21 @@ public class TopicsDaoService implements ITopicsService {
     }
 
     /**
-     * Редактировать тему
-     * @param id Уникальный идентификатор темы
+     * Метод, возвращающий экземпляр темы по её идентификатору
+     *
+     * @param id Идентификатор темы
+     * @return Найденная тема
      */
-    public void editTopic(int id) {
-        _topicsDao.editTopic(id);
+    public Topic getTopicByID(int id) {
+       return _topicsDao.getTopicByID(id);
+    }
+
+    /**
+     * Редактировать тему
+     * @param topic Измененная тема
+     */
+    public void editTopic(Topic topic) {
+        _topicsDao.editTopic(topic);
     }
 
     /**

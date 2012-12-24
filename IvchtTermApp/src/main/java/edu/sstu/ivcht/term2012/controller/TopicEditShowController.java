@@ -9,12 +9,11 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.util.List;
 
 /**
- * Контроллер-сервлет, удаляющий тему из БД
+ * Контроллер-сервлет, вызывающий форму редактирования темы, с заполненными полями текущими данными
  */
-public class TopicDeleteController extends HttpServlet {
+public class TopicEditShowController extends HttpServlet {
 
     //Получение службы работы с темами
     ITopicsService _topicService = ServiceInstancer.getTopicService();
@@ -30,7 +29,7 @@ public class TopicDeleteController extends HttpServlet {
     }
 
     /**
-     * Обработка запроса со страницы topicAdd.jsp
+     * Обработка полученных данных о текущем состоянии темы
      * @param req
      * @param resp
      * @throws IOException
@@ -42,25 +41,24 @@ public class TopicDeleteController extends HttpServlet {
         //Переданный идентификатор темы
         String id = req.getParameter("id");
 
-        try {
-            //Удаление темы
-            _topicService.deleteTopic(Integer.parseInt(id));
+        //Создает переменную темы, которая будет передана на страницу потом
+        Topic topic = new Topic();
 
-            req.setAttribute("result", "Тема успешно удалена");
+        try {
+
+            //Получение текущих данных темы
+            topic = _topicService.getTopicByID(Integer.parseInt(id));
+
         } catch (Exception e) {
-            req.setAttribute("error", "Произошла ошибка при удалении темы");
+            req.setAttribute("error", "Произошла ошибка при поиске темы");
             e.printStackTrace();
         }
 
-        //Получает список всех тем
-        List<Topic> topicList = _topicService.getAllTopics();
-
         //Устанавливает атрибут, передающийся странице. Атрибут - это список тем как раз
-        req.setAttribute("topics", topicList);
-        req.setAttribute("count", topicList.size());
+        req.setAttribute("topic", topic);
 
         //Вызывает страницу, не забывая передать все атрибуты
-        getServletContext().getRequestDispatcher("/topicList.jsp").forward(req,resp);
+        getServletContext().getRequestDispatcher("/topicEdit.jsp").forward(req,resp);
     }
 
 }

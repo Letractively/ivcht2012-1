@@ -21,10 +21,18 @@ public interface ITopicsService {
     public void addTopic(Topic topic);
 
     /**
-     * Метод, изменяющий данные указанного экземпляра темы
+     * Метод, возвращающий экземпляр темы по её идентификатору
      * @param id Идентификатор темы
+     * @return Найденная тема
      */
-    public void editTopic(int id);
+    public Topic getTopicByID(int id);
+
+
+    /**
+     * Метод, изменяющий данные указанного экземпляра темы
+     * @param topic Измененная темы
+     */
+    public void editTopic(Topic topic);
 
     /**
      * Метод, удаляющий указанную тему
