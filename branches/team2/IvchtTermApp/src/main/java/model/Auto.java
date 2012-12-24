@@ -10,6 +10,9 @@ import java.util.Date;
  * To change this template use File | Settings | File Templates.
  */
 
+/**
+ *
+ */
 public class Auto {
     private int id;
     private int id_brand;
