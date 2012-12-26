@@ -7,19 +7,23 @@ package model;
  * Time: 12:17
  * To change this template use File | Settings | File Templates.
  */
+/**/
+/**
+ *      Класс комплектаций автомобиля
+ */
 public class Packag {
-    private int id;
-    private int id_types;
-    private String types;
-    private int id_auto;
-   // private String auto;
-    private int motor;
-    private String transmission;
-    private String drive;
-    private double price;
-    private int rating;
-    private String datestart;
-    private int checked;
+    private int id;                                   //счетчик
+    private int id_types;                             //ссылка на таблицу типов кузова
+    private String types;                             //тип кузова из запроса
+    private int id_auto;                              //ссылка на родитель автомобиль
+   // private String auto;                            //
+    private int motor;                                //объем двигателя
+    private String transmission;                      //тип трансмиссии
+    private String drive;                             //тип привода
+    private double price;                             //цена
+    private int rating;                               //резерв
+    private String datestart;                         //резерв
+    private int checked;                              //резерв
 
     public Packag(){
 
