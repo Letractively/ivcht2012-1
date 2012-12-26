@@ -10,24 +10,24 @@ import java.util.Date;
  * To change this template use File | Settings | File Templates.
  */
 
-/**
+/**      Класс автомобиль
  *
  */
 public class Auto {
-    private int id;
-    private int id_brand;
-    private int id_types;
-    private String types;
-    private int seat;
-    private int len;
-    private int width;
-    private int height;
-    private String descr;
-    private String brand;
-    private String model;
-    private double price;
-    private int rating;
-    private String datest;
+    private int id;                            //счетчик
+    private int id_brand;                      //ссылка на таблицу марок авто
+    private int id_types;                      //ссылка на таблицу типов кузовов
+    private String types;                      //тип кузова, заполняется по запросу
+    private int seat;                          //число сидений
+    private int len;                           //длина
+    private int width;                         //ширина
+    private int height;                        //высота
+    private String descr;                      //Доп информация
+    private String brand;                      //марка авто
+    private String model;                      // модель авто
+    private double price;                      //цена
+    private int rating;                        //райтинг
+    private String datest;                     //резерв
 
 
 

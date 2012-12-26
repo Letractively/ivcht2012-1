@@ -8,6 +8,9 @@ package model;
  * To change this template use File | Settings | File Templates.
  */
 
+/**
+ * ТИпы кузова
+ */
 public class Types {
     private int id;
     private String types;

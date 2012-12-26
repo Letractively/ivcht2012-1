@@ -7,6 +7,11 @@ package model;
  * Time: 13:26
  * To change this template use File | Settings | File Templates.
  */
+
+
+/**
+ * Марки автомобиля
+ */
 public class Brand {
     private int id;
     private String brand;
