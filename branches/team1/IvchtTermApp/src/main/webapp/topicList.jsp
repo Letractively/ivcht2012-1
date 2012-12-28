@@ -24,20 +24,22 @@
 
 <body>
 <h2>Список тем</h2>
-<a href="topicAdd.jsp">Добавить тему</a>
+<a href="topicAdd.jsp"><img src="resources/img/button_topic.png" border="2"></a>
+<br>
 <table class="example" border="1">
     <tr>
-        <th>ID</th>
         <th>Название</th>
-        <th>Описание</th>
         <th>Дата создания</th>
         <th></th>
     </tr>
     <c:forEach items="${topics}" var="topic">
         <tr>
-            <td><c:out value="${topic.id}"></c:out></td>
-            <td><a href="messageList?topicID=<c:out value="${topic.id}"></c:out>"><c:out value="${topic.subject}"></c:out></a></td>
-            <td><c:out value="${topic.description}"></c:out></td>
+            <td width="500">
+                <b><a href="messageList?topicID=<c:out value="${topic.id}"></c:out>"><c:out value="${topic.subject}"></c:out></a></b>
+                <font size="1">(Тема создана: <c:out value="${topic.formattedDate}"></c:out>)</font>
+                <br>
+                <c:out value="${topic.description}"></c:out>
+            </td>
             <td><c:out value="${topic.formattedDate}"></c:out></td>
             <td><a href="topicEdit?id=<c:out value="${topic.id}"></c:out>">
                 <img src="resources/img/edit.png" >

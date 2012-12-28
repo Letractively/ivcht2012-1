@@ -39,7 +39,7 @@
             <td><c:out value="${message.id}"></c:out></td>
             <td><c:out value="${message.contents}"></c:out></td>
             <td><c:out value="${message.formattedDate}"></c:out></td>
-            <td><a href="messageDelete?id=<c:out value="${message.id}"></c:out>"><img src="resources/img/Delete.png"></a></td>
+            <td><a href="messageDelete?id=<c:out value="${message.id}&topicID=${message.topicID}"></c:out>"><img src="resources/img/Delete.png"></a></td>
         </tr>
     </c:forEach>
 </table>
