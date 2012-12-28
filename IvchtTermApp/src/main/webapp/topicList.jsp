@@ -24,8 +24,7 @@
 
 <body>
 <h2>Список тем</h2>
-<a href="topicAdd.jsp"><img src="resources/img/button_topic.png" border="2"></a>
-<br>
+<a href="topicAdd.jsp"><button>Новая тема</button></a>
 <table class="example" border="1">
     <tr>
         <th>Название</th>
@@ -52,6 +51,9 @@
         </tr>
     </c:forEach>
 </table>
+<br/>
+<a href="topicAdd.jsp"><button>Новая тема</button></a>
+<br/>
 Количество тем на форуме: <c:out value="${count}"></c:out>
 <br/>
 

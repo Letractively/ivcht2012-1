@@ -22,7 +22,7 @@
 </head>
 
 <body>
-<h2>Добавление новой темы</h2>
+<h2>Новая тема</h2>
 
 <%-- Форма отправки запроса добавления темы --%>
 <form action="topicAdd" method="post">
@@ -38,7 +38,8 @@
         <tr>
             <td></td>
             <td>
-                <input type="submit" value="Добавить"/>
+
+                <input type="submit" value="Добавить" onclick="this.disabled=true; this.form.submit(); return false;" />
                 <input type="reset" value="Очистить"/>
             </td>
         </tr>
@@ -49,6 +50,9 @@
 
 <c:if test="${not empty result}">
     <span> <c:out value="${result}"></c:out></span>
+    <script>
+
+        setTimeout('location = "topicList"', 2000) </script>
 </c:if>
 
 <%-- Обработка ошибок запроса - error --%>

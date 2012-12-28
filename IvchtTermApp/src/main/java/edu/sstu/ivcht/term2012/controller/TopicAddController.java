@@ -56,7 +56,7 @@ public class TopicAddController extends HttpServlet {
 
             _topicService.addTopic(topic);
 
-            req.setAttribute("result", "Тема успешно добавлена");
+            req.setAttribute("result", "Тема успешно добавлена, вы будете переведены на главную страницу");
 
         } catch (Exception e) {
             req.setAttribute("error", "Произошла ошибка при создании темы");
