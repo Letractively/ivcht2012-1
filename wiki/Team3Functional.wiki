@@ -1,8 +1,7 @@
 #summary Функционал
 
-= Introduction =
+= Функционал =
 
-Add your content here.
 
 
 = Details =
