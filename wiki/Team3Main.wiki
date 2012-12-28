@@ -26,3 +26,7 @@
 Система управления версиями: [http://tortoisesvn.net/ TortoiseSVN]
 
 Веб-сервер: [http://tomcat.apache.org/ Apache Tomcat]
+
+
+
+_[Team3functional Функционал]_
