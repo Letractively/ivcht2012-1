@@ -16,27 +16,28 @@
 
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 
-    <!-- Styles
+
     <link rel=stylesheet href="resources/css/base.css" type="text/css">
 
-    <style type="text/css">
-
-    </style>
-    -->
 </head>
 
 <body>
+<center>
 <h1>Welcome to anonymous forum</h1>
 
-<table width="100%">
+<table align="center" border="0">
     <tr>
-        <td>
-            <img src="resources/img/logo.jpg" align="left">
+        <td width="300" align="center">
+            <img src="resources/img/logo.jpg">
+            &nbsp
         </td>
     </tr>
     <tr>
-        <td>
-            <a href="topicList">Список тем</a>
+        <td align="center">
+            &nbsp
+            <a href="topicList">
+            <button>Войти на форум</button>
+                </a>
         </td>
     </tr>
 </table>
@@ -46,6 +47,6 @@
     2012 © Created by Team1
 </span>
 
-
+     </center>
 </body>
 </html>
