@@ -45,6 +45,8 @@ public class TopicAddController extends HttpServlet {
              subject="<empty>";
         String description = req.getParameter("description");
 
+        boolean closed = (req.getParameter("closed") != null);
+
         //Попытка добавления темы в БД
         try {
             //Новый экземпляр темы
@@ -52,7 +54,7 @@ public class TopicAddController extends HttpServlet {
                     subject,
                     description,
                     new Date(),
-                    false
+                    closed
             );
 
             _topicService.addTopic(topic);

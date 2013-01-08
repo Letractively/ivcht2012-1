@@ -44,6 +44,10 @@
             <td><input type="text" name="createDate" readonly="readonly" value="<c:out value="${topic.formattedDate}"></c:out>" /></td>
         </tr>
         <tr>
+            <td>Тема закрыта</td>
+            <td><input type="checkbox" name="closed" <c:if test="${topic.closed}">checked="checked"</c:if>></td>
+        </tr>
+        <tr>
             <td></td>
             <td>
                 <input type="submit" value="Изменить"/>
