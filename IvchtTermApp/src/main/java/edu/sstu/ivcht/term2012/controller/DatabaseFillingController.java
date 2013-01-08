@@ -48,21 +48,24 @@ public class DatabaseFillingController extends HttpServlet {
                     0,
                     "Первая тема",
                     "Тема созданная первой",
-                    sdf.parse("17.12.2012")
+                    sdf.parse("17.12.2012"),
+                    true
             ));
 
             _topicService.addTopic(new Topic(
                     1,
                     "Приветствие",
                     "Тема созданная для ознакомления",
-                    sdf.parse("17.12.2012")
+                    sdf.parse("17.12.2012"),
+                    false
             ));
 
             _topicService.addTopic(new Topic(
                     2,
                     "Текущая тема",
                     "Рабочая тема",
-                    new Date()
+                    new Date(),
+                    false
             ));
 
             //Сообщения

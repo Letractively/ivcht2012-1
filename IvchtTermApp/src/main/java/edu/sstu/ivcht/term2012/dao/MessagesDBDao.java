@@ -15,7 +15,35 @@ import java.util.List;
 public class MessagesDBDao implements IMessagesDao{
 
     public List<Message> getAllMessages() {
-        return null;  //To change body of implemented methods use File | Settings | File Templates.
+        //Создаем список сообщен в виде связанного списка
+        List<Message> messageList = new LinkedList<Message>();
+
+        try {
+            //Создаем или получаем подключение
+            Connection connection = ConnectionDBDao.getConnection();
+            //Создаем запрос?
+            Statement statement = connection.createStatement();
+            //Создаем и получаем результат запроса
+            ResultSet resultSet =  statement.executeQuery("SELECT * FROM messages");
+
+            //Заполнение списка
+            while (resultSet.next()) {
+                Message message = new Message(
+                        resultSet.getInt("id"),
+                        resultSet.getString("contents"),
+                        resultSet.getDate("createDate"),
+                        resultSet.getInt("messageID")
+                );
+                messageList.add(message);
+            }
+
+            resultSet.close();
+            statement.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return messageList;
     }
 
     public void addMessage(Message message) {
@@ -77,11 +105,56 @@ public class MessagesDBDao implements IMessagesDao{
 }
 
     public List<Message> getSearchMessagesByString(String searchString) {
-        return null;  //To change body of implemented methods use File | Settings | File Templates.
+
+        //Создаем список студентов в виде связанного списка
+        List<Message> messageList = new LinkedList<Message>();
+
+        try {
+            //Создаем или получаем подключение
+            Connection connection = ConnectionDBDao.getConnection();
+            //Создаем запрос?
+            Statement statement = connection.createStatement();
+            //Создаем и получаем результат запроса
+            ResultSet resultSet =  statement.executeQuery("SELECT * FROM messages WHERE LOWER(subject) LIKE LOWER('%"+searchString+"%')");
+
+            //Заполнение списка
+            while (resultSet.next()) {
+                Message message = new Message(
+                        resultSet.getInt("id"),
+                        resultSet.getString("contents"),
+                        resultSet.getDate("createDate"),
+                        resultSet.getInt("topicID")
+                );
+                messageList.add(message);
+            }
+
+            resultSet.close();
+            statement.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return messageList;
     }
 
     public void editMessage(Message message) {
-        //To change body of implemented methods use File | Settings | File Templates.
+        try {
+            //Создаем или получаем подключение
+            Connection connection = ConnectionDBDao.getConnection();
+
+            //Создаем запрос?
+            Statement statement = connection.createStatement();
+
+            //Создаем строку запроса и выполняем запрос
+            String sql = "UPDATE messages SET contents='"+message.getContents()
+                    + "' WHERE id="+message.getId();
+
+            statement.executeUpdate(sql);
+
+            statement.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     public void deleteMessage(int id) {

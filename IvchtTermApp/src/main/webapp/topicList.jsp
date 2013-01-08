@@ -29,6 +29,7 @@
     <tr>
         <th>Название</th>
         <th>Дата создания</th>
+        <th>Тема закрыта</th>
         <th></th>
     </tr>
     <c:forEach items="${topics}" var="topic">
@@ -40,6 +41,7 @@
                 <c:out value="${topic.description}"></c:out>
             </td>
             <td><c:out value="${topic.formattedDate}"></c:out></td>
+            <td><input type="checkbox" <c:if test="${topic.closed}">checked="checked"</c:if>> </td>
             <td><a href="topicEdit?id=<c:out value="${topic.id}"></c:out>">
                 <img src="resources/img/edit.png" >
             </a>
