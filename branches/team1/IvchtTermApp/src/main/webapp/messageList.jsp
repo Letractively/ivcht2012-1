@@ -25,9 +25,8 @@
 <h2>Список сообщений в теме</h2>
 
 
-<c:if test="${!topic.closed}">
-<a href="messageAdd?topicID=<c:out value="${topicID}"></c:out>"> <button>Новое собщение</button> </a>
-</c:if>
+
+<a href="messageAdd?topicID=<c:out value="${topicID}"></c:out>"> <button <c:if test="${topic.closed}">disabled="disabled"</c:if>>Новое собщение</button> </a>
 
 <table class="example" border="1">
     <tr>
@@ -41,7 +40,11 @@
             <td><c:out value="${message.id}"></c:out></td>
             <td><c:out value="${message.contents}"></c:out></td>
             <td><c:out value="${message.formattedDate}"></c:out></td>
-            <td><a href="messageDelete?id=<c:out value="${message.id}&topicID=${message.topicID}"></c:out>"><img src="resources/img/Delete.png"></a></td>
+            <td>
+                <a onclick="if(confirm('Вы уверены, что хотите удалить сообщение?'))location.href='messageDelete?id=<c:out value="${message.id}&topicID=${message.topicID}"></c:out>'">
+                    <img src="resources/img/Delete.png">
+                </a>
+            </td>
         </tr>
     </c:forEach>
 </table>

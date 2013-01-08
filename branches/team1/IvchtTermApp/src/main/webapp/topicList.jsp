@@ -42,13 +42,16 @@
             </td>
             <td><c:out value="${topic.formattedDate}"></c:out></td>
             <td><input type="checkbox" disabled="disabled" <c:if test="${topic.closed}">checked="checked"</c:if>> </td>
-            <td><a href="topicEdit?id=<c:out value="${topic.id}"></c:out>">
-                <img src="resources/img/edit.png" >
-            </a>
+            <td>
+                <a href="topicEdit?id=<c:out value="${topic.id}"></c:out>">
+                    <img src="resources/img/edit.png" >
+                </a>
 
-                <a href="topicDelete?id=<c:out value="${topic.id}"></c:out>">
+                <a onclick="if(confirm('Вы уверены, что хотите удалить тему?'))location.href='topicDelete?id=<c:out value="${topic.id}"></c:out>'">
                     <img src="resources/img/Delete.png">
                 </a>
+            </td>
+
             </td>
         </tr>
     </c:forEach>
