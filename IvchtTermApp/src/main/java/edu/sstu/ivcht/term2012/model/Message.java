@@ -45,6 +45,12 @@ public class Message {
         this.topicID = topicID;
     }
 
+    public Message(String contents, Date createDate, int topicID) {
+        this.contents = contents;
+        this.createDate = createDate;
+        this.topicID = topicID;
+    }
+
     //Геттеры и Сеттеры
 
     public int getId() {

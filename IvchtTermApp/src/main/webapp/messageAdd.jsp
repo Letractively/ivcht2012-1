@@ -26,12 +26,26 @@
 <h2>Добавление нового сообщения</h2>
 
 <%-- Форма отправки сообщения в тему --%>
-<form action="messageAdd" method="post">
+<form action="messageAddApply" method="post">
     <table class="add">
 
         <tr>
+            <td>Добавить в тему:</td>
+            <td>
+
+                <select name="topicID">
+                    <c:forEach items="${topics}" var="topic">
+
+                    <option value="<c:out value="${topic.id}"></c:out>" <c:if test="${topic.id==topicID}"> selected</c:if> ><c:out value="${topic.subject}"></c:out></option>
+
+                    </c:forEach>
+                </select>
+
+            </td>
+        </tr>
+        <tr>
             <td>Содержимое сообщения</td>
-            <td><input type="text" name="description" size="100"/></td>
+            <td><input type="text" name="contents" size="100"/></td>
         </tr>
         <tr>
             <td></td>

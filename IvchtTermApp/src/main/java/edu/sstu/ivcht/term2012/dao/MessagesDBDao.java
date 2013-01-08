@@ -55,8 +55,7 @@ public class MessagesDBDao implements IMessagesDao{
             Statement statement = connection.createStatement();
             //Формируем строку SQL запроса
             StringBuilder sqlStringBuilder = new StringBuilder();
-            sqlStringBuilder.append("INSERT INTO messages (id, contents, createDate, topicID) VALUES (").append(
-                    "'" + message.getId() + "', ").append(
+            sqlStringBuilder.append("INSERT INTO messages (contents, createDate, topicID) VALUES (").append(
                     "'" + message.getContents() + "', ").append(
                     "'" + sdf.format(message.getCreateDate()) + "', ").append(
                     "'" + message.getTopicID() + "')");

@@ -25,7 +25,9 @@
 <h2>Список сообщений в теме</h2>
 
 
-<a href="messageAdd.jsp"><button>Новое собщение</button></a>
+<c:if test="${!topic.closed}">
+<a href="messageAdd?topicID=<c:out value="${topicID}"></c:out>"> <button>Новое собщение</button> </a>
+</c:if>
 
 <table class="example" border="1">
     <tr>
