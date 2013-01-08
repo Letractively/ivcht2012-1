@@ -25,7 +25,7 @@
 <h2>Список сообщений в теме</h2>
 
 
-<a href="messageAdd.jsp">Добавить сообщение</a>
+<a href="messageAdd.jsp"><button>Новое собщение</button></a>
 
 <table class="example" border="1">
     <tr>
