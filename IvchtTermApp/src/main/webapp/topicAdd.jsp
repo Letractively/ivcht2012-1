@@ -36,6 +36,10 @@
             <td><input type="text" name="description" size="100"/></td>
         </tr>
         <tr>
+            <td>Тема закрыта</td>
+            <td><input type="checkbox" name="closed" <c:if test="${topic.closed}">checked="checked"</c:if>></td>
+        </tr>
+        <tr>
             <td></td>
             <td>
 

@@ -50,6 +50,8 @@ public class TopicEditApplyController extends HttpServlet {
         String createDate = req.getParameter("createDate");
         SimpleDateFormat sdf = new SimpleDateFormat("dd.MM.yyyy");
 
+        boolean closed = (req.getParameter("closed") != null);
+
         //Попытка изменения темы в БД
         try {
 
@@ -59,7 +61,7 @@ public class TopicEditApplyController extends HttpServlet {
                     subject,
                     description,
                     sdf.parse(createDate),
-                    false
+                    closed
             );
 
             //Применение изменений темы
