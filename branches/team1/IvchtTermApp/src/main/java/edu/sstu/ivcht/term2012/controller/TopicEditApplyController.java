@@ -58,7 +58,8 @@ public class TopicEditApplyController extends HttpServlet {
                     Integer.parseInt(id),
                     subject,
                     description,
-                    sdf.parse(createDate)
+                    sdf.parse(createDate),
+                    false
             );
 
             //Применение изменений темы

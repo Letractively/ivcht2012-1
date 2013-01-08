@@ -40,7 +40,8 @@ public class TopicsDBDao implements ITopicsDao,ITopicsService {
                         resultSet.getInt("id"),
                         resultSet.getString("subject"),
                         resultSet.getString("description"),
-                        resultSet.getDate("createDate")
+                        resultSet.getDate("createDate"),
+                        resultSet.getBoolean("closed")
                 );
                 topicList.add(topic);
             }
@@ -67,10 +68,11 @@ public class TopicsDBDao implements ITopicsDao,ITopicsService {
             Statement statement = connection.createStatement();
             //Формируем строку SQL запроса
             StringBuilder sqlStringBuilder = new StringBuilder();
-            sqlStringBuilder.append("INSERT INTO topics (subject, description, createDate) VALUES (").append(
+            sqlStringBuilder.append("INSERT INTO topics (subject, description, createDate, closed) VALUES (").append(
                     "'" + topic.getSubject() + "', ").append(
                     "'" + topic.getDescription() + "', ").append(
-                    "'" + sdf.format(topic.getCreateDate()) + "')");
+                    "'" + sdf.format(topic.getCreateDate()) + "', ").append(
+                    "'" + topic.getClosed() + "')");
 
             //Выполняем запрос
             statement.executeUpdate(sqlStringBuilder.toString());
@@ -107,6 +109,7 @@ public class TopicsDBDao implements ITopicsDao,ITopicsService {
                 topic.setSubject(resultSet.getString("subject"));
             topic.setDescription(resultSet.getString("description"));
              topic.setCreateDate(resultSet.getDate("createDate"));
+            topic.setClosed(resultSet.getBoolean("closed"));
 
             resultSet.close();
             statement.close();
@@ -141,7 +144,8 @@ public class TopicsDBDao implements ITopicsDao,ITopicsService {
                         resultSet.getInt("id"),
                         resultSet.getString("subject"),
                         resultSet.getString("description"),
-                        resultSet.getDate("createDate")
+                        resultSet.getDate("createDate"),
+                        resultSet.getBoolean("closed")
                 );
                 topicList.add(topic);
             }
@@ -171,6 +175,7 @@ public class TopicsDBDao implements ITopicsDao,ITopicsService {
             //Создаем строку запроса и выполняем запрос
             String sql = "UPDATE topics SET subject='"+topic.getSubject()
                     + "', description='"+topic.getDescription()
+                    + "', closed='"+topic.getClosed()
                     + "' WHERE id="+topic.getId();
 
             statement.executeUpdate(sql);

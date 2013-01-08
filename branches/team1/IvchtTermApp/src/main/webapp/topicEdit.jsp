@@ -29,7 +29,7 @@
     <table class="edit">
         <tr>
             <td>Идентификатор темы</td>
-            <td><input type="text" name="id" style="background:#b9b9b9" readonly="readonly" value="<c:out value="${topic.id}"></c:out>" /></td>
+            <td><input type="text" name="id" readonly="readonly" value="<c:out value="${topic.id}"></c:out>" /></td>
         </tr>
         <tr>
             <td>Название темы</td>
@@ -41,7 +41,7 @@
         </tr>
         <tr>
             <td>Дата создания темы</td>
-            <td><input type="text" name="createDate" style="background:#b9b9b9" readonly="readonly" value="<c:out value="${topic.formattedDate}"></c:out>" /></td>
+            <td><input type="text" name="createDate" readonly="readonly" value="<c:out value="${topic.formattedDate}"></c:out>" /></td>
         </tr>
         <tr>
             <td></td>

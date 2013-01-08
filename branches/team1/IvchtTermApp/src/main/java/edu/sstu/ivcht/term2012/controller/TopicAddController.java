@@ -51,7 +51,8 @@ public class TopicAddController extends HttpServlet {
             Topic topic = new Topic(
                     subject,
                     description,
-                    new Date()
+                    new Date(),
+                    false
             );
 
             _topicService.addTopic(topic);

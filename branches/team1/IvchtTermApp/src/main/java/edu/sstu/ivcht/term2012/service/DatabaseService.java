@@ -14,7 +14,7 @@ public class DatabaseService {
     /**
      * Константная строка - SQL запрос создания таблицы тем
      */
-    private final static String CREATE_TOPICS_TABLE = "CREATE TABLE topics (id IDENTITY, subject VARCHAR(100), description VARCHAR (100), createDate DATE)";
+    private final static String CREATE_TOPICS_TABLE = "CREATE TABLE topics (id IDENTITY, subject VARCHAR(100), description VARCHAR (100), createDate DATE, closed boolean)";
 
     /**
      * Константная строка - SQL запрос создания таблицы сообщений

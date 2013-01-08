@@ -27,6 +27,12 @@ public class Topic {
      */
     private Date createDate;
 
+    /**
+     * Тема закрыта
+     */
+    private Boolean closed;
+
+
     private static SimpleDateFormat simpleDateFormatDateFormat = new SimpleDateFormat("dd.MM.yyyy");
 
     //                      Конструкторы
@@ -43,10 +49,11 @@ public class Topic {
      * @param description Описание темы
      * @param createDate Дата создания темы
      */
-    public Topic(String subject, String description, Date createDate) {
+    public Topic(String subject, String description, Date createDate, Boolean closed) {
         this.subject = subject;
         this.description = description;
         this.createDate = createDate;
+        this.closed = closed;
     }
 
     /**
@@ -56,11 +63,12 @@ public class Topic {
      * @param description Описание темы
      * @param createDate Дата создания темы
      */
-    public Topic(int id, String subject, String description, Date createDate) {
+    public Topic(int id, String subject, String description, Date createDate, Boolean closed) {
         this.id = id;
         this.subject = subject;
         this.description = description;
         this.createDate = createDate;
+        this.closed = closed;
     }
 
 
@@ -137,5 +145,13 @@ public class Topic {
      */
     public String getFormattedDate() {
         return simpleDateFormatDateFormat.format(createDate);
+    }
+
+    public Boolean getClosed() {
+        return closed;
+    }
+
+    public void setClosed(Boolean closed) {
+        this.closed = closed;
     }
 }
