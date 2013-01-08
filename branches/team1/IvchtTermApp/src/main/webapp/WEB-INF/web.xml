@@ -46,8 +46,12 @@
         <servlet-class>edu.sstu.ivcht.term2012.controller.MessageListController</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>MessageAddController</servlet-name>
-        <servlet-class>edu.sstu.ivcht.term2012.controller.MessageAddController</servlet-class>
+        <servlet-name>MessageAddShowController</servlet-name>
+        <servlet-class>edu.sstu.ivcht.term2012.controller.MessageAddShowController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>MessageAddApplyController</servlet-name>
+        <servlet-class>edu.sstu.ivcht.term2012.controller.MessageAddApplyController</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>MessageDeleteController</servlet-name>
@@ -92,8 +96,12 @@
         <url-pattern>/messageEdit</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>MessageAddController</servlet-name>
+        <servlet-name>MessageAddShowController</servlet-name>
         <url-pattern>/messageAdd</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>MessageAddApplyController</servlet-name>
+        <url-pattern>/messageAddApply</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>MessageListController</servlet-name>

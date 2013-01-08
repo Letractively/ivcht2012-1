@@ -13,10 +13,10 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
-public class MessageListController extends HttpServlet {
-
-    //Получение службы работы с сообщениями
-    IMessagesService _messageService = ServiceInstancer.getMessageService();
+/**
+ * Контроллер-сервлет, передающий на форму добавленя сообщения информацию о существующих темах
+ */
+public class MessageAddShowController extends HttpServlet {
 
     //Получение службы работы с темами
     ITopicsService _topicService = ServiceInstancer.getTopicService();
@@ -31,25 +31,31 @@ public class MessageListController extends HttpServlet {
         processRequest(req, resp);
     }
 
+    /**
+     * Обработка полученных данных о текущем состоянии темы
+     * @param req
+     * @param resp
+     * @throws IOException
+     * @throws ServletException
+     */
     private void processRequest(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
+        req.setCharacterEncoding("UTF-8");
 
-        //Полученный номер темы
+        //Переданный идентификатор темы
         String topicID = req.getParameter("topicID");
 
-        //Получает список всех сообщений в данной теме, для передачи в отображение
-        List<Message> messageList = _messageService.getMessagesByTopicID(Integer.parseInt(topicID));
 
-        //Получает текущую тему, чтобы передать её аттрибуты в отображение
-        Topic topic = _topicService.getTopicByID(Integer.parseInt(topicID));
+        //Получает список всех тем
+        List<Topic> topicList = _topicService.getAllTopics();
 
         //Устанавливает атрибут, передающийся странице. Атрибут - это список тем как раз
-        req.setAttribute("messages", messageList);
-        req.setAttribute("count", messageList.size());
+        req.setAttribute("topics", topicList);
+        req.setAttribute("count", topicList.size());
         req.setAttribute("topicID", Integer.parseInt(topicID));
-        req.setAttribute("topic", topic);
+
 
         //Вызывает страницу, не забывая передать все атрибуты
-        getServletContext().getRequestDispatcher("/messageList.jsp").forward(req, resp);
-
+        getServletContext().getRequestDispatcher("/messageAdd.jsp").forward(req,resp);
     }
+
 }

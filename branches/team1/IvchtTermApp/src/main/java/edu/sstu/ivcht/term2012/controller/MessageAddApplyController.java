@@ -1,7 +1,6 @@
 package edu.sstu.ivcht.term2012.controller;
-
-import edu.sstu.ivcht.term2012.model.Topic;
-import edu.sstu.ivcht.term2012.service.ITopicsService;
+import edu.sstu.ivcht.term2012.model.Message;
+import edu.sstu.ivcht.term2012.service.IMessagesService;
 import edu.sstu.ivcht.term2012.utils.ServiceInstancer;
 
 import javax.servlet.ServletException;
@@ -12,12 +11,12 @@ import java.io.IOException;
 import java.util.Date;
 
 /**
- * Контроллер-сервлет, вызывающший страницу со списком тем
+ * Контроллер-сервлет, добавляющий сообщение в указанную тему
  */
-public class TopicAddController extends HttpServlet {
+public class MessageAddApplyController extends HttpServlet {
 
     //Получение службы работы с темами
-    ITopicsService _topicService = ServiceInstancer.getTopicService();
+    IMessagesService _messageService = ServiceInstancer.getMessageService();
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -39,35 +38,36 @@ public class TopicAddController extends HttpServlet {
     private void processRequest(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
         req.setCharacterEncoding("UTF-8");
 
-        //Извлечение переданных сервлетом переменных
-        String subject = req.getParameter("subject");
-        if (subject=="")
-             subject="<empty>";
-        String description = req.getParameter("description");
 
-        boolean closed = (req.getParameter("closed") != null);
+        //Извлечение переданных сервлетом переменных
+        String topicID = req.getParameter("topicID");
+        String contents = req.getParameter("contents");
+        if (contents=="")
+            contents="<empty>";
 
         //Попытка добавления темы в БД
         try {
             //Новый экземпляр темы
-            Topic topic = new Topic(
-                    subject,
-                    description,
+            Message message = new Message(
+                    contents,
                     new Date(),
-                    closed
+                    Integer.parseInt(topicID)
             );
 
-            _topicService.addTopic(topic);
+            _messageService.addMessage(message);
 
-            req.setAttribute("result", "Тема успешно добавлена");
+            req.setAttribute("result", "Сообщение успешно добавлено");
 
         } catch (Exception e) {
-            req.setAttribute("error", "Произошла ошибка при создании темы");
+            req.setAttribute("error", "Произошла ошибка при создании сообщения");
             e.printStackTrace();
         }
 
-        //Передает результаты обработки запроса на страницу
-        getServletContext().getRequestDispatcher("/topicList").forward(req, resp);
-    }
 
+
+        //Передает результаты обработки запроса на страницу
+        getServletContext().getRequestDispatcher("/messageList?topicID="+Integer.parseInt(topicID)).forward(req, resp);
+
+
+    }
 }
