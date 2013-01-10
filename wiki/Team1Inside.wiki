@@ -1,13 +1,14 @@
-#summary One-sentence summary of this page.
+#summary Страница описания внутренней структуры проекта.
 
-= Introduction =
+===Внутренняя структура проекта===
 
-Add your content here.
+====Сущность "тема" обладает следующими полями====
+  * Уникальный идентификатор
+  * Название темы
+  * Дата создания
 
-
-= Details =
-
-Add your content here.  Format your content with:
-  * Text in *bold* or _italic_
-  * Headings, paragraphs, and lists
-  * Automatic links to other wiki pages
+====Сущность "сообщение" обладает следующими полями====
+  * Уникальный идентификатор
+  * Текст сообщения
+  * Дата создания
+  * Идентификатор темы
